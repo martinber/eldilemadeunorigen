@@ -7,7 +7,7 @@ Juego.Cargador.prototype = {
 		// Colocar fondo y barra de carga
 		this.fondo = this.add.sprite(0, 0, 'cargadorFondo');
 		this.barra = this.add.sprite(0, 0, 'cargadorBarra');
-		this.textoCargando = this.add.bitmapText(50, 50, 'fuenteMartin','Cargando...', 50);
+		this.textoCargando = this.add.bitmapText(50, 50, 'fuenteJuan','Cargando...', 50);
 		
 		this.load.setPreloadSprite(this.barra); // Configurar la barra como barra de carga
 		
@@ -19,11 +19,14 @@ Juego.Cargador.prototype = {
 		
 		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escena1.jpg');
 		this.load.image('UIFondo', 'recursos/escenas/fondos/UI.jpg');
+		this.load.image('dialogoFondo', 'recursos/escenas/fondos/dialogo.png');
+		this.load.text('datosJSON', 'recursos/datos.json');
 		// 18 cuadros de 84x128px cada uno
 		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 84, 128, 8);
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera
+		datosJSON = JSON.parse(game.cache.getText('datosJSON'));
 		this.barra.cropEnabled = false;
 	},
 	update: function () {

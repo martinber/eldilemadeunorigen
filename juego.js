@@ -1,7 +1,7 @@
-width = 960;
-height = 540;
+canvasWidth = 960;
+canvasHeight = 540;
 
-var game = new Phaser.Game(width, height, Phaser.AUTO, 'divJuego');//, { preload: preload, create: create, update: update });
+var game = new Phaser.Game(canvasWidth, canvasHeight, Phaser.AUTO, 'divJuego');//, { preload: preload, create: create, update: update });
 
 // Agregar estados
 game.state.add('Inicio', Juego.Inicio);

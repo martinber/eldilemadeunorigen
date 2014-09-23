@@ -9,6 +9,7 @@ Juego.Escena1.prototype = {
 		this.UI = new UI(); // Agregar UI
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
+		this.dialogo = new Dialogo(datosJSON.escena1);
 	},
 	update: function () {
 		this.personaje.update(); // Actualizar personaje
@@ -36,10 +37,12 @@ Juego.Escena1.prototype = {
 		}
 		
 		
-		
 		this.camara.update();
+		this.UI.update(this.camara);
 	},
 	quitGame: function (pointer) {
+		this.personaje.eliminar();
+		this.dialogo.eliminar();
 		this.personaje = null;
 		this.fondo = null;
 		this.game.state.start('Menu');

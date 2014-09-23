@@ -1,0 +1,23 @@
+{
+	"escena1": {
+		"tamaño":"completo",
+		"dialogo":[
+			{
+				"personaje":"Estefania",
+				"texto":"Hola me llamo Estefania"
+			},
+			{
+				"personaje":"Madre",
+				"texto":"Hola Estefania"
+			},
+			{
+				"personaje":"Madre",
+				"texto":"Chau Estefania"
+			},
+			{
+				"personaje":"Estefania",
+				"texto":"Chau!!"
+			}
+		]
+	}
+}

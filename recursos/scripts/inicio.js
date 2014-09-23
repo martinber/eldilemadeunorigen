@@ -31,7 +31,7 @@ Juego.Inicio.prototype = {
 		// Cargar lo necesario para el cargador
 		this.load.image('cargadorFondo', 'recursos/cargador/cargadorFondo.png');
 		this.load.image('cargadorBarra', 'recursos/cargador/cargadorBarra.png');
-		this.load.bitmapFont('fuenteMartin', 'recursos/fuentes/fuenteMartin.png', 'recursos/fuentes/fuenteMartin.xml');
+		this.load.bitmapFont('fuenteJuan', 'recursos/fuentes/fuenteJuan.png', 'recursos/fuentes/fuenteJuan.xml');
 	},
 	
 	create: function () {

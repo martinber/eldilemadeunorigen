@@ -68,8 +68,9 @@ Personaje.prototype = {
 	
 	eliminar: function () { // Liberar espacio
 		this.sprite.destroy();
-		/*this.x = null;
-		this.y = null;*/
+		this.h = null;
+		this.w = null;
+		this.velocidad = null;
 	},
 	
 	moverX: function (xPos) { // Mover a posicion, solo mover en X
@@ -91,13 +92,26 @@ Personaje.prototype = {
 UI = function () { // Objeto que se encarga de manejar la interfaz, algo así como un HUD
 	// Posicion en pantalla
 	this.x = 0;
-	this.y = 400;
+	this.y = 440;
+	this.camara = null;
 	
 	this.fondo = game.add.sprite(this.x, this.y, 'UIFondo');
 }
 UI.prototype = {
-	update: function () { // Llamar constantemente
+	update: function (camara) { // Llamar constantemente
+		this.camara = camara;
+		this.x = this.camara.x;
 		
+		if (this.x < 0) this.x = 0;
+		
+		this.fondo.x = this.x;
+		this.fondo.y = this.y;
+	},
+	eliminar: function () { // Liberar espacio
+		this.fondo.destroy();
+		this.x = null;
+		this.y = null;
+		this.camara = null;
 	}
 }
 
@@ -116,5 +130,55 @@ Camara.prototype = {
 		this.x = this.objetivo.sprite.x - this.w / 2;
 		// No hay que preocuparse por si la camara se sale del juego, Phaser lo arregla si se sale de los limites de game.world
 		game.camera.setPosition(this.x, this.y); // Actualizar la camara
+	},
+	eliminar: function () { // Liberar espacio
+		this.x = null;
+		this.y = null;
+		this.h = null;
+		this.w = null;
+		this.objetivo = null;
+	}
+}
+
+Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialogos
+	// Posicion en pantalla
+	this.x = 0;
+	this.y = 0;
+	this.w = canvasWidth;
+	this.h = canvasHeight;
+	this.camara = null;
+	this.avance = 0;
+	this.texto = new Array();
+	
+	this.datosEscena = datosEscena;
+	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo');
+	
+	for (var i = 0; i < this.datosEscena.dialogo.length; i++) {
+		this.texto[i] = game.add.bitmapText(50, 50 + 64 * i, 'fuenteJuan',this.datosEscena.dialogo[i].texto, 64);
+	}
+	
+}
+Dialogo.prototype = {
+	update: function (camara) { // Llamar constantemente
+		this.camara = camara;
+		this.x = this.camara.x;
+		
+		if (this.x < 0) this.x = 0;
+		
+		this.fondo.x = this.x;
+		this.fondo.y = this.y;
+	},
+	avanzar: function () {
+		this.avance += 1;
+	},
+	eliminar: function () { // Liberar espacio
+		this.fondo.destroy();
+		this.x = null;
+		this.y = null;
+		this.h = null;
+		this.w = null;
+		this.camara = null;
+		this.dialogos = null;
+		this.avance = null;
 	}
 }
