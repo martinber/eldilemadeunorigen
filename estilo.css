@@ -1,0 +1,43 @@
+body {
+	background-color: #DDF;
+	margin:0;
+	padding:0;
+}
+canvas {
+	display: block;
+	margin: 0 auto;
+	background-color: #FFF;
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+}
+.oscuro {
+	background-color: #555;
+}
+.alFondo {
+	z-index: -1;
+}
+h1 {
+	margin: 0;
+}
+header {
+	float: left;
+	margin: 1em;
+}
+footer {
+	margin: 1em;
+}
+main {
+	clear: both;
+}
+footer ul {
+	margin-top: 1em;
+	margin-left: 1em;
+	margin-bottom: .5em;
+	padding: 0;
+}
+footer ul li {
+	display: inline-block;
+}
+footer a {
+	text-align: right;
+	color: #DDD;
+}
