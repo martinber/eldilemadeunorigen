@@ -12,10 +12,10 @@ Teclas = function () {
 
 Personaje = function (x, y) {
 	// Posicionar personaje como lo indica el constructor
-	/*this.x = x;
+	this.x = x;
 	this.y = y;
 	
-	this.objetivo = x; // A donde esta moviendose, ahora, a su posicion*/
+	//this.objetivo = x; // A donde esta moviendose, ahora, a su posicion
 	
 	this.w = game.cache.getImage('personaje').width;
 	this.h = game.cache.getImage('personaje').height;
@@ -50,10 +50,10 @@ Personaje.prototype = {
 		// Impedir que se vaya fuera de la habitación
 		if (this.x < 0) this.x = 0;
 		if (this.x > 1200) this.x = 1200;
-		
-		// Actualizar posición del sprite
-		this.sprite.x = this.x;
-		this.sprite.y = this.y;*/
+		*/
+		// Actualizar posición
+		this.x = this.sprite.x;
+		this.y = this.sprite.y;
 		
 		// Si no existe movimiento, o si el movimiento esta parado, parar las animaciones
 		if (this.movimiento == null) {
@@ -174,6 +174,7 @@ Dialogo.prototype = {
 		
 		if (this.linea < this.datosEscena.dialogo.length) {
 			this.texto[this.linea] = game.add.bitmapText(50, 50 + 64 * this.linea, 'fuenteJuan', "", 64);
+			this.texto[this.linea].fixedToCamera = true;
 			game.time.events.repeat(80, this.datosEscena.dialogo[this.linea].texto.length, this.avanzar, this);
 		}
 	},

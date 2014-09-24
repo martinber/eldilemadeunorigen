@@ -3,19 +3,19 @@
 		"tamaño":"completo",
 		"dialogo":[
 			{
-				"personaje":"Estefania",
-				"texto":"Hola me llamo Estefania"
+				"personaje":"Mario",
+				"texto":"Hola me llamo Mario"
 			},
 			{
-				"personaje":"Madre",
-				"texto":"Hola Estefania"
+				"personaje":"Luigi",
+				"texto":"Hola Mario"
 			},
 			{
-				"personaje":"Madre",
-				"texto":"Chau Estefania"
+				"personaje":"Mario",
+				"texto":"Chau Luigi"
 			},
 			{
-				"personaje":"Estefania",
+				"personaje":"Luigi",
 				"texto":"Chau!!"
 			}
 		]

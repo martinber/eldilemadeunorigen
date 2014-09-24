@@ -23,6 +23,7 @@ Juego.Cargador.prototype = {
 		this.load.text('datosJSON', 'recursos/datos.json');
 		// 18 cuadros de 84x128px cada uno
 		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 84, 128, 8);
+		this.load.image('luigi', 'recursos/escenas/luigi.png');
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera
