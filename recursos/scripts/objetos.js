@@ -148,31 +148,36 @@ Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialo
 	this.w = canvasWidth;
 	this.h = canvasHeight;
 	this.camara = null;
-	this.avance = 0;
 	this.texto = new Array();
+	this.linea = 0;
 	
 	this.datosEscena = datosEscena;
 	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo');
 	this.fondo.fixedToCamera = true;
 	
-	for (var i = 0; i < this.datosEscena.dialogo.length; i++) {
-		this.texto[i] = game.add.bitmapText(50, 50 + 64 * i, 'fuenteJuan',this.datosEscena.dialogo[i].texto, 64);
-		this.texto[i].fixedToCamera = true;
-	}
+	this.nuevaLinea();
+	
 	
 }
 Dialogo.prototype = {
 	update: function (camara) { // Llamar constantemente
-		/*this.camara = camara;
-		this.x = this.camara.x;
-		
-		if (this.x < 0) this.x = 0;
-		
-		this.fondo.x = this.x;
-		this.fondo.y = this.y;*/
+
 	},
 	avanzar: function () {
-		this.avance += 1;
+		if (this.texto[this.linea].text.length < this.datosEscena.dialogo[this.linea].texto.length) {
+			this.texto[this.linea].setText(this.datosEscena.dialogo[this.linea].texto.substr(0, this.texto[this.linea].text.length + 1));
+		}
+		else {
+			game.time.events.add(Phaser.Timer.SECOND, this.nuevaLinea, this);
+			this.linea += 1;
+		}
+	},
+	nuevaLinea: function () {
+		
+		if (this.linea < this.datosEscena.dialogo.length) {
+			this.texto[this.linea] = game.add.bitmapText(50, 50 + 64 * this.linea, 'fuenteJuan', "", 64);
+			game.time.events.repeat(80, this.datosEscena.dialogo[this.linea].texto.length, this.avanzar, this);
+		}
 	},
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
@@ -182,6 +187,5 @@ Dialogo.prototype = {
 		this.w = null;
 		this.camara = null;
 		this.dialogos = null;
-		this.avance = null;
 	}
 }
