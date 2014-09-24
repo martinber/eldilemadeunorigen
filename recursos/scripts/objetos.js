@@ -156,8 +156,6 @@ Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialo
 	this.fondo.fixedToCamera = true;
 	
 	this.nuevaLinea();
-	
-	
 }
 Dialogo.prototype = {
 	update: function (camara) { // Llamar constantemente
