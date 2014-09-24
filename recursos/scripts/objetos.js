@@ -15,6 +15,8 @@ Personaje = function (x, y) {
 	this.x = x;
 	this.y = y;
 	
+	this.xMin = -1;
+	this.xMax = -1;
 	//this.objetivo = x; // A donde esta moviendose, ahora, a su posicion
 	
 	this.w = game.cache.getImage('personaje').width;
@@ -73,17 +75,27 @@ Personaje.prototype = {
 		this.velocidad = null;
 	},
 	
+	limitarX: function (xMin, xMax) {
+		this.xMin = xMin;
+		this.xMax = xMax;
+	},
+	
 	moverX: function (xPos) { // Mover a posicion, solo mover en X
-		this.objetivo = xPos;
+		var x = xPos;
+		if (this.xMin != -1 && x < this.xMin) x = this.xMin;
+		if (this.xMax != -1 && x > this.xMax) x = this.xMax;
+		
+		if (x == this.x) return;
+		
 		if (this.movimiento != null && this.movimiento.isRunning) this.movimiento.stop(); // Parar movimientos anteriores si estan corriendo
 		this.movimiento = game.add.tween(this.sprite); // Inicializar animaciones
-		this.duracion = Math.abs(xPos - this.sprite.x) / this.velocidad;
-		this.movimiento.to({x: xPos, y: this.sprite.y}, this.duracion, Phaser.Easing.Linear.None, true, 0 , false);
+		this.duracion = Math.abs(x - this.sprite.x) / this.velocidad;
+		this.movimiento.to({x: x, y: this.sprite.y}, this.duracion, Phaser.Easing.Linear.None, true, 0 , false);
 		this.sprite.animations.play('personajeCaminando'); // Animar personaje
-		if (xPos > this.sprite.x) { // Si nos vamos a mover a la derecha
+		if (x > this.sprite.x) { // Si nos vamos a mover a la derecha
 			this.sprite.scale.x = 1; // El personaje mira a la derecha
 		}
-		else {
+		else if (x < this.sprite.x) {
 			this.sprite.scale.x = -1; // El personaje mira a la izquierda
 		}
 	}

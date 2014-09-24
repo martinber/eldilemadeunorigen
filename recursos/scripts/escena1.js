@@ -6,16 +6,20 @@ Juego.Escena1.prototype = {
 	create: function () {
 		this.fondo = this.add.sprite(0, 0, 'escena1Fondo'); // Agregar fondo
 		this.personaje = new Personaje(0, 395); // Agregar personaje
+		this.UI = new UI(); // Agregar UI
+		this.camara = new Camara(this.personaje); // Agregar camara
+		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
+		//this.dialogo = new Dialogo(datosJSON.escena1);
+		
+		
 		this.luigi = this.add.sprite(1000, 395, 'luigi');
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.luigi.inputEnabled = true;
 		this.luigi.input.useHandCursor = true; //if you want a hand cursor
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this);
 		
-		this.UI = new UI(); // Agregar UI
-		this.camara = new Camara(this.personaje); // Agregar camara
-		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
-		//this.dialogo = new Dialogo(datosJSON.escena1);
+		this.personaje.limitarX(200, 800);
+
 	},
 	update: function () {
 		this.personaje.update(); // Actualizar personaje

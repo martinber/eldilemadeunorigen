@@ -39,4 +39,3 @@ Juego.Inicio.prototype = {
 		this.game.state.start('Cargador');
 	}
 };
- 
