@@ -8,7 +8,7 @@ Juego.Inicio.prototype = {
 		this.input.maxPointers = 1; // No es necesario multitouch
 		this.stage.disableVisibilityChange = true; // Pausar juego al perder foco
 		Juego.teclas = new Teclas(); // Inicializar controlador de teclado
-		Juego.mouse = game.input.mousePointer;
+		Juego.mouse = game.input.activePointer;
 		
 		if (this.game.device.desktop) { //Si se juega desde una PC
 			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
