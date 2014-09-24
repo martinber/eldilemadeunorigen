@@ -19,12 +19,17 @@ Juego.Escena1.prototype = {
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this);
 		
 		this.personaje.limitarX(200, 800);
+		
+		game.input.onDown.add(this.click, this);
 
+	},
+	click: function (pointer) {
+		this.personaje.moverX(pointer.worldX);
 	},
 	update: function () {
 		this.personaje.update(); // Actualizar personaje
 		
-		if (Juego.mouse.isDown) {
+		/*if (game.input.mousePointer.isDown) {
 			//if (Juego.mouse.worldX > this.personaje.x && Juego.mouse.worldY > this.personaje.y && Juego.mouse.worldX < this.personaje.x + this.personaje.w && Juego.mouse.worldY < this.personaje.y + this.personaje.h) {
 			//alert(this.personaje.x + " " + this.personaje.y + " " + this.personaje.w + " " + this.personaje.h + " " + Juego.mouse.worldX + " " + Juego.mouse.worldY + " ");
 			
@@ -40,10 +45,10 @@ Juego.Escena1.prototype = {
 			else{
 				Mover personaje
 			}
-			*/
+			
 			
 			this.personaje.moverX(Juego.mouse.worldX);
-		}
+		}*/
 		
 		
 		this.camara.update();
