@@ -96,16 +96,17 @@ UI = function () { // Objeto que se encarga de manejar la interfaz, algo así co
 	this.camara = null;
 	
 	this.fondo = game.add.sprite(this.x, this.y, 'UIFondo');
+	this.fondo.fixedToCamera = true;
 }
 UI.prototype = {
 	update: function (camara) { // Llamar constantemente
-		this.camara = camara;
+		/*this.camara = camara;
 		this.x = this.camara.x;
 		
 		if (this.x < 0) this.x = 0;
 		
 		this.fondo.x = this.x;
-		this.fondo.y = this.y;
+		this.fondo.y = this.y;*/
 	},
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
@@ -152,21 +153,23 @@ Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialo
 	
 	this.datosEscena = datosEscena;
 	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo');
+	this.fondo.fixedToCamera = true;
 	
 	for (var i = 0; i < this.datosEscena.dialogo.length; i++) {
 		this.texto[i] = game.add.bitmapText(50, 50 + 64 * i, 'fuenteJuan',this.datosEscena.dialogo[i].texto, 64);
+		this.texto[i].fixedToCamera = true;
 	}
 	
 }
 Dialogo.prototype = {
 	update: function (camara) { // Llamar constantemente
-		this.camara = camara;
+		/*this.camara = camara;
 		this.x = this.camara.x;
 		
 		if (this.x < 0) this.x = 0;
 		
 		this.fondo.x = this.x;
-		this.fondo.y = this.y;
+		this.fondo.y = this.y;*/
 	},
 	avanzar: function () {
 		this.avance += 1;

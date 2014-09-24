@@ -38,6 +38,7 @@ Juego.Escena1.prototype = {
 		
 		
 		this.camara.update();
+		this.dialogo.update(this.camara);
 		this.UI.update(this.camara);
 	},
 	quitGame: function (pointer) {
