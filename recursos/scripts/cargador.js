@@ -21,14 +21,15 @@ Juego.Cargador.prototype = {
 		this.load.image('UIFondo', 'recursos/escenas/fondos/UI.jpg');
 		this.load.image('dialogoFondo', 'recursos/escenas/fondos/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
-		// 18 cuadros de 84x128px cada uno
-		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 84, 128, 8);
+		
+		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 84, 128, 8);// 18 cuadros de 84x128px cada uno
 		this.load.image('luigi', 'recursos/escenas/luigi.png');
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera
-		datosJSON = JSON.parse(game.cache.getText('datosJSON'));
 		this.barra.cropEnabled = false;
+		
+		datosJSON = JSON.parse(game.cache.getText('datosJSON')); // Leer JSON de datos
 	},
 	update: function () {
 		// Esperar a que se decodifique la musica

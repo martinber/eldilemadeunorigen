@@ -1,7 +1,8 @@
+// Dimensiones del juego
 canvasWidth = 960;
 canvasHeight = 540;
 
-var game = new Phaser.Game(canvasWidth, canvasHeight, Phaser.AUTO, 'divJuego');//, { preload: preload, create: create, update: update });
+var game = new Phaser.Game(canvasWidth, canvasHeight, Phaser.AUTO, 'divJuego');
 
 // Agregar estados
 game.state.add('Inicio', Juego.Inicio);

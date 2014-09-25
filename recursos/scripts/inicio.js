@@ -12,16 +12,16 @@ Juego.Inicio.prototype = {
 		if (this.game.device.desktop) { //Si se juega desde una PC
 			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			this.scale.setMinMax(640, 360, 960, 540); // Escalar juego como  minimo 480x260 y como maximo 1024x768
-			this.scale.setScreenSize(true);
+			this.scale.setScreenSize(true); // Habilitar escalado
 			this.scale.refresh();
 		}
 		else { // Si se juega desde el celular
 			
 			this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
 			this.scale.setMinMax(640, 360, 960, 540); // Escalar juego como  minimo 480x260 y como maximo 1024x768
-			this.scale.forceLandscape = true; // Forzar pantalla en horizontal
-			this.scale.pageAlignHorizontally = true;
-			this.scale.setScreenSize(true);
+			//this.scale.forceLandscape = true; // Forzar pantalla en horizontal
+			//this.scale.pageAlignHorizontally = true; // Colocar juego en medio de la pantalla
+			this.scale.setScreenSize(true); // Habilitar escalado
 			this.scale.refresh();
 		}
 	},
