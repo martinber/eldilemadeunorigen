@@ -29,7 +29,7 @@ Juego.Escena1.prototype = {
 	},
 	
 	clickEnLuigi: function() {
-		this.dialogo = new Dialogo(datosJSON.escena1); // Crear dialogo
+		this.dialogo = new Dialogo(datosJSON.escena1.dialogos.luigi); // Crear dialogo
 	},
 	
 	click: function (pointer) {

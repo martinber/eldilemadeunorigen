@@ -1,23 +1,43 @@
 {
 	"escena1": {
 		"tamaño":"completo",
-		"dialogo":[
-			{
-				"personaje":"Mario",
-				"texto":"Hola me llamo Mario"
-			},
-			{
-				"personaje":"Luigi",
-				"texto":"Hola Mario"
-			},
-			{
-				"personaje":"Mario",
-				"texto":"Chau Luigi"
-			},
-			{
-				"personaje":"Luigi",
-				"texto":"Chau!!"
-			}
-		]
+		"dialogos": {
+			"luigi":[
+				{
+					"personaje":"Mario",
+					"texto":"Hola me llamo Mario"
+				},
+				{
+					"personaje":"Luigi",
+					"texto":"Hola Mario"
+				},
+				{
+					"personaje":"Mario",
+					"texto":"Chau Luigi"
+				},
+				{
+					"personaje":"Luigi",
+					"texto":"Chau!!"
+				}
+			],
+			"luigi2":[
+				{
+					"personaje":"Mario",
+					"texto":"Hola de nuevo Luigi"
+				},
+				{
+					"personaje":"Luigi",
+					"texto":"Hola Mario"
+				},
+				{
+					"personaje":"Mario",
+					"texto":"Chau Luigi"
+				},
+				{
+					"personaje":"Luigi",
+					"texto":"Chau!!"
+				}
+			]
+		}
 	}
 }

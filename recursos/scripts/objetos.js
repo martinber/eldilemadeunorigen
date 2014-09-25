@@ -128,7 +128,7 @@ Camara.prototype = {
 	}
 }
 
-Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialogos
+Dialogo = function (datosDialogo) { // Objeto que se encarga de mostrar los dialogos
 	// Posicion en pantalla
 	this.x = 0;
 	this.y = 0;
@@ -140,7 +140,7 @@ Dialogo = function (datosEscena) { // Objeto que se encarga de mostrar los dialo
 	this.texto = new Array(); // Inicializar array que contiene las líneas de texto visibles
 	this.linea = 0; // Línea actual, la que se anima
 	
-	this.datosEscena = datosEscena; // Obtener información sobre la escena
+	this.datosDialogo = datosDialogo; // Obtener información sobre la escena
 	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo'); // Dibujar fondo
 	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
@@ -151,8 +151,8 @@ Dialogo.prototype = {
 
 	},
 	avanzar: function () { // Llamado periodicamente para ir agregando letras
-		if (this.texto[this.linea].text.length < this.datosEscena.dialogo[this.linea].texto.length) { // Si no se termino de escribir la linea
-			this.texto[this.linea].setText(this.datosEscena.dialogo[this.linea].texto.substr(0, this.texto[this.linea].text.length + 1)); // Agregar una letra a la línea
+		if (this.texto[this.linea].text.length < this.datosDialogo[this.linea].texto.length) { // Si no se termino de escribir la linea
+			this.texto[this.linea].setText(this.datosDialogo[this.linea].texto.substr(0, this.texto[this.linea].text.length + 1)); // Agregar una letra a la línea
 		}
 		else {
 			// Crear una línea dentro de un segundo
@@ -161,10 +161,10 @@ Dialogo.prototype = {
 		}
 	},
 	nuevaLinea: function () {
-		if (this.linea < this.datosEscena.dialogo.length) { // Si no terminó el diálogo
+		if (this.linea < this.datosDialogo.length) { // Si no terminó el diálogo
 			this.texto[this.linea] = game.add.bitmapText(50, 50 + 64 * this.linea, 'fuenteJuan', "", 64); // Crear línea nueva
 			this.texto[this.linea].fixedToCamera = true; // Fijarla a la cámara
-			game.time.events.repeat(80, this.datosEscena.dialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
+			game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 		}
 	},
 	eliminar: function () { // Liberar espacio
