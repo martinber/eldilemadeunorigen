@@ -35,7 +35,6 @@ Personaje.prototype = {
 		this.x = this.sprite.x;
 		this.y = this.sprite.y;
 		
-		
 		// Si no existe movimiento, o si el movimiento esta parado, parar las animaciones
 		if (this.movimiento == null) {
 			this.sprite.animations.stop(); // Parar animaciones si no existe movimiento
@@ -79,10 +78,19 @@ Personaje.prototype = {
 	},
 	
 	eliminar: function () { // Liberar espacio
+		game.tween.remove(this.movimiento);
+		this.movimiento = null;
 		this.sprite.destroy();
+		this.sprite = null;
+		this.x = null;
+		this.y = null;
 		this.h = null;
 		this.w = null;
+		this.xMin = null;
+		this.xMax = null;
 		this.velocidad = null;
+		this.puedeMoverse = null;
+		this.duracion = null;
 	}
 }
 
@@ -100,9 +108,9 @@ UI.prototype = {
 	},
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
+		this.fondo = null;
 		this.x = null;
 		this.y = null;
-		this.camara = null;
 	}
 }
 

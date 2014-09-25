@@ -48,14 +48,21 @@ Juego.Escena1.prototype = {
 	
 	quitGame: function (pointer) { // Salir de la escena
 		// Liberar espacio
-		this.personaje.eliminar();
+		this.fondo.destroy();
+		this.fondo = null;
 		if (this.dialogo != null) {
 			this.dialogo.eliminar();
 			this.dialogo = null;
 		}
+		this.personaje.eliminar();
 		this.personaje = null;
-		this.fondo = null;
-		
+		this.UI.eliminar();
+		this.UI = null;
+		this.camara.eliminar();
+		this.camara = null;
+		this.luigi.destroy();
+		this.luigi = null;
+		this.vecesHabladasConLuigi = null;
 		
 		this.game.state.start('Menu'); // Ir al menu
 	}
