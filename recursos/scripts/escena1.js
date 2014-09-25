@@ -14,10 +14,11 @@ Juego.Escena1.prototype = {
 		this.luigi = this.add.sprite(1000, 395, 'luigi');
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.luigi.inputEnabled = true; // Habilitar chequeos de click
-		this.luigi.input.useHandCursor = true; // Mostrar el mouse como una mano
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
 		
 		this.personaje.limitarX(200, 800); // Limitar posición del personaje
+		
+		this.vecesHabladasConLuigi = 0;
 		
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 	},
@@ -29,7 +30,9 @@ Juego.Escena1.prototype = {
 	},
 	
 	clickEnLuigi: function() {
-		this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
+		if (this.vecesHabladasConLuigi == 0) this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
+		else this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi2); // Crear dialogo 2
+		this.vecesHabladasConLuigi += 1;
 		this.personaje.puedeMoverse = false;
 	},
 	
