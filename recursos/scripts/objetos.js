@@ -22,6 +22,7 @@ Personaje = function (x, y) {
 	this.sprite = game.add.sprite(0, 390, 'personaje'); // Agregar el sprite
 	this.sprite.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 	
+	this.puedeMoverse = true;
 	this.movimiento = null; // Declarar variable que guarda los tweens (movimientos)
 	this.velocidad = .2; // Velocidad de caminata, 0,2 pixeles por milisegundo
 	
@@ -33,6 +34,7 @@ Personaje.prototype = {
 		// Actualizar posición a partir de posición de sprite, porque los tweens mueven a los sprites, no a los objetos
 		this.x = this.sprite.x;
 		this.y = this.sprite.y;
+		
 		
 		// Si no existe movimiento, o si el movimiento esta parado, parar las animaciones
 		if (this.movimiento == null) {
@@ -51,26 +53,28 @@ Personaje.prototype = {
 	},
 	
 	moverX: function (xPos) { // Mover a posicion, solo mover en X
-		var x = xPos;
-		
-		// Limitar posición
-		if (this.xMin != -1 && x < this.xMin) x = this.xMin;
-		if (this.xMax != -1 && x > this.xMax) x = this.xMax;
-		
-		if (x == this.x) return; // Si no se va a mover, salir de la función
-		
-		if (this.movimiento != null && this.movimiento.isRunning) this.movimiento.stop(); // Parar movimientos anteriores si estan corriendo
-		this.movimiento = game.add.tween(this.sprite); // Inicializar movimientos
-		this.duracion = Math.abs(x - this.sprite.x) / this.velocidad; // Calcular duracion de movimiento a partir de la distancia
-		
-		this.movimiento.to({x: x, y: this.sprite.y}, this.duracion, Phaser.Easing.Linear.None, true, 0 , false); // Mover
-		
-		this.sprite.animations.play('personajeCaminando'); // Animar personaje
-		if (x > this.sprite.x) { // Si nos vamos a mover a la derecha
-			this.sprite.scale.x = 1; // El personaje mira a la derecha
-		}
-		else if (x < this.sprite.x) {
-			this.sprite.scale.x = -1; // El personaje mira a la izquierda
+		if (this.puedeMoverse) {
+			var x = xPos;
+			
+			// Limitar posición
+			if (this.xMin != -1 && x < this.xMin) x = this.xMin;
+			if (this.xMax != -1 && x > this.xMax) x = this.xMax;
+			
+			if (x == this.x) return; // Si no se va a mover, salir de la función
+			
+			if (this.movimiento != null && this.movimiento.isRunning) this.movimiento.stop(); // Parar movimientos anteriores si estan corriendo
+			this.movimiento = game.add.tween(this.sprite); // Inicializar movimientos
+			this.duracion = Math.abs(x - this.sprite.x) / this.velocidad; // Calcular duracion de movimiento a partir de la distancia
+			
+			this.movimiento.to({x: x, y: this.sprite.y}, this.duracion, Phaser.Easing.Linear.None, true, 0 , false); // Mover
+			
+			this.sprite.animations.play('personajeCaminando'); // Animar personaje
+			if (x > this.sprite.x) { // Si nos vamos a mover a la derecha
+				this.sprite.scale.x = 1; // El personaje mira a la derecha
+			}
+			else if (x < this.sprite.x) {
+				this.sprite.scale.x = -1; // El personaje mira a la izquierda
+			}
 		}
 	},
 	
@@ -128,7 +132,7 @@ Camara.prototype = {
 	}
 }
 
-Dialogo = function (datosDialogo) { // Objeto que se encarga de mostrar los dialogos
+Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar los dialogos
 	// Posicion en pantalla
 	this.x = 0;
 	this.y = 0;
@@ -137,12 +141,23 @@ Dialogo = function (datosDialogo) { // Objeto que se encarga de mostrar los dial
 	this.w = canvasWidth;
 	this.h = canvasHeight;
 	
+	// Declarar alarmas
+	this.alarmaAvance = null;
+	this.alarmaNuevaLinea = null;
+	
+	this.creador = creador; // Necesario para que luego borre a este objeto
+	
 	this.texto = new Array(); // Inicializar array que contiene las líneas de texto visibles
 	this.linea = 0; // Línea actual, la que se anima
 	
 	this.datosDialogo = datosDialogo; // Obtener información sobre la escena
 	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo'); // Dibujar fondo
 	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
+	
+	// Agregar boton
+	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'boton', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.boton.fixedToCamera = true;
 	
 	this.nuevaLinea(); // Empezar a dibujar una línea de texto
 }
@@ -156,7 +171,7 @@ Dialogo.prototype = {
 		}
 		else {
 			// Crear una línea dentro de un segundo
-			game.time.events.add(Phaser.Timer.SECOND, this.nuevaLinea, this);
+			this.alarmaNuevaLinea = game.time.events.add(Phaser.Timer.SECOND, this.nuevaLinea, this);
 			this.linea += 1;
 		}
 	},
@@ -164,8 +179,11 @@ Dialogo.prototype = {
 		if (this.linea < this.datosDialogo.length) { // Si no terminó el diálogo
 			this.texto[this.linea] = game.add.bitmapText(50, 50 + 64 * this.linea, 'fuenteJuan', "", 64); // Crear línea nueva
 			this.texto[this.linea].fixedToCamera = true; // Fijarla a la cámara
-			game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
+			this.alarmaAvance = game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 		}
+	},
+	cerrar: function () {
+		this.creador.eliminarDialogo();;
 	},
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
@@ -175,5 +193,13 @@ Dialogo.prototype = {
 		this.w = null;
 		this.camara = null;
 		this.dialogos = null;
+		this.datosDialogo = null;
+		for (var i = 0; i < this.texto.length; i++) {
+			this.texto[i].destroy();
+		}
+		game.time.events.remove(this.alarmaNuevaLinea);
+		game.time.events.remove(this.alarmaAvance);
+		this.texto = null;
+		this.boton.destroy();
 	}
 }

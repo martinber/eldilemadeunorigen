@@ -24,16 +24,23 @@ Juego.Escena1.prototype = {
 	
 	update: function () {
 		this.personaje.update(); // Actualizar personaje
-		//this.camara.update(); // Actualizar camara
+		this.camara.update(); // Actualizar camara
 		this.UI.update(this.camara); // Actualizar UI
 	},
 	
 	clickEnLuigi: function() {
-		this.dialogo = new Dialogo(datosJSON.escena1.dialogos.luigi); // Crear dialogo
+		this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
+		this.personaje.puedeMoverse = false;
 	},
 	
 	click: function (pointer) {
 		this.personaje.moverX(pointer.worldX); // Mover personaje
+	},
+	
+	eliminarDialogo: function () {
+		this.dialogo.eliminar();
+		this.dialogo = null;
+		this.personaje.puedeMoverse = true;
 	},
 	
 	quitGame: function (pointer) { // Salir de la escena

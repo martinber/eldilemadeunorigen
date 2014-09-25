@@ -11,7 +11,8 @@ Juego.Menu.prototype = {
 		
 		// Dibujar el menu
 		this.add.sprite(0, 0, 'menuFondo');
-		this.boton = this.add.button(100, 150, 'menuBoton', this.comenzarJuego, this, 'menuBoton2', 'menuBoton1', 'menuBoton2');
+		// Agregar boton
+		this.boton = this.add.button(100, 150, 'boton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 		
 		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteMartinBlanco','Jueguito ISLGSM', 64);
 	},
