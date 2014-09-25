@@ -9,56 +9,35 @@ Juego.Escena1.prototype = {
 		this.UI = new UI(); // Agregar UI
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
-		//this.dialogo = new Dialogo(datosJSON.escena1);
 		
-		
+		// Agregar a Luigi
 		this.luigi = this.add.sprite(1000, 395, 'luigi');
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.luigi.inputEnabled = true;
-		this.luigi.input.useHandCursor = true; //if you want a hand cursor
-		this.luigi.events.onInputDown.add(this.clickEnLuigi, this);
+		this.luigi.inputEnabled = true; // Habilitar chequeos de click
+		this.luigi.input.useHandCursor = true; // Mostrar el mouse como una mano
+		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
 		
-		this.personaje.limitarX(200, 800);
+		this.personaje.limitarX(200, 800); // Limitar posición del personaje
 		
-		game.input.onDown.add(this.click, this);
-
+		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 	},
-	click: function (pointer) {
-		this.personaje.moverX(pointer.worldX);
-	},
+	
 	update: function () {
 		this.personaje.update(); // Actualizar personaje
-		
-		/*if (game.input.mousePointer.isDown) {
-			//if (Juego.mouse.worldX > this.personaje.x && Juego.mouse.worldY > this.personaje.y && Juego.mouse.worldX < this.personaje.x + this.personaje.w && Juego.mouse.worldY < this.personaje.y + this.personaje.h) {
-			//alert(this.personaje.x + " " + this.personaje.y + " " + this.personaje.w + " " + this.personaje.h + " " + Juego.mouse.worldX + " " + Juego.mouse.worldY + " ");
-			
-			/*if (es un boton) {
-			
-			}
-			else if (es una casa) {
-				
-			}
-			else if (es una cosa) {
-				
-			}
-			else{
-				Mover personaje
-			}
-			
-			
-			this.personaje.moverX(Juego.mouse.worldX);
-		}*/
-		
-		
-		this.camara.update();
-		//this.dialogo.update(this.camara);
-		this.UI.update(this.camara);
+		//this.camara.update(); // Actualizar camara
+		this.UI.update(this.camara); // Actualizar UI
 	},
+	
 	clickEnLuigi: function() {
-		this.dialogo = new Dialogo(datosJSON.escena1);
+		this.dialogo = new Dialogo(datosJSON.escena1); // Crear dialogo
 	},
-	quitGame: function (pointer) {
+	
+	click: function (pointer) {
+		this.personaje.moverX(pointer.worldX); // Mover personaje
+	},
+	
+	quitGame: function (pointer) { // Salir de la escena
+		// Liberar espacio
 		this.personaje.eliminar();
 		if (this.dialogo != null) {
 			this.dialogo.eliminar();
@@ -66,6 +45,8 @@ Juego.Escena1.prototype = {
 		}
 		this.personaje = null;
 		this.fondo = null;
-		this.game.state.start('Menu');
+		
+		
+		this.game.state.start('Menu'); // Ir al menu
 	}
 };
