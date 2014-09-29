@@ -6,7 +6,7 @@ Juego.Escena1.prototype = {
 	create: function () {
 		this.fondo = this.add.sprite(0, 0, 'escena1Fondo'); // Agregar fondo
 		this.personaje = new Personaje(0, 395); // Agregar personaje
-		this.UI = new UI(); // Agregar UI
+		this.UI = new UI(this); // Agregar UI
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
 		
@@ -46,16 +46,18 @@ Juego.Escena1.prototype = {
 		this.personaje.puedeMoverse = true;
 	},
 	
-	quitGame: function (pointer) { // Salir de la escena
+	volver: function () { // Salir de la escena
 		// Liberar espacio
+		this.personaje.eliminar();
+		this.personaje = null;
 		this.fondo.destroy();
 		this.fondo = null;
 		if (this.dialogo != null) {
 			this.dialogo.eliminar();
 			this.dialogo = null;
 		}
-		this.personaje.eliminar();
-		this.personaje = null;
+		
+		
 		this.UI.eliminar();
 		this.UI = null;
 		this.camara.eliminar();
@@ -64,6 +66,6 @@ Juego.Escena1.prototype = {
 		this.luigi = null;
 		this.vecesHabladasConLuigi = null;
 		
-		this.game.state.start('Menu'); // Ir al menu
+		game.state.start('Menu'); // Ir al menu
 	}
 };

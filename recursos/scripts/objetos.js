@@ -78,7 +78,7 @@ Personaje.prototype = {
 	},
 	
 	eliminar: function () { // Liberar espacio
-		game.tween.remove(this.movimiento);
+		game.tweens.remove(this.movimiento);
 		this.movimiento = null;
 		this.sprite.destroy();
 		this.sprite = null;
@@ -94,21 +94,31 @@ Personaje.prototype = {
 	}
 }
 
-UI = function () { // Objeto que se encarga de manejar la interfaz, algo así como un HUD
+UI = function (escena) { // Objeto que se encarga de manejar la interfaz, algo así como un HUD
 	// Posicion en pantalla
 	this.x = 0;
 	this.y = 440;
+	this.escena = escena; // Guardar cuál es la escena
 	
-	this.fondo = game.add.sprite(this.x, this.y, 'UIFondo'); // Dibujar fondo
-	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
+	//this.fondo = game.add.sprite(this.x, this.y, 'UIFondo'); // Dibujar fondo
+	//this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
+	
+	this.botonVolver = game.add.button(canvasWidth - 20, canvasHeight - 20, 'boton', this.volver, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.botonVolver.anchor.setTo(1, 1); // Establecer su origen (ancla)
+	this.botonVolver.fixedToCamera = true; // Fijar a cámara
 }
 UI.prototype = {
 	update: function () { // Llamar constantemente
 
 	},
+	volver: function () { // Volver al menu
+		this.escena.volver();
+	},
 	eliminar: function () { // Liberar espacio
-		this.fondo.destroy();
-		this.fondo = null;
+		//this.fondo.destroy();
+		//this.fondo = null;
+		this.botonVolver.destroy();
+		this.botonVolver = null;
 		this.x = null;
 		this.y = null;
 	}
