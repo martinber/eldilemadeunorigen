@@ -19,6 +19,7 @@ Juego.Escena1.prototype = {
 		this.personaje.limitarX(200, 800); // Limitar posición del personaje
 		
 		this.vecesHabladasConLuigi = 0;
+		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 	},
@@ -30,20 +31,24 @@ Juego.Escena1.prototype = {
 	},
 	
 	clickEnLuigi: function() {
-		if (this.vecesHabladasConLuigi == 0) this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
-		else this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi2); // Crear dialogo 2
-		this.vecesHabladasConLuigi += 1;
-		this.personaje.puedeMoverse = false;
+		if (this.foco == true) {
+			if (this.vecesHabladasConLuigi == 0) this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
+			else this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi2); // Crear dialogo 2
+			this.vecesHabladasConLuigi += 1;
+			this.foco = false;
+		}
 	},
 	
 	click: function (pointer) {
-		this.personaje.moverX(pointer.worldX); // Mover personaje
+		if (this.foco == true) {
+			this.personaje.moverX(pointer.worldX); // Mover personaje
+		}
 	},
 	
 	eliminarDialogo: function () {
 		this.dialogo.eliminar();
 		this.dialogo = null;
-		this.personaje.puedeMoverse = true;
+		this.foco = true;
 	},
 	
 	volver: function () { // Salir de la escena
@@ -56,8 +61,6 @@ Juego.Escena1.prototype = {
 			this.dialogo.eliminar();
 			this.dialogo = null;
 		}
-		
-		
 		this.UI.eliminar();
 		this.UI = null;
 		this.camara.eliminar();

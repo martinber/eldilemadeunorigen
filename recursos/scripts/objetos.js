@@ -112,7 +112,9 @@ UI.prototype = {
 
 	},
 	volver: function () { // Volver al menu
-		this.escena.volver();
+		if (this.escena.foco == true) {
+			this.escena.volver();
+		}
 	},
 	eliminar: function () { // Liberar espacio
 		//this.fondo.destroy();
