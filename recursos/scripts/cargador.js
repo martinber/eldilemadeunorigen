@@ -20,6 +20,7 @@ Juego.Cargador.prototype = {
 		
 		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escena1.jpg');
 		this.load.image('UIFondo', 'recursos/escenas/fondos/UI.jpg');
+		this.load.image('puerta', 'recursos/escenas/puerta.png');
 		this.load.image('dialogoFondo', 'recursos/escenas/fondos/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
 		

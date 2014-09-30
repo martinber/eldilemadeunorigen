@@ -51,10 +51,9 @@ Personaje.prototype = {
 		this.xMax = xMax;
 	},
 	
-	moverX: function (xPos) { // Mover a posicion, solo mover en X
+	moverX: function (xPos, especial, callback, contexto) { // Mover a posicion, solo mover en X
 		if (this.puedeMoverse) {
 			var x = xPos;
-			
 			// Limitar posición
 			if (this.xMin != -1 && x < this.xMin) x = this.xMin;
 			if (this.xMax != -1 && x > this.xMax) x = this.xMax;
@@ -73,6 +72,9 @@ Personaje.prototype = {
 			}
 			else if (x < this.sprite.x) {
 				this.sprite.scale.x = -1; // El personaje mira a la izquierda
+			}
+			if (especial != null) {
+				if (especial == "callback") this.movimiento.onComplete.add(callback, contexto);
 			}
 		}
 	},

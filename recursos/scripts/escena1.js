@@ -11,12 +11,18 @@ Juego.Escena1.prototype = {
 		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
 		
 		// Agregar a Luigi
-		this.luigi = this.add.sprite(1000, 395, 'luigi');
+		this.luigi = this.add.sprite(800, 395, 'luigi');
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.luigi.inputEnabled = true; // Habilitar chequeos de click
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
 		
-		this.personaje.limitarX(200, 800); // Limitar posición del personaje
+		// Agregar puerta
+		this.puerta = this.add.sprite(600, 395, 'puerta');
+		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puerta.inputEnabled = true; // Habilitar chequeos de click
+		this.puerta.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
+		
+		this.personaje.limitarX(200, 2000); // Limitar posición del personaje
 		
 		this.vecesHabladasConLuigi = 0;
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
@@ -30,6 +36,18 @@ Juego.Escena1.prototype = {
 		this.UI.update(this.camara); // Actualizar UI
 	},
 	
+	click: function (pointer) {
+		if (this.foco == true) {
+			//this.personaje.moverX(pointer.worldX, null); // Mover personaje
+		}
+	},
+	
+	eliminarDialogo: function () {
+		this.dialogo.eliminar();
+		this.dialogo = null;
+		this.foco = true;
+	},
+	
 	clickEnLuigi: function() {
 		if (this.foco == true) {
 			if (this.vecesHabladasConLuigi == 0) this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.luigi); // Crear dialogo
@@ -39,16 +57,14 @@ Juego.Escena1.prototype = {
 		}
 	},
 	
-	click: function (pointer) {
+	clickEnPuerta: function() {
 		if (this.foco == true) {
-			this.personaje.moverX(pointer.worldX); // Mover personaje
+			this.personaje.moverX(this.puerta.x, "callback", this.puerta1, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
 		}
 	},
 	
-	eliminarDialogo: function () {
-		this.dialogo.eliminar();
-		this.dialogo = null;
-		this.foco = true;
+	puerta1: function() {
+		alert("Me voy!");
 	},
 	
 	volver: function () { // Salir de la escena
