@@ -1,7 +1,7 @@
 body {
 	background-color: #DDF;
 	margin:0;
-	padding:0;
+	padding:30px;
 }
 canvas {
 	display: block;
@@ -15,21 +15,82 @@ canvas {
 .alFondo {
 	z-index: -1;
 }
+
 h1 {
 	margin: 0;
-}
-header {
-	float: left;
-	margin: 1em;
-}
-footer {
-	margin: 1em;
+	margin-bottom: 1em;
 }
 main {
-	clear: both;
+	margin: 0 auto;
+	background-color: #EEE;
+	max-width: 960px;
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+	padding: 1em;
+}
+
+#botonLike {
+	display: block;
+	float: right;
+}
+
+.botonJuego {
+	display: block;
+	float: right;
+	padding: .5em;
+	margin: 10px;
+	font-size: 150%;
+	background-color: #45A64B;
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	text-decoration: none;
+	position: relative;
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.botonJuego:hover {
+	background-color: #35963B;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+	top: 1px;
+}
+
+#redes {
+	margin: 0.5em 0;
+	background-color: #FAFAFA;
+	display: inline-block;
+}
+
+.botonRedes {
+	display: inline-block;
+	padding: .5em;
+	margin: 16px;
+	font-size: 150%;
+	background-color: #587AAC;
+	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	text-decoration: none;
+	position: relative;
+	
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.botonRedes:hover {
+	background-color: #486A9C;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+	top: 1px;
+}
+
+footer {
+	margin-top: 1em;
 }
 footer ul {
-	margin-top: 1em;
+	margin-top: 0em;
 	margin-left: 1em;
 	margin-bottom: .5em;
 	padding: 0;
