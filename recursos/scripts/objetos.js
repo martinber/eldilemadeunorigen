@@ -73,6 +73,8 @@ Personaje.prototype = {
 			else if (x < this.sprite.x) {
 				this.sprite.scale.x = -1; // El personaje mira a la izquierda
 			}
+			
+			
 			if (especial != null) {
 				if (especial == "callback") this.movimiento.onComplete.add(callback, contexto);
 			}
