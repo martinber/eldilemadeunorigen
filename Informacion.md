@@ -128,9 +128,11 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > PB: Bueno... la verdad es que nosotros nunca quisimos esto pero no podíamos cuidarte como te lo merecías
 
-> E. está bien, entiendo, pero... quiero saber un poco más sobre...
+> E. Está bien, entiendo, pero... quiero saber un poco más sobre...
 
 [Se oscurece]
+
+**Pregunta si ir con padres Si o No**
 
 ### Si no le pregunta a los padres o a los abuelos
 
@@ -138,6 +140,12 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 **Pregunta si ir con padres Si o No**
 
-[Si dice que sí luego se arrepiente]
+### Si se va a vivir con los padres
+
+[Luego se arrepiente]
+
+[Fin]
+
+### Si no se va a vivir con los padres
 
 [Fin]
