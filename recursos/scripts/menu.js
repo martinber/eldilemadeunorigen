@@ -14,7 +14,7 @@ Juego.Menu.prototype = {
 		// Agregar boton
 		this.boton = this.add.button(100, 150, 'boton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 		
-		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteMartinBlanco','Jueguito ISLGSM', 64);
+		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteMartinBlanco','El Dilema de un Origen', 64);
 	},
 
 	update: function () {
@@ -22,6 +22,6 @@ Juego.Menu.prototype = {
 	},
 	comenzarJuego: function (pointer) { // Se ejecuta al presionar boton correspondiente
 		this.musica.stop(); // Parar la musica
-		this.game.state.start('Escena1'); // Ir a la escena 1
+		this.game.state.start('EscenaPrueba'); // Ir a la escena 1
 	}
 }; 

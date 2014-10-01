@@ -1,6 +1,5 @@
 {
-	"escena1": {
-		"tamaño":"completo",
+	"escenaPrueba": {
 		"dialogos": {
 			"luigi":[
 				{
@@ -36,6 +35,36 @@
 				{
 					"personaje":"Luigi",
 					"texto":"Chau!!"
+				}
+			]
+		}
+	},
+	"escena1": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"MA",
+					"texto":"¿Como te fue hoy en el colegio?"
+				},
+				{
+					"personaje":"E",
+					"texto":"Bien, conocí un montón de chicos nuevos"
+				},
+				{
+					"personaje":"E",
+					"texto":"Nos presentamos con los otros chicos para conocernos, la profe de tarea nos pidió que llevemos fotos de nosotros con la familia"
+				},
+				{
+					"personaje":"MA",
+					"texto":"Uuuuy, ¿Es obligación? ¿Para cuando es?"
+				},
+				{
+					"personaje":"E",
+					"texto":"Es para la semana que viene, ¿Pero lo podemos hacer ahora así ya está?"
+				},
+				{
+					"personaje":"MA",
+					"texto":"Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos esta tarde"
 				}
 			]
 		}

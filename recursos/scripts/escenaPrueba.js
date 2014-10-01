@@ -1,23 +1,30 @@
-Juego.Escena1 = function (game) {
+Juego.EscenaPrueba = function (game) {
 	
 };
 
-Juego.Escena1.prototype = {
+Juego.EscenaPrueba.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'escena1Fondo'); // Agregar fondo
 		this.UI = new UI(this); // Agregar UI
-		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
+		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
 		
 		// Agregar a Luigi
-		this.luigi = this.add.sprite(800, 526, 'luigi');
+		this.luigi = this.add.sprite(800, 395, 'luigi');
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.luigi.inputEnabled = true; // Habilitar chequeos de click
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
 		
-		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
+		// Agregar puerta
+		this.puerta = this.add.sprite(600, 395, 'puerta');
+		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puerta.inputEnabled = true; // Habilitar chequeos de click
+		this.puerta.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
 		
-		this.personaje.limitarX(60, 900); // Limitar posición del personaje
+		this.personaje = new Personaje(0, 395); // Agregar personaje, al final para que se vea arriba
 		
+		this.personaje.limitarX(200, 2000); // Limitar posición del personaje
+		
+		this.vecesHabladasConLuigi = 0;
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
 		
@@ -39,7 +46,9 @@ Juego.Escena1.prototype = {
 	
 	crearDialogo: function () { // No pude hacer que tween.onComplete.add() llame a esta función con argumentos, como argumento uso this.ultimoClick que debe ser seteado anteriormente
 		if (this.ultimoClick == "luigi") {
-			this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.dialogo1); // Crear dialogo
+			if (this.vecesHabladasConLuigi == 0) this.dialogo = new Dialogo(this, datosJSON.escenaPrueba.dialogos.luigi); // Crear dialogo
+			else this.dialogo = new Dialogo(this, datosJSON.escenaPrueba.dialogos.luigi2); // Crear dialogo 2
+			this.vecesHabladasConLuigi += 1;
 			this.foco = false;
 		}
 	},
@@ -58,7 +67,20 @@ Juego.Escena1.prototype = {
 		}
 	},
 	
-	limpiar: function () { // Salir de la escena
+	clickEnPuerta: function() {
+		if (this.foco == true) {
+			this.personaje.moverX(this.puerta.x, "callback", this.puerta1, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
+			// (posX, accion, funcion, contexto)
+			this.ultimoClick = "puerta";
+		}
+	},
+	
+	puerta1: function() {
+		this.limpiar();
+		game.state.start('Escena1'); // Ir a escena
+	},
+	
+	limpiar: function () { // Limpiar recursos
 		// Liberar espacio
 		this.personaje.eliminar();
 		this.personaje = null;
@@ -74,5 +96,6 @@ Juego.Escena1.prototype = {
 		this.camara = null;
 		this.luigi.destroy();
 		this.luigi = null;
+		this.vecesHabladasConLuigi = null;
 	}
 };

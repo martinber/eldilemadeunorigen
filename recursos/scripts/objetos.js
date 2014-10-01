@@ -19,7 +19,7 @@ Personaje = function (x, y) {
 	this.w = game.cache.getImage('personaje').width;
 	this.h = game.cache.getImage('personaje').height;
 	
-	this.sprite = game.add.sprite(0, 390, 'personaje'); // Agregar el sprite
+	this.sprite = game.add.sprite(this.x, this.y, 'personaje'); // Agregar el sprite
 	this.sprite.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 	
 	this.puedeMoverse = true;
@@ -27,7 +27,7 @@ Personaje = function (x, y) {
 	this.velocidad = .2; // Velocidad de caminata, 0,2 pixeles por milisegundo
 	
 	// Definir las animaciones
-	this.sprite.animations.add('personajeCaminando', [0, 1, 2, 3, 4, 5, 6, 7], 10, true);
+	this.sprite.animations.add('personajeCaminando', [0, 1], 10, true);
 }
 Personaje.prototype = {	
 	update: function () { // Debe ser llamado continuamente
@@ -117,7 +117,8 @@ UI.prototype = {
 	},
 	volver: function () { // Volver al menu
 		if (this.escena.foco == true) {
-			this.escena.volver();
+			this.escena.limpiar();
+			game.state.start('Escena1'); // Ir a escena
 		}
 	},
 	eliminar: function () { // Liberar espacio
@@ -201,7 +202,7 @@ Dialogo.prototype = {
 	},
 	nuevaLinea: function () {
 		if (this.linea < this.datosDialogo.length) { // Si no terminó el diálogo
-			this.texto[this.linea] = game.add.bitmapText(50, 50 + 64 * this.linea, 'fuenteJuan', "", 64); // Crear línea nueva
+			this.texto[this.linea] = game.add.bitmapText(50, 50 + 40 * this.linea, 'fuenteJuan', "", 40); // Crear línea nueva
 			this.texto[this.linea].fixedToCamera = true; // Fijarla a la cámara
 			this.alarmaAvance = game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 		}

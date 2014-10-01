@@ -18,14 +18,16 @@ Juego.Cargador.prototype = {
 		this.load.atlas('boton', 'recursos/escenas/UI/boton.png', 'recursos/escenas/UI/boton.json');
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
 		
-		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escena1.jpg');
+		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escenaPrueba.jpg');
 		this.load.image('UIFondo', 'recursos/escenas/fondos/UI.jpg');
 		this.load.image('puerta', 'recursos/escenas/puerta.png');
 		this.load.image('dialogoFondo', 'recursos/escenas/fondos/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
-		
-		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 84, 128, 8);// 18 cuadros de 84x128px cada uno
 		this.load.image('luigi', 'recursos/escenas/luigi.png');
+		
+		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
+		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');
+		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera
