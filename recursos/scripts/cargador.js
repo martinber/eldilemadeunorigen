@@ -15,17 +15,17 @@ Juego.Cargador.prototype = {
 		this.load.bitmapFont('fuenteMartinBlanco', 'recursos/fuentes/fuenteMartinBlanco.png', 'recursos/fuentes/fuenteMartin.xml');
 		this.load.image('menuFondo', 'recursos/menu/menuFondo.png');
 		this.load.atlas('menuBoton', 'recursos/menu/boton.png', 'recursos/menu/boton.json');
-		this.load.atlas('boton', 'recursos/escenas/UI/boton.png', 'recursos/escenas/UI/boton.json');
+		this.load.atlas('boton', 'recursos/escenas/general/boton.png', 'recursos/escenas/general/boton.json');
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
 		
 		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escenaPrueba.jpg');
-		this.load.image('UIFondo', 'recursos/escenas/fondos/UI.jpg');
-		this.load.image('puerta', 'recursos/escenas/puerta.png');
-		this.load.image('dialogoFondo', 'recursos/escenas/fondos/dialogo.png');
+		this.load.image('UIFondo', 'recursos/escenas/general/UI.jpg');
+		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
+		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
-		this.load.image('luigi', 'recursos/escenas/luigi.png');
+		this.load.image('luigi', 'recursos/escenas/general/luigi.png');
 		
-		this.load.spritesheet('personaje', 'recursos/escenas/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
+		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
 		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');
 		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
 	},
