@@ -28,6 +28,13 @@ Juego.Cargador.prototype = {
 		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
 		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');
 		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
+		
+		this.load.image('iconoE', 'recursos/escenas/general/iconosPersonajes/e.png');
+		this.load.image('iconoA', 'recursos/escenas/general/iconosPersonajes/a.png');
+		this.load.image('iconoMA', 'recursos/escenas/general/iconosPersonajes/ma.png');
+		this.load.image('iconoPA', 'recursos/escenas/general/iconosPersonajes/pa.png');
+		this.load.image('iconoMB', 'recursos/escenas/general/iconosPersonajes/mb.png');
+		this.load.image('iconoPB', 'recursos/escenas/general/iconosPersonajes/pb.png');
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera

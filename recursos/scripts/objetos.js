@@ -173,6 +173,7 @@ Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar
 	this.creador = creador; // Necesario para que luego borre a este objeto
 	
 	this.texto = new Array(); // Inicializar array que contiene las líneas de texto visibles
+	this.iconos = new Array(); // Inicializar array que contiene los iconos
 	this.linea = 0; // Línea actual, la que se anima
 	this.renglones = 0 // Tiene en cuenta los \n
 	this.maxRenglones = 5;
@@ -206,7 +207,9 @@ Dialogo.prototype = {
 		if (this.linea < this.datosDialogo.length) { // Si no terminó el diálogo
 			if (this.cantRenglones(this.datosDialogo[this.linea].texto) + this.renglones > this.maxRenglones) this.nuevaPantalla();
 			
-			this.texto[this.linea] = game.add.bitmapText(50, 50 + 40 * this.renglones, 'fuenteJuan', "", 40); // Crear línea nueva
+			this.iconos[this.linea] = game.add.sprite(50, 50 + 40 * this.renglones, "icono" + this.datosDialogo[this.linea].personaje)
+			//this.iconos[this.linea].anchor.setTo(0, 0);
+			this.texto[this.linea] = game.add.bitmapText(100, 50 + 40 * this.renglones, 'fuenteJuan', "", 40); // Crear línea nueva
 			this.texto[this.linea].fixedToCamera = true; // Fijarla a la cámara
 			this.alarmaAvance = game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 			
@@ -224,6 +227,9 @@ Dialogo.prototype = {
 		for (var i = 0; i < this.texto.length; i++) {
 			this.texto[i].destroy();
 		}
+		for (var i = 0; i < this.iconos.length; i++) {
+			this.iconos[i].destroy();
+		}
 	},
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
@@ -236,6 +242,9 @@ Dialogo.prototype = {
 		this.datosDialogo = null;
 		for (var i = 0; i < this.texto.length; i++) {
 			this.texto[i].destroy();
+		}
+		for (var i = 0; i < this.iconos.length; i++) {
+			this.iconos[i].destroy();
 		}
 		game.time.events.remove(this.alarmaNuevaLinea);
 		game.time.events.remove(this.alarmaAvance);
