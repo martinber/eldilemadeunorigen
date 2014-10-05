@@ -2,7 +2,6 @@ var Juego = {};
 
 Juego.Inicio = function (game) {
 };
-
 Juego.Inicio.prototype = {
 	init: function () {
 		this.input.maxPointers = 1; // No es necesario multitouch
@@ -23,6 +22,7 @@ Juego.Inicio.prototype = {
 			//this.scale.pageAlignHorizontally = true; // Colocar juego en medio de la pantalla
 			this.scale.setScreenSize(true); // Habilitar escalado
 			this.scale.refresh();
+			document.getElementsByTagName("BODY")[0].style.padding = "0px";
 		}
 	},
 	
