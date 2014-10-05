@@ -68,5 +68,38 @@
 				}
 			]
 		}
+	},
+	"creditos": {
+		"texto":[
+			"Aventura gráfica realizada por los alumnos del Instituto Secundario Libertador General San Martín"
+			,
+			"Sexto año Naturales, promoción 2014"
+			,
+			""
+			,
+			"Guión:"
+			,
+			"    Facundo Carezzano, Martín Bernardi"
+			,
+			"Gráficos y dibujos:"
+			,
+			"    Juan Cruz Capra"
+			,
+			"Programación y sitio Web:"
+			,
+			"    Martín Bernardi"
+			,
+			"Blogs y redes sociales:"
+			,
+			"    Facundo Barbetta, Nicolás Ribotta"
+			,
+			"Música y sonidos:"
+			,
+			"    Nicolás Ribotta"
+			,
+			"Informe:"
+			,
+			"    Facundo Carezzano, Facundo Barbetta, Nicolás Ribotta"
+		]
 	}
 }

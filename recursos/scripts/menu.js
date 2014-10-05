@@ -15,8 +15,14 @@ Juego.Menu.prototype = {
 		this.boton = this.add.button(100, 150, 'boton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 		
 		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteMartinBlanco','El Dilema de un Origen', 64);
+		
+		this.transicion = new Transicion(2000, "entrar", this.listo, this);
 	},
 
+	listo: function () {
+		
+	},
+	
 	update: function () {
 		
 	},

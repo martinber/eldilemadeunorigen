@@ -23,13 +23,18 @@ Juego.EscenaPrueba.prototype = {
 		this.personaje = new Personaje(0, 395); // Agregar personaje, al final para que se vea arriba
 		
 		this.personaje.limitarX(200, 2000); // Limitar posición del personaje
-		
 		this.vecesHabladasConLuigi = 0;
-		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
+		this.foco = false; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
 		
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
+		
+		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+	},
+	
+	listo: function () {
+		this.foco = true;
 	},
 	
 	update: function () {
@@ -76,6 +81,10 @@ Juego.EscenaPrueba.prototype = {
 	},
 	
 	puerta1: function() {
+		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+	},
+	
+	avanzarEscena: function() {
 		this.limpiar();
 		game.state.start('Escena1'); // Ir a escena
 	},

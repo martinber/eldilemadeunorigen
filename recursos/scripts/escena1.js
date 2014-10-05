@@ -13,16 +13,19 @@ Juego.Escena1.prototype = {
 		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.luigi.inputEnabled = true; // Habilitar chequeos de click
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
+		//
 		
 		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
-		
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
-		
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
-		
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
+		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+	},
+	
+	listo: function () {
+		this.foco = true;
 	},
 	
 	update: function () {

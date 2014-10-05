@@ -74,7 +74,6 @@ Personaje.prototype = {
 				this.sprite.scale.x = -1; // El personaje mira a la izquierda
 			}
 			
-			
 			if (especial != null) {
 				if (especial == "callback") this.movimiento.onComplete.add(callback, contexto);
 			}
@@ -118,7 +117,7 @@ UI.prototype = {
 	volver: function () { // Volver al menu
 		if (this.escena.foco == true) {
 			this.escena.limpiar();
-			game.state.start('Escena1'); // Ir a escena
+			game.state.start('Creditos'); // Ir a escena
 		}
 	},
 	eliminar: function () { // Liberar espacio
@@ -205,7 +204,9 @@ Dialogo.prototype = {
 	},
 	nuevaLinea: function () {
 		if (this.linea < this.datosDialogo.length) { // Si no terminó el diálogo
-			if (this.cantRenglones(this.datosDialogo[this.linea].texto) + this.renglones > this.maxRenglones) this.nuevaPantalla();
+			if (this.cantRenglones(this.datosDialogo[this.linea].texto) + this.renglones > this.maxRenglones) {
+				this.nuevaPantalla(); // Si superamos el maximo de renglones empezamos uan nueva pantalla
+			}
 			
 			this.iconos[this.linea] = game.add.sprite(50, 50 + 40 * this.renglones, "icono" + this.datosDialogo[this.linea].personaje)
 			//this.iconos[this.linea].anchor.setTo(0, 0);
@@ -250,5 +251,23 @@ Dialogo.prototype = {
 		game.time.events.remove(this.alarmaAvance);
 		this.texto = null;
 		this.boton.destroy();
+	}
+}
+
+Transicion = function (tiempo, funcion, callback, contexto) { // Objeto que crea una transición a negro
+	if (funcion == "entrar") {
+		game.world.alpha = 0;
+		this.tween = game.add.tween(game.world).to({alpha: 1}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		this.tween.onComplete.add(callback, contexto);
+	}
+	if (funcion == "salir") {
+		game.world.alpha = 1;
+		this.tween = game.add.tween(game.world).to({alpha: 0}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		this.tween.onComplete.add(callback, contexto);
+	}
+}
+Transicion.prototype = {
+	eliminar: function () { // Liberar espacio
+
 	}
 }
