@@ -1,5 +1,6 @@
 body {
-	background-color: #DDF;
+	background-image: url('recursos/fondo.jpg');
+	background-repeat: repeat;
 	margin:0;
 	padding:30px;
 }
@@ -10,7 +11,8 @@ canvas {
 	box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
 }
 .oscuro {
-	background-color: #555;
+	background-image: url('recursos/fondoInvertido.jpg');
+	background-repeat: repeat;
 }
 .alFondo {
 	z-index: -1;
@@ -19,6 +21,7 @@ canvas {
 h1 {
 	margin: 0;
 	margin-bottom: 1em;
+	text-shadow: 0px 0px 6px #FFF;
 }
 main {
 	margin: 0 auto;
@@ -88,6 +91,7 @@ main {
 
 footer {
 	margin-top: 1em;
+	text-shadow: 0px 0px 6px #FFF;
 }
 footer ul {
 	margin-top: 0em;
