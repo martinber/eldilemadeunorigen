@@ -3,15 +3,15 @@
 		"dialogos": {
 			"luigi":[
 				{
-					"personaje":"Mario",
-					"texto":"Hola me llamo Mario"
+					"personaje":"E",
+					"texto":"Hola me llamo Estefania"
 				},
 				{
 					"personaje":"Luigi",
-					"texto":"Hola Mario"
+					"texto":"Hola Estefania"
 				},
 				{
-					"personaje":"Mario",
+					"personaje":"E",
 					"texto":"Chau Luigi"
 				},
 				{
@@ -21,15 +21,15 @@
 			],
 			"luigi2":[
 				{
-					"personaje":"Mario",
+					"personaje":"E",
 					"texto":"Hola de nuevo Luigi"
 				},
 				{
 					"personaje":"Luigi",
-					"texto":"Hola Mario"
+					"texto":"Hola Estefania"
 				},
 				{
-					"personaje":"Mario",
+					"personaje":"E",
 					"texto":"Chau Luigi"
 				},
 				{
@@ -52,7 +52,7 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Nos presentamos con los otros chicos para conocernos,\nla profe de tarea nos pidió que llevemos fotos de nosotros \ncon la familia"
+					"texto":"Nos presentamos con los otros chicos para conocernos,\nla profe de tarea nos pidió que llevemos fotos de \nnosotros con la familia"
 				},
 				{
 					"personaje":"MA",
@@ -60,11 +60,211 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Es para la semana que viene, ¿Pero lo podemos hacer ahora así ya está?"
+					"texto":"Es para la semana que viene, ¿Pero lo podemos hacer ahora \nasí ya está?"
 				},
 				{
 					"personaje":"MA",
-					"texto":"Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos esta tarde"
+					"texto":"Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos \nesta tarde"
+				}
+			]
+		}
+	},
+	"escena2": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"PA",
+					"texto":"Acá están las fotos"
+				},
+				{
+					"personaje":"E",
+					"texto":"Ahhhh, mira esa que tierna... no hay de cuando estás embarazada? Los otros chicos iban a llevar"
+				},
+				{
+					"personaje":"PA",
+					"texto":"Uy, creo que no hay...."
+				},
+				{
+					"personaje":"E",
+					"texto":"Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren"
+				},
+				{
+					"personaje":"MA",
+					"texto":"Ah bueno, cualquier cosa avisanos"
+				}
+			]
+		}
+	},
+	"escena3": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Y esta foto? Nunca la vi"
+				}
+			]
+		}
+	},
+	"escena4": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"No conozco a estas personas"
+				}
+			]
+		}
+	},
+	"escena-1s-1": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"PA",
+					"texto":"Son unos amigos nuestros, hace bastante que no los vemos"
+				},
+				{
+					"personaje":"E",
+					"texto":"..."
+				},
+				{
+					"personaje":"E",
+					"texto":"Ah, si creo que una vez vinieron a visitarnos"
+				},
+				{
+					"personaje":"MA",
+					"texto":"Anda a guardarla"
+				}
+			]
+		}
+	},
+	"escena-1s-2s-1": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Hola abuelo"
+				},
+				{
+					"personaje":"A",
+					"texto":"Hola nena"
+				},
+				{
+					"personaje":"E",
+					"texto":"Recién encontré esta foto, ¿Quiénes son? Papá dice que son unos amigos pero es raro que tenga mi nombre"
+				},
+				{
+					"personaje":"A",
+					"texto":"Lo que pasa es que... bueno, en realidad ellos..."
+				}
+			]
+		}
+	},
+	"escena-1s-2s-2": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Pero no le digas nada de que me lo dijiste, por ahora"
+				},
+				{
+					"personaje":"A",
+					"texto":"Pero ¿Por qué no lo hablás con ellos?"
+				},
+				{
+					"personaje":"E",
+					"texto":"No, no me animo"
+				},
+				{
+					"personaje":"E",
+					"texto":"Bueno, nos vemos"
+				},
+				{
+					"personaje":"A",
+					"texto":"Chau chiquita quedate tranquila y habla con tus papis"
+				}
+			]
+		}
+	},
+	"escena-1s-2s-3": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Ya sé la verdad de esta foto"
+				},
+				{
+					"personaje":"MA",
+					"texto":"............"
+				},
+				{
+					"personaje":"E",
+					"texto":"Quiero conocerlos"
+				},
+				{
+					"personaje":"PA",
+					"texto":"Vamos..."
+				}
+			]
+		}
+	},
+	"escena-1s-2s-4": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"PA",
+					"texto":"Hola... ¿Cómo están? Estefanía quiere conocerlos"
+				},
+				{
+					"personaje":"PB",
+					"texto":"Por favor pasen"
+				},
+				{
+					"personaje":"MB",
+					"texto":"Sientense, ahi traigo algo para tomar"
+				}
+			]
+		}
+	},
+	"escena-1s-2s-5": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"PB",
+					"texto":"Bueno... la verdad es que nosotros nunca quisimos esto, pero no podíamos cuidarte como te lo merecías"
+				},
+				{
+					"personaje":"E",
+					"texto":"Está bien, entiendo, pero... quiero saber un poco más sobre..."
+				}
+			]
+		}
+	},
+	"escenaX": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"",
+					"texto":""
+				},
+				{
+					"personaje":"",
+					"texto":""
+				},
+				{
+					"personaje":"",
+					"texto":""
+				},
+				{
+					"personaje":"",
+					"texto":""
+				},
+				{
+					"personaje":"",
+					"texto":""
+				},
+				{
+					"personaje":"",
+					"texto":""
 				}
 			]
 		}

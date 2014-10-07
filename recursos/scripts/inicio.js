@@ -4,6 +4,7 @@ Juego.Inicio = function (game) {
 };
 Juego.Inicio.prototype = {
 	init: function () {
+		sonido = true;
 		this.input.maxPointers = 1; // No es necesario multitouch
 		this.stage.disableVisibilityChange = true; // Pausar juego al perder foco
 		Juego.teclas = new Teclas(); // Inicializar controlador de teclado
@@ -28,9 +29,10 @@ Juego.Inicio.prototype = {
 	
 	preload: function () {
 		// Cargar lo necesario para el cargador
-		this.load.image('cargadorFondo', 'recursos/cargador/cargadorFondo.png');
+		//this.load.image('cargadorFondo', 'recursos/cargador/cargadorFondo.png');
 		this.load.image('cargadorBarra', 'recursos/cargador/cargadorBarra.png');
 		this.load.bitmapFont('fuenteJuan', 'recursos/fuentes/fuenteJuan.png', 'recursos/fuentes/fuenteJuan.xml');
+		this.load.image('fondo', 'recursos/fondo.jpg');
 	},
 	
 	create: function () {

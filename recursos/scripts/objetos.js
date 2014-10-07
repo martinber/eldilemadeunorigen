@@ -175,7 +175,7 @@ Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar
 	this.iconos = new Array(); // Inicializar array que contiene los iconos
 	this.linea = 0; // Línea actual, la que se anima
 	this.renglones = 0 // Tiene en cuenta los \n
-	this.maxRenglones = 5;
+	this.maxRenglones = 11;
 	
 	this.datosDialogo = datosDialogo; // Obtener información sobre la escena
 	this.fondo = game.add.sprite(this.x, this.y, 'dialogoFondo'); // Dibujar fondo

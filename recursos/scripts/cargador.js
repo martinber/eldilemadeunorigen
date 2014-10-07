@@ -5,9 +5,11 @@ Juego.Cargador = function (game) {
 Juego.Cargador.prototype = {
 	preload: function () {
 		// Colocar fondo y barra de carga
-		this.fondo = this.add.sprite(0, 0, 'cargadorFondo');
-		this.barra = this.add.sprite(0, 0, 'cargadorBarra');
-		this.textoCargando = this.add.bitmapText(50, 50, 'fuenteJuan','Cargando...', 50);
+		this.fondo = this.add.tileSprite(0, 0, canvasWidth, canvasHeight, 'fondo');
+		this.barra = this.add.sprite(canvasWidth / 2, canvasHeight / 2, 'cargadorBarra');
+		this.barra.x = canvasWidth / 2 - this.barra.width / 2; // Centrar, no puedo usar anclas acá porque o si no se centra el sprite mientras se va completando
+		this.textoCargando = this.add.bitmapText(canvasWidth / 2, canvasHeight / 2 + 45, 'fuenteJuan','Cargando...', 50);
+		this.textoCargando.x = canvasWidth / 2 - this.textoCargando.textWidth / 2; // Centrar, no puedo usar anclas acá
 		
 		this.load.setPreloadSprite(this.barra); // Configurar la barra como barra de carga
 		

@@ -42,7 +42,7 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > PA: Uy, creo que no hay....
 
-> E: Que lastima [se pone a pegar fotos]
+> E: Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren
 
 > MA: Ah bueno, cualquier cosa avisanos
 
@@ -76,7 +76,7 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > MA: Anda a guardarla
 
-> E: Ella se la va a la pieza
+[E se la va a la pieza]
 
 [Se pone en negro]
 
