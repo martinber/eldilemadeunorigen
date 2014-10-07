@@ -15,10 +15,14 @@ Juego.EscenaPrueba.prototype = {
 		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
 		
 		// Agregar puerta
-		this.puerta = this.add.sprite(600, 395, 'puerta');
-		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.puerta.inputEnabled = true; // Habilitar chequeos de click
-		this.puerta.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
+		this.puerta1 = this.add.sprite(600, 395, 'puerta');
+		this.puerta1.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puerta1.inputEnabled = true; // Habilitar chequeos de click
+		this.puerta1.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
+		
+		this.cajaFotos = this.add.sprite(400, 320, 'cajaFotos');
+		this.cajaFotos.inputEnabled = true; // Habilitar chequeos de click
+		this.cajaFotos.events.onInputDown.add(this.clickEnCajaFotos, this); // Llamar la función al hacerle click
 		
 		this.personaje = new Personaje(0, 395); // Agregar personaje, al final para que se vea arriba
 		
@@ -64,6 +68,12 @@ Juego.EscenaPrueba.prototype = {
 		this.foco = true;
 	},
 	
+	eliminarFoto: function () {
+		this.foto.eliminar();
+		this.foto = null;
+		this.foco = true;
+	},
+	
 	clickEnLuigi: function() {
 		if (this.foco == true) {
 			this.personaje.moverX(this.luigi.x, "callback", this.crearDialogo, this, "luigi"); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
@@ -74,13 +84,26 @@ Juego.EscenaPrueba.prototype = {
 	
 	clickEnPuerta: function() {
 		if (this.foco == true) {
-			this.personaje.moverX(this.puerta.x, "callback", this.puerta1, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
+			this.personaje.moverX(this.puerta1.x, "callback", this.fPuerta1, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
 			// (posX, accion, funcion, contexto)
-			this.ultimoClick = "puerta";
+			this.ultimoClick = "puerta1";
 		}
 	},
 	
-	puerta1: function() {
+	clickEnCajaFotos: function() {
+		if (this.foco == true) {
+			this.personaje.moverX(this.cajaFotos.x, "callback", this.fCajaFotos, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
+			// (posX, accion, funcion, contexto)
+			this.ultimoClick = "cajaFotos";
+		}
+	},
+	
+	fCajaFotos: function () {
+		this.foto = new Foto(this, "escenaPrueba"); // Crear dialogo
+		this.foco = false;
+	},
+	
+	fPuerta1: function() {
 		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
 	},
 	

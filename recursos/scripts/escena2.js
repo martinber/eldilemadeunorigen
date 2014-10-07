@@ -1,30 +1,28 @@
-Juego.Escena1 = function (game) {
+Juego.Escena2 = function (game) {
 	
 };
 
-Juego.Escena1.prototype = {
+Juego.Escena2.prototype = {
 	create: function () {
 		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
 		this.UI = new UI(this); // Agregar UI
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
+		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
+		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
 		
-		// Agregar a Luigi
-		this.luigi = this.add.sprite(800, 526, 'luigi');
-		this.luigi.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.luigi.inputEnabled = true; // Habilitar chequeos de click
-		this.luigi.events.onInputDown.add(this.clickEnLuigi, this); // Llamar la función al hacerle click
-		//
+		// Comienzo creacion objetos
 		
 		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
-		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
-		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
+		
+		// Fin creacion objetos
+		
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
 	},
 	
-	listo: function () {
+	listo: function () { // Cuando termina la transicion
 		this.foco = true;
 	},
 	
@@ -34,7 +32,7 @@ Juego.Escena1.prototype = {
 		this.UI.update(this.camara); // Actualizar UI
 	},
 	
-	click: function (pointer) {
+	click: function (pointer) { // Al hacer click en cualquier lado
 		if (this.foco == true) {
 			this.personaje.moverX(pointer.worldX, null); // Mover personaje
 		}
@@ -53,14 +51,6 @@ Juego.Escena1.prototype = {
 		this.foco = true;
 	},
 	
-	clickEnLuigi: function() {
-		if (this.foco == true) {
-			this.personaje.moverX(this.luigi.x, "callback", this.crearDialogo, this, "luigi"); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
-			// (posX, accion, funcion, contexto, argumentos)
-			this.ultimoClick = "luigi";
-		}
-	},
-	
 	limpiar: function () { // Salir de la escena
 		// Liberar espacio
 		this.personaje.eliminar();
@@ -75,7 +65,5 @@ Juego.Escena1.prototype = {
 		this.UI = null;
 		this.camara.eliminar();
 		this.camara = null;
-		this.luigi.destroy();
-		this.luigi = null;
 	}
 };

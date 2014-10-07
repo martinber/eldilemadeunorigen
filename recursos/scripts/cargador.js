@@ -26,6 +26,7 @@ Juego.Cargador.prototype = {
 		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
 		this.load.image('luigi', 'recursos/escenas/general/luigi.png');
+		this.load.image('cajaFotos', 'recursos/escenas/cajaFotos.png');
 		
 		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
 		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');

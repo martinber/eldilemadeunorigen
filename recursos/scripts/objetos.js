@@ -238,7 +238,6 @@ Dialogo.prototype = {
 		this.y = null;
 		this.h = null;
 		this.w = null;
-		this.camara = null;
 		this.dialogos = null;
 		this.datosDialogo = null;
 		for (var i = 0; i < this.texto.length; i++) {
@@ -269,5 +268,38 @@ Transicion = function (tiempo, funcion, callback, contexto) { // Objeto que crea
 Transicion.prototype = {
 	eliminar: function () { // Liberar espacio
 
+	}
+}
+
+Foto = function (creador, id) { // Objeto que crea una transición a negro
+	// Posicion en pantalla
+	this.x = 0;
+	this.y = 0;
+	
+	// Declarar tamaño
+	this.w = canvasWidth;
+	this.h = canvasHeight;
+	
+	this.creador = creador; // Necesario para que luego borre a este objeto
+	
+	this.sprite = game.add.sprite(this.x, this.y, 'dialogoFondo'); // Dibujar fondo
+	this.sprite.fixedToCamera = true; // Fondo fijado a la cámara
+	
+	// Agregar boton
+	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'boton', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.boton.fixedToCamera = true;
+}
+Foto.prototype = {
+	cerrar: function () {
+		this.creador.eliminarFoto();
+	},
+	eliminar: function () { // Liberar espacio
+		this.sprite.destroy();
+		this.x = null;
+		this.y = null;
+		this.h = null;
+		this.w = null;
+		this.boton.destroy();
 	}
 }
