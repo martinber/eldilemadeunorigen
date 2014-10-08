@@ -94,7 +94,7 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 [Se va oscureciendo..., vuelve cuando terminan de hablar]
 
-> E: pero no le digas nada de que me lo dijiste, por ahora
+> E: Pero no le digas nada de que me lo dijiste, por ahora
 
 > A: Pero ¿Por qué no lo hablás con ellos?
 
@@ -136,16 +136,56 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 ### Si no le pregunta a los padres o a los abuelos
 
-[Se encuentra con una amiga que resulta ser su hermana....]
+[Aparece en la cocina]
+
+> E: Mama me dieron numeros del colegio para vender
+
+> MA: Que se rifa hija? es para el dia de la madre? 
+
+> E: Se sortea una cartera, un ramo de flores y una caja de bombones. Salen $15 cada unos
+
+> MA: Te compro 2 despues, anda a vender los demas
+
+> E: Bueno, gracias. Voy a ir de los vecinos.
+
+[Se pone negro apraece al frente de una casa toca timbre y atiende una nena]
+
+> E: Hola buen dia, queres comprar un numero para el dia de la madre?
+
+> MB: Eh, si ya vengo
+
+> E: Disculpe yo a usted la conozco de algun lado, ahora recuerdo tengo una foto suya en mi casa.
+
+> MB: Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro dia te compro. Chau.
+
+[Vuelve a su casa]
+
+> E: ¿Papa quien es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?
+
+> PA: Si, hija tengo que contarte algo sobre esta mujer.
+
+[Se pone en negro]
+
+> E: Quiero conocer a mis padres biologicos.
 
 **Pregunta si ir con padres Si o No**
 
 ### Si se va a vivir con los padres
 
-[Luego se arrepiente]
+[Unos meses despues. Aparecen en la casa de biologicos]
 
-[Fin]
+> E: Yo los quiero mucho porq son mis padres biologicos, pero extraño mucho mi casa y a mis otros padres.
+
+> PB: ¿Esta bien Estefania, vos que queres hacer? 
+
+> E: Quiero volver con mis padres adoptivos.
+
+[Se pone en negro, aparece la frase]
 
 ### Si no se va a vivir con los padres
 
-[Fin]
+[Se pone en negro, aparece la frase]
+
+### Frase
+
+Estefania heredo los ojos de su madre y la nariz de su padre, pero el afecto y el cariño se lo dieron sus padres adoptivos

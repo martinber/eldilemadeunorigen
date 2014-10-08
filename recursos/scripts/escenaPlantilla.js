@@ -9,6 +9,7 @@ Juego.EscenaPlantilla.prototype = {
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
+		this.puedeSalir == false; // Si puede salir de habitacion, para no saltarse dialogo
 		
 		// Comienzo creacion objetos
 		
