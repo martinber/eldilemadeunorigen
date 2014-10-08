@@ -117,7 +117,7 @@ UI.prototype = {
 	volver: function () { // Volver al menu
 		if (this.escena.foco == true) {
 			this.escena.limpiar();
-			game.state.start('Creditos'); // Ir a escena
+			game.state.start('Final'); // Ir a escena
 		}
 	},
 	eliminar: function () { // Liberar espacio
