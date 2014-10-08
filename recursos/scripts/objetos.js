@@ -303,3 +303,52 @@ Foto.prototype = {
 		this.boton.destroy();
 	}
 }
+
+Decision = function (creador, id) { // Objeto que crea una transición a negro
+	// Posicion en pantalla
+	this.x = 0;
+	this.y = 0;
+	
+	// Declarar tamaño
+	this.w = canvasWidth;
+	this.h = canvasHeight;
+	
+	this.creador = creador; // Necesario para que luego borre a este objeto
+	
+	this.fondo = game.add.graphics(0, 0);
+	this.fondo.lineStyle(0);
+	this.fondo.fixedToCamera = true;
+    this.fondo.beginFill(0x000000, 0.9);
+	this.fondo.drawRect(this.x, this.y, this.w, this.h);
+	
+	if (id == "1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40); // Crear línea nueva
+	
+	// Agregar botones
+	this.botonSi = game.add.button(100, 200, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.botonSi.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.botonSi.fixedToCamera = true;
+	
+	this.botonNo = game.add.button(100, 250, 'botonNo', this.no, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.botonNo.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.botonNo.fixedToCamera = true;
+}
+Decision.prototype = {
+	si: function () {
+		this.creador.terminarDecision(true);
+	},
+	
+	no: function () {
+		this.creador.terminarDecision(false);
+	},
+	
+	eliminar: function () { // Liberar espacio
+		this.x = null;
+		this.y = null;
+		this.h = null;
+		this.w = null;
+		this.botonSi.destroy();
+		this.botonNo.destroy();
+		this.texto.destroy();
+		this.fondo.destroy();
+	}
+}

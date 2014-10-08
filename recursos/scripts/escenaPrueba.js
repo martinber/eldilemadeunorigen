@@ -68,6 +68,13 @@ Juego.EscenaPrueba.prototype = {
 		this.foco = true;
 	},
 	
+	terminarDecision: function (respuesta) {
+		this.decision.eliminar();
+		this.decision = null;
+		if (respuesta == true) this.crearDialogo();
+		else this.foco = true;
+	},
+	
 	eliminarFoto: function () {
 		this.foto.eliminar();
 		this.foto = null;
@@ -76,7 +83,7 @@ Juego.EscenaPrueba.prototype = {
 	
 	clickEnLuigi: function() {
 		if (this.foco == true) {
-			this.personaje.moverX(this.luigi.x, "callback", this.crearDialogo, this, "luigi"); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
+			this.personaje.moverX(this.luigi.x, "callback", this.fLuigi, this, "luigi"); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
 			// (posX, accion, funcion, contexto, argumentos)
 			this.ultimoClick = "luigi";
 		}
@@ -105,6 +112,11 @@ Juego.EscenaPrueba.prototype = {
 	
 	fPuerta1: function() {
 		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+	},
+	
+	fLuigi: function () {
+		this.decision = new Decision(this, "1"); // Crear decision
+		this.foco = false;
 	},
 	
 	avanzarEscena: function() {

@@ -40,7 +40,7 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > E: Ahhhh, mira esa que tierna... no hay de cuando estás embarazada? Los otros chicos iban a llevar
 
-> PA: Uy, creo que no hay....
+> PA: Uy, creo que no hay...
 
 > E: Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren
 
