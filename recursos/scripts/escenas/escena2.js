@@ -78,7 +78,7 @@ Juego.Escena2.prototype = {
 		if (this.personaje != null) this.personaje.update(); // Actualizar personaje
 		this.UI.update(this.camara); // Actualizar UI
 		if (this.personaje != null) {
-			if (this.personaje.x < 60) this.avanzarEscena();
+			if (this.personaje.x < 60) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
 		}
 	},
 	

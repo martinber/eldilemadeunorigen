@@ -106,7 +106,7 @@ UI = function (escena) { // Objeto que se encarga de manejar la interfaz, algo a
 	this.escena = escena; // Guardar cuál es la escena
 	
 	this.fondo = game.add.sprite(this.x + this.w - 100, this.y, 'UIFondo'); // Dibujar fondo
-	//this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
+	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	this.botonVolver = game.add.button(canvasWidth - 20, canvasHeight - 20, 'boton', this.volver, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.botonVolver.anchor.setTo(1, 1); // Establecer su origen (ancla)
@@ -124,17 +124,23 @@ UI.prototype = {
 	},
 	
 	decir: function (string, autor) {
+		if (this.moverFondo != null) {
+			if (this.moverFondo.isRunning == true || this.mostrarTexto.isRunning == true || this.quitarTexto.isRunning == true || this.quitarFondo.isRunning == true) return;
+		}
+		
 		this.texto = game.add.bitmapText(this.x + 50, this.y + 20, 'fuenteJuan', string, 60); // Crear línea nueva
 		this.texto.alpha = 0;
+		this.texto.fixedToCamera = true;
 		this.icono = game.add.sprite(this.x + 10, this.y + 20, "icono" + autor)
 		this.icono.alpha = 0;
+		this.icono.fixedToCamera = true;
 		
-		this.moverFondo = game.add.tween(this.fondo).to({x: this.x}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.moverFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.mostrarTexto = game.add.tween(this.texto).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.mostrarIcono = game.add.tween(this.icono).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.quitarTexto = game.add.tween(this.texto).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
 		this.quitarIcono = game.add.tween(this.icono).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
-		this.quitarFondo = game.add.tween(this.fondo).to({x: this.x + this.w - 100}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.quitarFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x + this.w - 100}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		
 		this.moverFondo.chain(this.mostrarTexto, this.mostrarIcono)
 		this.mostrarTexto.chain(this.quitarTexto, this.quitarIcono);
