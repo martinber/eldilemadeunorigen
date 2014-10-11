@@ -1,6 +1,36 @@
 Información aparte
 ==================
 
+Esquema escenas
+---------------
+
+|Rama 1          |Rama 2          |
+|----------------|----------------|
+|Escena1         |                |
+|Escena2         |                |
+|Escena3         |                |
+|Escena4         |                |
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-1s-1     |[Ir a Escena-n-]|
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-2s-1     |Escena-n-1      |
+|Escena-2s-2     |Escena-n-2      |
+|Escena-2s-3     |Escena-n-3      |
+|Escena-2s-4     |Escena-n-4      |
+|Escena-2s-5     |[Ir a Escena-3-]|
+|Escena-2s-6     |                |
+|                |                |
+|Escena-3-1      |                |
+|Escena-3-2      |                |
+|Escena-3-3      |                |
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-4s-1     |Fin             |
+|Fin             |                |
+
+
 Transcurso de la historia, díalogos, guión
 ------------------------------------------
 **SPOILER ALERT. No leer para no joderse la historia**
@@ -20,6 +50,8 @@ MB: Madre biológica
 A: Abuelo
 ```
 
+#### Escena1
+
 > MA: Como te fue hoy en el colegio?
 
 > E: Bien, conocí un montón de chicos nuevos
@@ -32,9 +64,11 @@ A: Abuelo
 
 > MA: Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos esta tarde
 
-[Se pone en negro, vuelve cuando Estefania esta chateando por celular]
+[Se pone en negro]
 
-Horas mas tarde.... [Llegan los dos juntos]
+#### Escena2
+
+Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular]
 
 > PA: Acá están las fotos
 
@@ -48,17 +82,21 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 [Se van, Se pone en negro]
 
-[Va a guardar las fotos sobrantes, avisarle al jugador de alguna forma]
+#### Escena3
 
-[Ir al pasillo, hay varias puertas, si se elige puerta equivocada decir "En el baño no se guardan las fotos" o "Aquí no guardamos las fotos"]
+[Aparece en pasillo, debe guardar fotos sobrantes]
 
-[Va a la habitacion de la madre, guarda las fotos en el ropero]
+[Hay varias puertas, si se elige puerta equivocada decir "Aquí no guardamos las fotos"]
 
-[Ahi dice]
+#### Escena4
+
+[Aparece en habitacion de madre, debe guardar foto]
+
+[Al guardar foto encuentra otra]
 
 > E: Y esta foto? Nunca la vi
 
-[Se muestra la foto en grande, dice para Estefania]
+[Se muestra la foto en grande, dice "para Estefania"]
 
 [Estan los padres biologicos]
 
@@ -68,6 +106,10 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 ### Si le pregunta a los padres
 
+#### Escena-1s-1
+
+[Aparece en cocina]
+
 > PA: Son unos amigos nuestros, hace bastante que no los vemos
 
 > E: .... [que nerviosos que se pusieron]
@@ -76,13 +118,21 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > MA: Anda a guardarla
 
-[E se la va a la pieza]
-
-[Se pone en negro]
-
 **¿Le tendria que preguntarle a mis abuelos? Si o no**
 
 ### Si le pregunta a los abuelos
+
+#### Escena-2s-1
+
+[Aparece al frente, debe caminar a derecha]
+
+#### Escena-2s-2
+
+[Aparece en bosque, debe ir a derecha]
+
+#### Escena-2s-3
+
+[Aparece al frente de casa de abuelo, toca timbre]
 
 > E: Hola abuelo
 
@@ -92,7 +142,11 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > A: Lo que pasa es que... bueno, en realidad ellos...
 
-[Se va oscureciendo..., vuelve cuando terminan de hablar]
+[Se va oscureciendo...]
+
+#### Escena-2s-4
+
+[Aparecen en living]
 
 > E: Pero no le digas nada de que me lo dijiste, por ahora
 
@@ -104,27 +158,39 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > A: Chau chiquita quedate tranquila y habla con tus papis
 
-[Le va a preguntar a los padres]
+#### Escena-2s-5
+
+[Aparece frente del abuelo, debe caminar a izquierda]
+
+#### Escena-2s-6
+
+[Aparece en cocina]
 
 > E: Ya sé la verdad de esta foto
 
 > Padres: ............
 
-[Puede que se vaya a la habitacion y los padres la convenzan de ir a conocerlos]
+[Se va oscureciendo]
+
+#### Escena-3-1
 
 > E: Quiero conocerlos
 
-[Abrazan]
-
 > PA: Vamos....
 
-[Van a la casa de los padres biologicos]
+#### Escena-3-2
+
+[Aparecen al frente de casa de padres biologicos]
 
 > PA: Hola... ¿Cómo están? Estefanía quiere conocerlos
 
 > PB: Por favor pasen
 
 > MB: Sientense, ahi traigo algo para tomar
+
+#### Escena-3-3
+
+[Aparecen en living]
 
 > PB: Bueno... la verdad es que nosotros nunca quisimos esto pero no podíamos cuidarte como te lo merecías
 
@@ -136,7 +202,11 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 ### Si no le pregunta a los padres o a los abuelos
 
+#### Escena-n-1
+
 [Aparece en la cocina]
+
+Meses despues...
 
 > E: Mama me dieron numeros del colegio para vender
 
@@ -148,7 +218,13 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > E: Bueno, gracias. Voy a ir de los vecinos.
 
-[Se pone negro apraece al frente de una casa toca timbre y atiende una nena]
+#### Escena-n-2
+
+[Aparece frente de casa, debe ir a la derecha]
+
+#### Escena-n-3
+
+[Aparece al frente se casa de padres biologicos]
 
 > E: Hola buen dia, queres comprar un numero para el dia de la madre?
 
@@ -158,34 +234,40 @@ Horas mas tarde.... [Llegan los dos juntos]
 
 > MB: Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro dia te compro. Chau.
 
-[Vuelve a su casa]
+#### Escena-n-4
+
+[Aparece en cocina]
 
 > E: ¿Papa quien es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?
 
 > PA: Si, hija tengo que contarte algo sobre esta mujer.
 
-[Se pone en negro]
-
-> E: Quiero conocer a mis padres biologicos.
-
-**Pregunta si ir con padres Si o No**
+[Ir a Escena-3-1]
 
 ### Si se va a vivir con los padres
 
-[Unos meses despues. Aparecen en la casa de biologicos]
+#### Escena-4s-1
+
+[Aparecen en living]
+
+Unos meses despues...
 
 > E: Yo los quiero mucho porq son mis padres biologicos, pero extraño mucho mi casa y a mis otros padres.
 
 > PB: ¿Esta bien Estefania, vos que queres hacer? 
 
-> E: Quiero volver con mis padres adoptivos.
+> E: Quiero volver con mis padres adoptivos
 
-[Se pone en negro, aparece la frase]
+#### Fin
+
+[Aparece la frase]
 
 ### Si no se va a vivir con los padres
 
-[Se pone en negro, aparece la frase]
+#### Fin
 
-### Frase
+[Aparece la frase]
+
+## Frase
 
 Estefania heredo los ojos de su madre y la nariz de su padre, pero el afecto y el cariño se lo dieron sus padres adoptivos
