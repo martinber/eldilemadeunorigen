@@ -360,7 +360,8 @@ Decision = function (creador, id) { // Objeto que crea una transición a negro
     this.fondo.beginFill(0x000000, 0.9);
 	this.fondo.drawRect(this.x, this.y, this.w, this.h);
 	
-	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40); // Crear línea nueva
+	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40);
+	if (id == "Escena-1s-1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle al abuelo sobre la foto?", 40);
 	
 	// Agregar botones
 	this.botonSi = game.add.button(100, 200, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick

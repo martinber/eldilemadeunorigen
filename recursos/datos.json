@@ -111,7 +111,7 @@
 			]
 		}
 	},
-	"escena-1s-1": {
+	"escena_1s_1": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -133,7 +133,7 @@
 			]
 		}
 	},
-	"escena-2s-3": {
+	"escena_2s_3": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -155,7 +155,7 @@
 			]
 		}
 	},
-	"escena-2s-4": {
+	"escena_2s_4": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -181,7 +181,7 @@
 			]
 		}
 	},
-	"escena-2s-6": {
+	"escena_2s_6": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -195,7 +195,7 @@
 			]
 		}
 	},
-	"escena-3-1": {
+	"escena_3_1": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -209,7 +209,7 @@
 			]
 		}
 	},
-	"escena-3-2": {
+	"escena_3_2": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -227,7 +227,7 @@
 			]
 		}
 	},
-	"escena-3-3": {
+	"escena_3_3": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -241,7 +241,7 @@
 			]
 		}
 	},
-	"escena-n-1": {
+	"escena_n_1": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -267,7 +267,7 @@
 			]
 		}
 	},
-	"escena-n-3": {
+	"escena_n_3": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -289,7 +289,7 @@
 			]
 		}
 	},
-	"escena-n-4": {
+	"escena_n_4": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -303,7 +303,7 @@
 			]
 		}
 	},
-	"escena-4s-1": {
+	"escena_4s_1": {
 		"dialogos": {
 			"dialogo1":[
 				{
