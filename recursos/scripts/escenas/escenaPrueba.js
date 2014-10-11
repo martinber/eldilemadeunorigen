@@ -4,7 +4,7 @@ Juego.EscenaPrueba = function (game) {
 
 Juego.EscenaPrueba.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'escena1Fondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
 		this.UI = new UI(this); // Agregar UI
 		game.world.setBounds(0, 0, 2000, 2000); // Configurar tamaño de juego, que es mayor que el de la camara, si no, la camara no puede moverse
 		

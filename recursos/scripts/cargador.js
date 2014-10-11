@@ -22,17 +22,32 @@ Juego.Cargador.prototype = {
 		this.load.atlas('botonNo', 'recursos/escenas/general/botonNo.png', 'recursos/escenas/general/botonNo.json');
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
 		
-		this.load.image('escena1Fondo', 'recursos/escenas/fondos/escenaPrueba.jpg');
-		this.load.image('UIFondo', 'recursos/escenas/general/UI.jpg');
-		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
 		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
+		
+		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
 		this.load.image('luigi', 'recursos/escenas/general/luigi.png');
 		this.load.image('cajaFotos', 'recursos/escenas/cajaFotos.png');
+		this.load.image('armario', 'recursos/escenas/armario.png');
+		this.load.image('armarioAbierto', 'recursos/escenas/armarioAbierto.png');
+		this.load.image('mesa', 'recursos/escenas/mesa.png');
+		this.load.image('mesaEscritorio', 'recursos/escenas/mesaEscritorio.png');
+		this.load.image('puerta1', 'recursos/escenas/puerta1.png');
+		this.load.image('puerta1Abierta', 'recursos/escenas/puerta1Abierta.png');
+		this.load.image('puerta2', 'recursos/escenas/puerta2.png');
+		this.load.image('puerta3', 'recursos/escenas/puerta3.png');
+		this.load.image('puerta3Abierta', 'recursos/escenas/puerta3Abierta.png');
+		this.load.image('silla', 'recursos/escenas/silla.png');
+		this.load.image('sillaFrente', 'recursos/escenas/sillaFrente.png');
+		this.load.image('sillaEscritorio', 'recursos/escenas/sillaEscritorio.png');
 		
 		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
+		
 		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');
 		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
+		this.load.image('cocinaFondo', 'recursos/escenas/fondos/cocina.jpg');
+		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicos.jpg');
+		this.load.image('piezaFondo', 'recursos/escenas/fondos/pieza.jpg');
 
 		this.load.image('iconoE', 'recursos/escenas/general/iconosPersonajes/e.png');
 		this.load.image('iconoA', 'recursos/escenas/general/iconosPersonajes/a.png');

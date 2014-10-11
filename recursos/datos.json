@@ -95,19 +95,15 @@
 			]
 		}
 	},
-	"escena3": {
+	"escena4": {
 		"dialogos": {
 			"dialogo1":[
 				{
 					"personaje":"E",
 					"texto":"Y esta foto? Nunca la vi"
 				}
-			]
-		}
-	},
-	"escena4": {
-		"dialogos": {
-			"dialogo1":[
+			],
+			"dialogo2":[
 				{
 					"personaje":"E",
 					"texto":"No conozco a estas personas"
@@ -137,7 +133,7 @@
 			]
 		}
 	},
-	"escena-1s-2s-1": {
+	"escena-2s-3": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -159,7 +155,7 @@
 			]
 		}
 	},
-	"escena-1s-2s-2": {
+	"escena-2s-4": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -185,7 +181,7 @@
 			]
 		}
 	},
-	"escena-1s-2s-3": {
+	"escena-2s-6": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -195,7 +191,13 @@
 				{
 					"personaje":"MA",
 					"texto":"............"
-				},
+				}
+			]
+		}
+	},
+	"escena-3-1": {
+		"dialogos": {
+			"dialogo1":[
 				{
 					"personaje":"E",
 					"texto":"Quiero conocerlos"
@@ -207,7 +209,7 @@
 			]
 		}
 	},
-	"escena-1s-2s-4": {
+	"escena-3-2": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -225,7 +227,7 @@
 			]
 		}
 	},
-	"escena-1s-2s-5": {
+	"escena-3-3": {
 		"dialogos": {
 			"dialogo1":[
 				{
@@ -239,32 +241,82 @@
 			]
 		}
 	},
-	"escenaX": {
+	"escena-n-1": {
 		"dialogos": {
 			"dialogo1":[
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"E",
+					"texto":"Mama me dieron numeros del colegio para vender"
 				},
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"MA",
+					"texto":"Que se rifa hija? es para el dia de la madre?"
 				},
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"E",
+					"texto":"Se sortea una cartera, un ramo de flores y una caja de bombones. Salen $15 cada unos"
 				},
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"MA",
+					"texto":"Te compro 2 despues, anda a vender los demas"
 				},
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"E",
+					"texto":"Bueno, gracias. Voy a ir de los vecinos."
+				}
+			]
+		}
+	},
+	"escena-n-3": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Hola buen dia, queres comprar un numero para el dia de la madre?"
 				},
 				{
-					"personaje":"",
-					"texto":""
+					"personaje":"MB",
+					"texto":"Eh, si ya vengo"
+				},
+				{
+					"personaje":"E",
+					"texto":"Disculpe yo a usted la conozco de algun lado, ahora recuerdo tengo una foto suya en mi casa."
+				},
+				{
+					"personaje":"MB",
+					"texto":"Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro dia te compro. Chau."
+				}
+			]
+		}
+	},
+	"escena-n-4": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"¿Papa quien es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?"
+				},
+				{
+					"personaje":"PA",
+					"texto":"Si, hija tengo que contarte algo sobre esta mujer."
+				}
+			]
+		}
+	},
+	"escena-4s-1": {
+		"dialogos": {
+			"dialogo1":[
+				{
+					"personaje":"E",
+					"texto":"Yo los quiero mucho porq son mis padres biologicos, pero extraño mucho mi casa y a mis otros padres."
+				},
+				{
+					"personaje":"PB",
+					"texto":"¿Esta bien Estefania, vos que queres hacer?"
+				},
+				{
+					"personaje":"E",
+					"texto":"Quiero volver con mis padres adoptivos"
 				}
 			]
 		}

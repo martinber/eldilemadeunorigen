@@ -2,9 +2,11 @@ Juego.Escena2 = function (game) {
 	
 };
 
+
+
 Juego.Escena2.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(.50, 0, 'piezaFondo'); // Agregar fondo
 		this.UI = new UI(this); // Agregar UI
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
@@ -12,6 +14,12 @@ Juego.Escena2.prototype = {
 		this.puedeSalir == false; // Si puede salir de habitacion, para no saltarse dialogo
 		
 		// Comienzo creacion objetos
+		
+		this.silla = this.add.sprite(600, 500, 'sillaEscritorio');
+		this.silla.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.mesa = this.add.sprite(650, 500, 'mesaEscritorio');
+		this.mesa.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		
 		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
