@@ -4,8 +4,8 @@ Juego.Escena_2s_1 = function (game) {
 
 Juego.Escena_2s_1.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
-		this.UI = new UI(this); // Agregar UI
+		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
+		
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
@@ -13,7 +13,13 @@ Juego.Escena_2s_1.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
+		this.puerta = this.add.sprite(480, 520, 'puerta2');
+		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puerta.alpha = 0;
+		this.puertaAbierta = this.add.sprite(480, 520, 'puerta1Abierta');
+		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.personaje = new Personaje(480, 526); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
 		
 		// Fin creacion objetos
@@ -21,16 +27,27 @@ Juego.Escena_2s_1.prototype = {
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+		this.UI = new UI(this); // Agregar UI
 	},
 	
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
+		this.puertaAbierta.alpha = 0;
+		this.puerta.alpha = 1;
+		this.transicion = null;
 	},
 	
 	update: function () {
 		this.personaje.update(); // Actualizar personaje
 		this.camara.update(); // Actualizar camara
 		this.UI.update(this.camara); // Actualizar UI
+		
+		if (this.personaje.x > 890 && this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
+	},
+	
+	avanzarEscena: function() {
+		this.limpiar();
+		game.state.start('Escena-2s-2'); // Ir a escena
 	},
 	
 	click: function (pointer) { // Al hacer click en cualquier lado
