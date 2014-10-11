@@ -95,7 +95,7 @@ Juego.Escena_2s_3.prototype = {
 	
 	avanzarEscena: function() {
 		this.limpiar();
-		game.state.start('Escena-2s-3'); // Ir a escena
+		game.state.start('Escena-2s-4'); // Ir a escena
 	},
 	
 	limpiar: function () { // Salir de la escena
