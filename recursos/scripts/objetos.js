@@ -136,10 +136,10 @@ UI.prototype = {
 		this.icono.fixedToCamera = true;
 		
 		this.moverFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
-		this.mostrarTexto = game.add.tween(this.texto).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
-		this.mostrarIcono = game.add.tween(this.icono).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
-		this.quitarTexto = game.add.tween(this.texto).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
-		this.quitarIcono = game.add.tween(this.icono).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
+		this.mostrarTexto = game.add.tween(this.texto).to({alpha: 1}, 500, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.mostrarIcono = game.add.tween(this.icono).to({alpha: 1}, 500, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.quitarTexto = game.add.tween(this.texto).to({alpha: 0}, 500, Phaser.Easing.Quadratic.InOut, false, 3000);
+		this.quitarIcono = game.add.tween(this.icono).to({alpha: 0}, 500, Phaser.Easing.Quadratic.InOut, false, 3000);
 		this.quitarFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x + this.w - 100}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		
 		this.moverFondo.chain(this.mostrarTexto, this.mostrarIcono)
@@ -162,7 +162,7 @@ UI.prototype = {
 		this.botonVolver = null;
 		if (this.icono != null) this.icono.destroy;
 		this.icono = null;
-		if (this.texto != null) this.icono.destroy;
+		if (this.texto != null) this.texto.destroy;
 		this.texto = null;
 		this.x = null;
 		this.y = null;
@@ -360,7 +360,7 @@ Decision = function (creador, id) { // Objeto que crea una transición a negro
     this.fondo.beginFill(0x000000, 0.9);
 	this.fondo.drawRect(this.x, this.y, this.w, this.h);
 	
-	if (id == "1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40); // Crear línea nueva
+	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40); // Crear línea nueva
 	
 	// Agregar botones
 	this.botonSi = game.add.button(100, 200, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick

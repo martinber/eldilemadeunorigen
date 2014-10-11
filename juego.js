@@ -13,6 +13,7 @@ game.state.add('EscenaPrueba', Juego.EscenaPrueba);
 game.state.add('Escena1', Juego.Escena1);
 game.state.add('Escena2', Juego.Escena2);
 game.state.add('Escena3', Juego.Escena3);
+game.state.add('Escena4', Juego.Escena4);
 
 game.state.add('Escena-1s-1', Juego.Escena_1s_1);
 

@@ -49,6 +49,7 @@ Juego.Cargador.prototype = {
 		this.load.image('cocinaFondo', 'recursos/escenas/fondos/cocina.jpg');
 		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicos.jpg');
 		this.load.image('piezaFondo', 'recursos/escenas/fondos/pieza.jpg');
+		this.load.image('piezaPadresFondo', 'recursos/escenas/fondos/piezaPadres.jpg');
 
 		this.load.image('iconoE', 'recursos/escenas/general/iconosPersonajes/e.png');
 		this.load.image('iconoA', 'recursos/escenas/general/iconosPersonajes/a.png');

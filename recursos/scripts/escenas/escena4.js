@@ -4,8 +4,7 @@ Juego.Escena4 = function (game) {
 
 Juego.Escena4.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
-		this.UI = new UI(this); // Agregar UI
+		this.fondo = this.add.sprite(0, 0, 'piezaPadresFondo'); // Agregar fondo
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
@@ -13,14 +12,23 @@ Juego.Escena4.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
-		this.personaje.limitarX(60, 900); // Limitar posición del personaje
+		this.armario = this.add.sprite(260, 70, 'armario');
+		this.armario.inputEnabled = true; // Habilitar chequeos de click
+		this.armario.events.onInputDown.add(this.clickEnArmario, this); // Llamar la función al hacerle click
+		
+		this.armarioAbierto = this.add.sprite(220, 65, 'armarioAbierto');
+		this.armarioAbierto.alpha = 0;
+		
+		this.personaje = new Personaje(930, 515); // Agregar personaje, al final para que se vea arriba
+		this.personaje.limitarX(60, 930); // Limitar posición del personaje
+		this.personaje.sprite.scale.x = -1;
 		
 		// Fin creacion objetos
 		
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+		this.UI = new UI(this); // Agregar UI
 	},
 	
 	listo: function () { // Cuando termina la transicion
@@ -39,17 +47,43 @@ Juego.Escena4.prototype = {
 		}
 	},
 	
-	crearDialogo: function () { // No pude hacer que tween.onComplete.add() llame a esta función con argumentos, como argumento uso this.ultimoClick que debe ser seteado anteriormente
-		if (this.ultimoClick == "luigi") {
-			this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.dialogo1); // Crear dialogo
-			this.foco = false;
+	
+	clickEnArmario: function () {
+		if (this.foco == true) {
+			this.personaje.moverX(335, "callback", this.fArmario, this);
 		}
 	},
 	
-	eliminarDialogo: function () {
-		this.dialogo.eliminar();
-		this.dialogo = null;
-		this.foco = true;
+	fArmario: function () {
+		this.armario.alpha = 0;
+		this.armarioAbierto.alpha = 1;
+		this.personaje.sprite.scale.x = 1;
+		this.UI.decir("Y esta otra foto?", "E");
+		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 6.1, this.mostrarFoto, this);
+	},
+	
+	mostrarFoto: function () {
+		this.foto = new Foto(this, "escena4");
+		this.foco = false;
+		this.UI.traerAlFrente();
+		this.UI.decir("No conozco a estas personas", "E");
+	},
+	
+	eliminarFoto: function () {
+		this.foto.eliminar();
+		this.foto = null;
+		
+		this.decision = new Decision(this, "Escena4"); // Crear decision
+		this.foco = false;
+	},
+	
+	terminarDecision: function (respuesta) {
+		this.decision.eliminar();
+		this.decision = null;
+		
+		this.limpiar();
+		if (respuesta == true) game.state.start('Escena-1s-1');
+		else game.state.start('Escena-n-1');
 	},
 	
 	limpiar: function () { // Salir de la escena
