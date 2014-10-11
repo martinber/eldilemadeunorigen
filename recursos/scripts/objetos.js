@@ -101,9 +101,11 @@ UI = function (escena) { // Objeto que se encarga de manejar la interfaz, algo a
 	// Posicion en pantalla
 	this.x = 0;
 	this.y = 440;
+	this.w = canvasWidth;
+	this.h = 100;
 	this.escena = escena; // Guardar cuál es la escena
 	
-	//this.fondo = game.add.sprite(this.x, this.y, 'UIFondo'); // Dibujar fondo
+	this.fondo = game.add.sprite(this.x + this.w - 100, this.y, 'UIFondo'); // Dibujar fondo
 	//this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	this.botonVolver = game.add.button(canvasWidth - 20, canvasHeight - 20, 'boton', this.volver, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
@@ -120,11 +122,42 @@ UI.prototype = {
 			game.state.start('Final'); // Ir a escena
 		}
 	},
+	
+	decir: function (string, autor) {
+		this.texto = game.add.bitmapText(this.x + 50, this.y + 20, 'fuenteJuan', string, 60); // Crear línea nueva
+		this.texto.alpha = 0;
+		this.icono = game.add.sprite(this.x + 10, this.y + 20, "icono" + autor)
+		this.icono.alpha = 0;
+		
+		this.moverFondo = game.add.tween(this.fondo).to({x: this.x}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.mostrarTexto = game.add.tween(this.texto).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.mostrarIcono = game.add.tween(this.icono).to({alpha: 1}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.quitarTexto = game.add.tween(this.texto).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
+		this.quitarIcono = game.add.tween(this.icono).to({alpha: 0}, 1000, Phaser.Easing.Quadratic.InOut, false, 4000);
+		this.quitarFondo = game.add.tween(this.fondo).to({x: this.x + this.w - 100}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		
+		this.moverFondo.chain(this.mostrarTexto, this.mostrarIcono)
+		this.mostrarTexto.chain(this.quitarTexto, this.quitarIcono);
+		this.quitarTexto.chain(this.quitarFondo);
+		this.moverFondo.start();
+	},
+	
+	traerAlFrente: function () {
+		this.fondo.bringToTop();
+		this.botonVolver.bringToTop();
+		if (this.icono != null) this.icono.bringToTop();
+		if (this.texto != null) game.world.bringToTop(this.texto);
+	},
+	
 	eliminar: function () { // Liberar espacio
-		//this.fondo.destroy();
-		//this.fondo = null;
+		this.fondo.destroy();
+		this.fondo = null;
 		this.botonVolver.destroy();
 		this.botonVolver = null;
+		if (this.icono != null) this.icono.destroy;
+		this.icono = null;
+		if (this.texto != null) this.icono.destroy;
+		this.texto = null;
 		this.x = null;
 		this.y = null;
 	}

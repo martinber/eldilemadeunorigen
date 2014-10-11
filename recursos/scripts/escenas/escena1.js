@@ -12,7 +12,6 @@ Juego.Escena1 = function (game) {
 Juego.Escena1.prototype = {
 	create: function () {
 		this.fondo = this.add.sprite(0, 0, 'cocinaFondo'); // Agregar fondo
-		this.UI = new UI(this); // Agregar UI
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
@@ -37,6 +36,7 @@ Juego.Escena1.prototype = {
 		
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(2000, "entrar", this.listo, this);
+		this.UI = new UI(this); // Agregar UI
 	},
 	
 	listo: function () { // Cuando termina la transicion

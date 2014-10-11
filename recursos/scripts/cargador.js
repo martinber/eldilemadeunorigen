@@ -23,6 +23,7 @@ Juego.Cargador.prototype = {
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
 		
 		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
+		this.load.image('UIFondo', 'recursos/escenas/general/UI.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
 		
 		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
