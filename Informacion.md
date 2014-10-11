@@ -1,6 +1,36 @@
 Información aparte
 ==================
 
+Esquema escenas
+---------------
+
+|Rama 1          |Rama 2          |
+|----------------|----------------|
+|Escena1         |                |
+|Escena2         |                |
+|Escena3         |                |
+|Escena4         |                |
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-1s-1     |[Ir a Escena-n-]|
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-2s-1     |Escena-n-1      |
+|Escena-2s-2     |Escena-n-2      |
+|Escena-2s-3     |Escena-n-3      |
+|Escena-2s-4     |Escena-n-4      |
+|Escena-2s-5     |[Ir a Escena-3-]|
+|Escena-2s-6     |                |
+|                |                |
+|Escena-3-1      |                |
+|Escena-3-2      |                |
+|Escena-3-3      |                |
+|**Decision**    |                |
+|**Si**          |**No**          |
+|Escena-4s-1     |Fin             |
+|Fin             |                |
+
+
 Transcurso de la historia, díalogos, guión
 ------------------------------------------
 **SPOILER ALERT. No leer para no joderse la historia**
@@ -62,11 +92,11 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 [Aparece en habitacion de madre, debe guardar foto]
 
-[Al guardar foto encunetra otra]
+[Al guardar foto encuentra otra]
 
 > E: Y esta foto? Nunca la vi
 
-[Se muestra la foto en grande, dice para Estefania]
+[Se muestra la foto en grande, dice "para Estefania"]
 
 [Estan los padres biologicos]
 
@@ -102,7 +132,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 #### Escena-2s-3
 
-[Aparece frende de casa de abuelo, toca timbre]
+[Aparece al frente de casa de abuelo, toca timbre]
 
 > E: Hola abuelo
 
@@ -128,11 +158,11 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > A: Chau chiquita quedate tranquila y habla con tus papis
 
-#### Escena-2s-4
+#### Escena-2s-5
 
 [Aparece frente del abuelo, debe caminar a izquierda]
 
-#### Escena-2s-5
+#### Escena-2s-6
 
 [Aparece en cocina]
 
