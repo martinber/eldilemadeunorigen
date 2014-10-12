@@ -35,6 +35,9 @@ game.state.add('Escena-3-3', Juego.Escena_3_3);
 
 game.state.add('Escena-4s-1', Juego.Escena_4s_1);
 
+game.state.add('MesesMasTarde1', Juego.MesesMasTarde1);
+game.state.add('MesesMasTarde2', Juego.MesesMasTarde2);
+
 game.state.add('Final', Juego.Final);
 game.state.add('Creditos', Juego.Creditos);
 

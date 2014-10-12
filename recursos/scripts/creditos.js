@@ -7,6 +7,7 @@ Juego.Creditos.prototype = {
 		this.transicion = new Transicion(1, "entrar", this.listo, this);
 		this.alarmaAvance = null;
 		this.alarmaNuevaLinea = null;
+		game.world.setBounds(0, 0, 960, 2000);
 		
 		this.texto = new Array(); // Inicializar array que contiene las líneas de texto visibles
 		this.linea = 0; // Línea actual, la que se anima
