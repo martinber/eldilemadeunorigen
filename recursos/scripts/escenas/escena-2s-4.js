@@ -26,7 +26,7 @@ Juego.Escena_2s_4.prototype = {
 	},
 	
 	update: function () {
-		this.UI.update(this.camara); // Actualizar UI
+		if (this.UI != null) this.UI.update(this.camara); // Actualizar UI
 	},
 	
 	click: function (pointer) { // Al hacer click en cualquier lado
@@ -49,7 +49,7 @@ Juego.Escena_2s_4.prototype = {
 	
 	avanzarEscena: function() {
 		this.limpiar();
-		game.state.start('Escena_2s_5'); // Ir a escena
+		game.state.start('Escena-2s-5'); // Ir a escena
 	},
 	
 	limpiar: function () { // Salir de la escena
