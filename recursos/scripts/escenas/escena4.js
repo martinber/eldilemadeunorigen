@@ -83,7 +83,7 @@ Juego.Escena4.prototype = {
 		
 		this.limpiar();
 		if (respuesta == true) game.state.start('Escena-1s-1');
-		else game.state.start('Escena-n-1');
+		else game.state.start('MesesMasTarde1');
 	},
 	
 	limpiar: function () { // Salir de la escena

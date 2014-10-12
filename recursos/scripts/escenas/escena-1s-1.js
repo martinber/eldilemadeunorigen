@@ -65,7 +65,7 @@ Juego.Escena_1s_1.prototype = {
 		
 		this.limpiar();
 		if (respuesta == true) game.state.start('Escena-2s-1');
-		else game.state.start('Escena-n-1');
+		else game.state.start('MesesMasTarde1');
 	},
 	
 	avanzarEscena: function() {

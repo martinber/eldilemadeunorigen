@@ -4,16 +4,25 @@ Juego.Escena_n_3 = function (game) {
 
 Juego.Escena_n_3.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'bosqueFondo'); // Agregar fondo
-		this.UI = new UI(this); // Agregar UI
+		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
+		
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
-		this.puedeSalir == false; // Si puede salir de habitacion, para no saltarse dialogo
+		this.puedeSalir = false; // Si puede salir de habitacion, para no saltarse dialogo
 		
 		// Comienzo creacion objetos
 		
-		this.personaje = new Personaje(0, 526); // Agregar personaje, al final para que se vea arriba
+		this.puerta = this.add.sprite(480, 520, 'puerta2');
+		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puertaAbierta = this.add.sprite(480, 520, 'puerta1Abierta');
+		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.puertaAbierta.alpha = 0;
+		
+		this.puerta.inputEnabled = true; // Habilitar chequeos de click
+		this.puerta.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
+		
+		this.personaje = new Personaje(60, 526); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
 		
 		// Fin creacion objetos
@@ -21,6 +30,7 @@ Juego.Escena_n_3.prototype = {
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+		this.UI = new UI(this); // Agregar UI
 	},
 	
 	listo: function () { // Cuando termina la transicion
@@ -39,17 +49,56 @@ Juego.Escena_n_3.prototype = {
 		}
 	},
 	
-	crearDialogo: function () { // No pude hacer que tween.onComplete.add() llame a esta función con argumentos, como argumento uso this.ultimoClick que debe ser seteado anteriormente
-		if (this.ultimoClick == "luigi") {
-			this.dialogo = new Dialogo(this, datosJSON.escena1.dialogos.dialogo1); // Crear dialogo
+	clickEnPuerta: function() {
+		if (this.foco == true) {
+			this.personaje.moverX(this.puerta.x, "callback", this.fPuerta, this); // Mover personaje, ya se deberia estar moviendo gracias a la funcion click() pero necesito agregarle argumentos
+			// (posX, accion, funcion, contexto)
 			this.foco = false;
 		}
+	},
+	
+	fPuerta: function() {
+		this.personaje.moverX(this.personaje.x - 70, "callback", this.girarPersonaje, this);
+		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 5, this.atenderPuerta, this);
+	},
+	
+	girarPersonaje: function () {
+		this.personaje.sprite.scale.x = 1;
+	},
+	
+	atenderPuerta: function () {
+		this.puerta.alpha = 0;
+		this.puertaAbierta.alpha = 1;
+		
+		this.MA = game.add.sprite(this.puerta.x, this.puerta.y, 'personaje'); // Agregar abuelo
+		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		this.MA.scale.x = -1;
+		
+		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 2, this.crearDialogo, this);
+	},
+	
+	crearDialogo: function () { // No pude hacer que tween.onComplete.add() llame a esta función con argumentos, como argumento uso this.ultimoClick que debe ser seteado anteriormente
+		this.dialogo = new Dialogo(this, datosJSON.escena_n_3.dialogos.dialogo1); // Crear dialogo
+		this.foco = false;
 	},
 	
 	eliminarDialogo: function () {
 		this.dialogo.eliminar();
 		this.dialogo = null;
-		this.foco = true;
+		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 1, this.cerrarPuerta, this);
+	},
+	
+	cerrarPuerta: function () {
+		this.puerta.alpha = 1;
+		this.puertaAbierta.alpha = 0;
+		this.MA.destroy();
+		this.MA = null;
+		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+	},
+	
+	avanzarEscena: function() {
+		this.limpiar();
+		game.state.start('Escena-n-4'); // Ir a escena
 	},
 	
 	limpiar: function () { // Salir de la escena
