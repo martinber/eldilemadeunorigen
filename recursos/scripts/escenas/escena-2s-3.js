@@ -43,11 +43,6 @@ Juego.Escena_2s_3.prototype = {
 		this.UI.update(this.camara); // Actualizar UI
 	},
 	
-	avanzarEscena: function() {
-		this.limpiar();
-		game.state.start('Escena-2s-2'); // Ir a escena
-	},
-	
 	click: function (pointer) { // Al hacer click en cualquier lado
 		if (this.foco == true) {
 			this.personaje.moverX(pointer.worldX, null); // Mover personaje

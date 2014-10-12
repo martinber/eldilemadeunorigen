@@ -184,7 +184,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > PA: Hola... ¿Cómo están? Estefanía quiere conocerlos
 
-> PB: Por favor pasen
+> MB: Por favor pasen
 
 > MB: Sientense, ahi traigo algo para tomar
 
