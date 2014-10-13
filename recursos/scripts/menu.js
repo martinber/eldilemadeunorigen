@@ -12,9 +12,9 @@ Juego.Menu.prototype = {
 		// Dibujar el menu
 		this.add.sprite(0, 0, 'menuFondo');
 		// Agregar boton
-		this.boton = this.add.button(100, 150, 'boton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+		this.boton = this.add.button(100, 150, 'menuBoton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 		
-		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteMartinBlanco','El Dilema de un Origen', 64);
+		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteJuan','El Dilema de un Origen', 64);
 		
 		this.transicion = new Transicion(2000, "entrar", this.listo, this);
 	},
@@ -28,6 +28,6 @@ Juego.Menu.prototype = {
 	},
 	comenzarJuego: function (pointer) { // Se ejecuta al presionar boton correspondiente
 		this.musica.stop(); // Parar la musica
-		this.game.state.start('Escena-1s-1'); // Ir a la escena 1
+		this.game.state.start('Escena2'); // Ir a la escena 1
 	}
 }; 

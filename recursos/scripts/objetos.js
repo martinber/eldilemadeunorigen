@@ -105,23 +105,23 @@ UI = function (escena) { // Objeto que se encarga de manejar la interfaz, algo a
 	this.h = 100;
 	this.escena = escena; // Guardar cuál es la escena
 	
-	this.fondo = game.add.sprite(this.x + this.w - 100, this.y, 'UIFondo'); // Dibujar fondo
+	this.fondo = game.add.sprite(this.x, this.y + this.h, 'UIFondo'); // Dibujar fondo
 	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
-	this.botonVolver = game.add.button(canvasWidth - 20, canvasHeight - 20, 'boton', this.volver, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
-	this.botonVolver.anchor.setTo(1, 1); // Establecer su origen (ancla)
-	this.botonVolver.fixedToCamera = true; // Fijar a cámara
+	//this.botonVolver = game.add.button(canvasWidth - 20, canvasHeight - 20, 'boton', this.volver, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	//this.botonVolver.anchor.setTo(1, 1); // Establecer su origen (ancla)
+	//this.botonVolver.fixedToCamera = true; // Fijar a cámara
 }
 UI.prototype = {
 	update: function () { // Llamar constantemente
 
 	},
-	volver: function () { // Volver al menu
+	/*volver: function () { // Volver al menu
 		if (this.escena.foco == true) {
 			this.escena.limpiar();
 			game.state.start('Final'); // Ir a escena
 		}
-	},
+	},*/
 	
 	decir: function (string, autor) {
 		if (this.moverFondo != null) {
@@ -135,12 +135,12 @@ UI.prototype = {
 		this.icono.alpha = 0;
 		this.icono.fixedToCamera = true;
 		
-		this.moverFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.moverFondo = game.add.tween(this.fondo.cameraOffset).to({y: this.y}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.mostrarTexto = game.add.tween(this.texto).to({alpha: 1}, 500, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.mostrarIcono = game.add.tween(this.icono).to({alpha: 1}, 500, Phaser.Easing.Quadratic.InOut, false, 0);
 		this.quitarTexto = game.add.tween(this.texto).to({alpha: 0}, 500, Phaser.Easing.Quadratic.InOut, false, 3000);
 		this.quitarIcono = game.add.tween(this.icono).to({alpha: 0}, 500, Phaser.Easing.Quadratic.InOut, false, 3000);
-		this.quitarFondo = game.add.tween(this.fondo.cameraOffset).to({x: this.x + this.w - 100}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
+		this.quitarFondo = game.add.tween(this.fondo.cameraOffset).to({y: this.y + this.h}, 1000, Phaser.Easing.Quadratic.InOut, false, 0);
 		
 		this.moverFondo.chain(this.mostrarTexto, this.mostrarIcono)
 		this.mostrarTexto.chain(this.quitarTexto, this.quitarIcono);
@@ -150,7 +150,7 @@ UI.prototype = {
 	
 	traerAlFrente: function () {
 		this.fondo.bringToTop();
-		this.botonVolver.bringToTop();
+		//this.botonVolver.bringToTop();
 		if (this.icono != null) this.icono.bringToTop();
 		if (this.texto != null) game.world.bringToTop(this.texto);
 	},
@@ -158,8 +158,8 @@ UI.prototype = {
 	eliminar: function () { // Liberar espacio
 		this.fondo.destroy();
 		this.fondo = null;
-		this.botonVolver.destroy();
-		this.botonVolver = null;
+		//this.botonVolver.destroy();
+		//this.botonVolver = null;
 		if (this.icono != null) this.icono.destroy;
 		this.icono = null;
 		if (this.texto != null) this.texto.destroy;
@@ -221,7 +221,7 @@ Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar
 	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	// Agregar boton
-	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'boton', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
 	
@@ -363,13 +363,13 @@ Decision = function (creador, id) { // Objeto que crea una transición a negro
 	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40);
 	if (id == "Escena-1s-1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle al abuelo sobre la foto?", 40);
 	if (id == "Escena-3-3") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía ir a vivir con sus verdaderos padres?", 40);
+	this.texto.x = canvasWidth / 2 - this.texto.textWidth / 2; // Centrar, no puedo usar anclas acá
 	
 	// Agregar botones
-	this.botonSi = game.add.button(100, 200, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
-	this.botonSi.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.botonSi = game.add.button(100, 350, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.botonSi.fixedToCamera = true;
 	
-	this.botonNo = game.add.button(100, 250, 'botonNo', this.no, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.botonNo = game.add.button(this.w - 100, 350, 'botonNo', this.no, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.botonNo.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.botonNo.fixedToCamera = true;
 }

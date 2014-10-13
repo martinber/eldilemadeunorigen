@@ -15,9 +15,10 @@ Juego.Cargador.prototype = {
 		
 		// Cargar lo necesario para el juego
 		this.load.bitmapFont('fuenteMartinBlanco', 'recursos/fuentes/fuenteMartinBlanco.png', 'recursos/fuentes/fuenteMartin.xml');
-		this.load.image('menuFondo', 'recursos/menu/menuFondo.png');
+		this.load.image('menuFondo', 'recursos/menu/menuFondo.jpg');
 		this.load.atlas('menuBoton', 'recursos/menu/boton.png', 'recursos/menu/boton.json');
 		this.load.atlas('boton', 'recursos/escenas/general/boton.png', 'recursos/escenas/general/boton.json');
+		this.load.atlas('botonCerrar', 'recursos/escenas/general/botonCerrar.png', 'recursos/escenas/general/botonCerrar.json');
 		this.load.atlas('botonSi', 'recursos/escenas/general/botonSi.png', 'recursos/escenas/general/botonSi.json');
 		this.load.atlas('botonNo', 'recursos/escenas/general/botonNo.png', 'recursos/escenas/general/botonNo.json');
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);

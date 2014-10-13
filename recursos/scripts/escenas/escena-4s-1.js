@@ -49,7 +49,7 @@ Juego.Escena_4s_1.prototype = {
 	
 	avanzarEscena: function() {
 		this.limpiar();
-		game.state.start('Escena2'); // Ir a escena
+		game.state.start('Final'); // Ir a escena
 	},
 	
 	limpiar: function () { // Salir de la escena
