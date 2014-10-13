@@ -293,20 +293,27 @@ Dialogo.prototype = {
 }
 
 Transicion = function (tiempo, funcion, callback, contexto) { // Objeto que crea una transición a negro
+	this.fondo = game.add.graphics(0, 0);
+	this.fondo.lineStyle(0);
+	this.fondo.fixedToCamera = true;
+    this.fondo.beginFill(0x000000, 1);
+	this.fondo.drawRect(0,0, canvasWidth, canvasHeight);
+	
 	if (funcion == "entrar") {
-		game.world.alpha = 0;
-		this.tween = game.add.tween(game.world).to({alpha: 1}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		this.fondo.alpha = 1;
+		this.tween = game.add.tween(this.fondo).to({alpha: 0}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
 		this.tween.onComplete.add(callback, contexto);
 	}
 	if (funcion == "salir") {
-		game.world.alpha = 1;
-		this.tween = game.add.tween(game.world).to({alpha: 0}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		this.fondo.alpha = 0;
+		this.tween = game.add.tween(this.fondo).to({alpha: 1}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
 		this.tween.onComplete.add(callback, contexto);
 	}
 }
 Transicion.prototype = {
 	eliminar: function () { // Liberar espacio
-
+		this.fondo.destroy();
+		this.fondo = null;
 	}
 }
 

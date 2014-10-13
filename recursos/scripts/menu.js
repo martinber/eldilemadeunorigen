@@ -28,6 +28,6 @@ Juego.Menu.prototype = {
 	},
 	comenzarJuego: function (pointer) { // Se ejecuta al presionar boton correspondiente
 		this.musica.stop(); // Parar la musica
-		this.game.state.start('Escena2'); // Ir a la escena 1
+		this.game.state.start('Escena4'); // Ir a la escena 1
 	}
 }; 
