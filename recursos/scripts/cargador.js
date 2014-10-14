@@ -40,8 +40,13 @@ Juego.Cargador.prototype = {
 		this.load.image('puerta1', 'recursos/escenas/puerta1.png');
 		this.load.image('puerta1Abierta', 'recursos/escenas/puerta1Abierta.png');
 		this.load.image('puerta2', 'recursos/escenas/puerta2.png');
+		this.load.image('puerta2Abierta', 'recursos/escenas/puerta2Abierta.png');
 		this.load.image('puerta3', 'recursos/escenas/puerta3.png');
 		this.load.image('puerta3Abierta', 'recursos/escenas/puerta3Abierta.png');
+		this.load.image('puertaAbuelo', 'recursos/escenas/puertaAbuelo.png');
+		this.load.image('puertaAbueloAbierta', 'recursos/escenas/puertaAbueloAbierta.png');
+		this.load.image('puertaBiologicos', 'recursos/escenas/puertaBiologicos.png');
+		this.load.image('puertaBiologicosAbierta', 'recursos/escenas/puertaBiologicosAbierta.png');
 		this.load.image('silla', 'recursos/escenas/silla.png');
 		this.load.image('sillaFrente', 'recursos/escenas/sillaFrente.png');
 		this.load.image('sillaEscritorio', 'recursos/escenas/sillaEscritorio.png');
@@ -53,6 +58,9 @@ Juego.Cargador.prototype = {
 		this.load.image('cocinaFondo', 'recursos/escenas/fondos/cocina.jpg');
 		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicos.jpg');
 		this.load.image('piezaFondo', 'recursos/escenas/fondos/pieza.jpg');
+		this.load.image('frenteCasaFondo', 'recursos/escenas/fondos/frenteCasa.jpg');
+		this.load.image('frenteAbueloFondo', 'recursos/escenas/fondos/frenteAbuelo.jpg');
+		this.load.image('frenteBiologicosFondo', 'recursos/escenas/fondos/frenteBiologicos.jpg');
 		this.load.image('piezaPadresFondo', 'recursos/escenas/fondos/piezaPadres.jpg');
 
 		this.load.image('iconoE', 'recursos/escenas/general/iconosPersonajes/e.png');

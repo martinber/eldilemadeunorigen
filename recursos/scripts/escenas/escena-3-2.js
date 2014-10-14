@@ -4,7 +4,7 @@ Juego.Escena_3_2 = function (game) {
 
 Juego.Escena_3_2.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'frenteBiologicosFondo'); // Agregar fondo
 		
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
@@ -13,23 +13,23 @@ Juego.Escena_3_2.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.puerta = this.add.sprite(480, 520, 'puerta2');
+		this.puerta = this.add.sprite(770, 435, 'puertaBiologicos');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.puertaAbierta = this.add.sprite(480, 520, 'puerta1Abierta');
+		this.puertaAbierta = this.add.sprite(770, 435, 'puertaBiologicosAbierta');
 		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puertaAbierta.alpha = 0;
 		
-		this.MA = game.add.sprite(350, 526, 'personaje'); // Agregar madre
+		this.MA = game.add.sprite(650, 470, 'personaje'); // Agregar madre
 		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.MA.animations.add('personajeCaminando', [0, 1], 10, true);
 		
-		this.PA = game.add.sprite(300, 526, 'personaje'); // Agregar madre
+		this.PA = game.add.sprite(600, 470, 'personaje'); // Agregar madre
 		this.PA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.PA.animations.add('personajeCaminando', [0, 1], 10, true);
 		//this.MA.animations.play('personajeCaminando'); // Animar personaje
 		//this.MATween = game.add.tween(this.MA).to({x: 500}, 4000, Phaser.Easing.Linear.None, true, 0);
 		
-		this.personaje = new Personaje(325, 526); // Agregar personaje, al final para que se vea arriba
+		this.personaje = new Personaje(625, 470); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
 		
 		// Fin creacion objetos

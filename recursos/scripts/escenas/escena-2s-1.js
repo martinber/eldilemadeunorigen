@@ -4,7 +4,7 @@ Juego.Escena_2s_1 = function (game) {
 
 Juego.Escena_2s_1.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'frenteCasaFondo'); // Agregar fondo
 		
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
@@ -13,10 +13,10 @@ Juego.Escena_2s_1.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.puerta = this.add.sprite(480, 520, 'puerta2');
+		this.puerta = this.add.sprite(465, 477, 'puerta2');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puerta.alpha = 0;
-		this.puertaAbierta = this.add.sprite(480, 520, 'puerta1Abierta');
+		this.puertaAbierta = this.add.sprite(465, 477, 'puerta2Abierta');
 		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		
 		this.personaje = new Personaje(480, 526); // Agregar personaje, al final para que se vea arriba

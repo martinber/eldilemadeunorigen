@@ -4,7 +4,7 @@ Juego.Escena_n_3 = function (game) {
 
 Juego.Escena_n_3.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'pasilloFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'frenteBiologicosFondo'); // Agregar fondo
 		
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
@@ -13,16 +13,16 @@ Juego.Escena_n_3.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.puerta = this.add.sprite(480, 520, 'puerta2');
+		this.puerta = this.add.sprite(770, 435, 'puertaBiologicos');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.puertaAbierta = this.add.sprite(480, 520, 'puerta1Abierta');
+		this.puertaAbierta = this.add.sprite(770, 435, 'puertaBiologicosAbierta');
 		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puertaAbierta.alpha = 0;
 		
 		this.puerta.inputEnabled = true; // Habilitar chequeos de click
 		this.puerta.events.onInputDown.add(this.clickEnPuerta, this); // Llamar la función al hacerle click
 		
-		this.personaje = new Personaje(60, 526); // Agregar personaje, al final para que se vea arriba
+		this.personaje = new Personaje(60, 470); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
 		
 		// Fin creacion objetos
