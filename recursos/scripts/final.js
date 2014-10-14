@@ -10,7 +10,7 @@ Juego.Final.prototype = {
 		
 		this.datos = datosJSON.final.texto;
 		
-		this.texto = game.add.bitmapText(100, 50, 'fuenteMartinBlanco', "", 60); // Crear línea nueva
+		this.texto = game.add.bitmapText(100, 50, 'fuenteJuanBlanco', "", 60); // Crear línea nueva
 		this.alarmaAvance = game.time.events.repeat(120, this.datos.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 	},
 	

@@ -367,9 +367,9 @@ Decision = function (creador, id) { // Objeto que crea una transición a negro
     this.fondo.beginFill(0x000000, 0.9);
 	this.fondo.drawRect(this.x, this.y, this.w, this.h);
 	
-	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40);
-	if (id == "Escena-1s-1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía preguntarle al abuelo sobre la foto?", 40);
-	if (id == "Escena-3-3") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteMartinBlanco', "¿Debería Estefanía ir a vivir con sus verdaderos padres?", 40);
+	if (id == "Escena4") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteJuanBlanco', "¿Debería Estefanía preguntarle a los padres sobre la foto?", 40);
+	if (id == "Escena-1s-1") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteJuanBlanco', "¿Debería Estefanía preguntarle al abuelo sobre la foto?", 40);
+	if (id == "Escena-3-3") this.texto = game.add.bitmapText(canvasWidth / 2, 100, 'fuenteJuanBlanco', "¿Debería Estefanía ir a vivir con sus verdaderos padres?", 40);
 	this.texto.x = canvasWidth / 2 - this.texto.textWidth / 2; // Centrar, no puedo usar anclas acá
 	
 	// Agregar botones

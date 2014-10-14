@@ -32,6 +32,7 @@ Juego.Inicio.prototype = {
 		//this.load.image('cargadorFondo', 'recursos/cargador/cargadorFondo.png');
 		this.load.image('cargadorBarra', 'recursos/cargador/cargadorBarra.png');
 		this.load.bitmapFont('fuenteJuan', 'recursos/fuentes/fuenteJuan.png', 'recursos/fuentes/fuenteJuan.xml');
+		this.load.bitmapFont('fuenteJuanBlanco', 'recursos/fuentes/fuenteJuanBlanco.png', 'recursos/fuentes/fuenteJuan.xml');
 		this.load.image('fondo', 'recursos/fondo.jpg');
 	},
 	

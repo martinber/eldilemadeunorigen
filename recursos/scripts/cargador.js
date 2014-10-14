@@ -14,7 +14,6 @@ Juego.Cargador.prototype = {
 		this.load.setPreloadSprite(this.barra); // Configurar la barra como barra de carga
 		
 		// Cargar lo necesario para el juego
-		this.load.bitmapFont('fuenteMartinBlanco', 'recursos/fuentes/fuenteMartinBlanco.png', 'recursos/fuentes/fuenteMartin.xml');
 		this.load.image('menuFondo', 'recursos/menu/menuFondo.jpg');
 		this.load.atlas('menuBoton', 'recursos/menu/boton.png', 'recursos/menu/boton.json');
 		this.load.atlas('botonSilenciar1', 'recursos/menu/botonSilenciar1.png', 'recursos/menu/botonSilenciar.json');
