@@ -56,8 +56,6 @@ Juego.Escena_4s_1.prototype = {
 		// Liberar espacio
 		this.fondo.destroy();
 		this.fondo = null;
-		this.mesa.destroy();
-		this.mesa = null;
 		if (this.dialogo != null) {
 			this.dialogo.eliminar();
 			this.dialogo = null;

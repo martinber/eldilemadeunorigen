@@ -60,11 +60,11 @@ Juego.Escena4.prototype = {
 		this.personaje.sprite.scale.x = 1;
 		this.UI.decir("Y esta otra foto?", "E");
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 6.1, this.mostrarFoto, this);
+		this.foco = false;
 	},
 	
 	mostrarFoto: function () {
 		this.foto = new Foto(this, "escena4");
-		this.foco = false;
 		this.UI.traerAlFrente();
 		this.UI.decir("No conozco a estas personas", "E");
 	},

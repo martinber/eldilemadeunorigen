@@ -26,6 +26,7 @@ Juego.Escena_2s_2.prototype = {
 	
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
+		this.transicion = null;
 	},
 	
 	update: function () {
