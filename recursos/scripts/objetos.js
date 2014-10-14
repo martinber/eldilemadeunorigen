@@ -128,10 +128,10 @@ UI.prototype = {
 			if (this.moverFondo.isRunning == true || this.mostrarTexto.isRunning == true || this.quitarTexto.isRunning == true || this.quitarFondo.isRunning == true) return;
 		}
 		
-		this.texto = game.add.bitmapText(this.x + 50, this.y + 20, 'fuenteJuan', string, 60); // Crear línea nueva
+		this.texto = game.add.bitmapText(this.x + 100, this.y + 30, 'fuenteJuan', string, 40); // Crear línea nueva
 		this.texto.alpha = 0;
 		this.texto.fixedToCamera = true;
-		this.icono = game.add.sprite(this.x + 10, this.y + 20, "icono" + autor)
+		this.icono = game.add.sprite(this.x + 50, this.y + 30, "icono" + autor)
 		this.icono.alpha = 0;
 		this.icono.fixedToCamera = true;
 		

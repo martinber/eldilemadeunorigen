@@ -52,7 +52,7 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Nos presentamos con los otros chicos para conocernos,\nla profe de tarea nos pidió que llevemos fotos de \nnosotros con la familia"
+					"texto":"Nos presentamos con los otros chicos para conocernos,\nla profe nos pidió de tarea que llevemos fotos de \nnosotros con la familia"
 				},
 				{
 					"personaje":"MA",
@@ -78,7 +78,7 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Ahhhh, mira esa que tierna... no hay de cuando estás embarazada? Los otros chicos iban a llevar"
+					"texto":"Ahhhh, mira esa que tierna... no hay de cuando estás\nembarazada? Los otros chicos iban a llevar"
 				},
 				{
 					"personaje":"PA",
@@ -86,7 +86,7 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren"
+					"texto":"Que lastima, ahi me pongo a pegarlas, despues guardo\nlas que sobren"
 				},
 				{
 					"personaje":"MA",
@@ -116,7 +116,7 @@
 			"dialogo1":[
 				{
 					"personaje":"PA",
-					"texto":"Son unos amigos nuestros, hace bastante que no los vemos"
+					"texto":"Son unos amigos nuestros, hace bastante que no\nlos vemos"
 				},
 				{
 					"personaje":"E",
@@ -146,7 +146,7 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Recién encontré esta foto, ¿Quiénes son? Papá dice que son unos amigos pero es raro que tenga mi nombre"
+					"texto":"Recién encontré esta foto, ¿Quiénes son? Papá dice\nque son unos amigos pero es raro que tenga mi nombre"
 				},
 				{
 					"personaje":"A",
@@ -232,11 +232,11 @@
 			"dialogo1":[
 				{
 					"personaje":"PB",
-					"texto":"Bueno... la verdad es que nosotros nunca quisimos esto, pero no podíamos cuidarte como te lo merecías"
+					"texto":"Bueno... la verdad es que nosotros nunca quisimos\nesto, pero no podíamos cuidarte como te lo merecías"
 				},
 				{
 					"personaje":"E",
-					"texto":"Está bien, entiendo, pero... quiero saber un poco más sobre..."
+					"texto":"Está bien, entiendo, pero... quiero saber un poco\nmás sobre..."
 				}
 			]
 		}
@@ -308,11 +308,11 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Yo los quiero mucho porq son mis padres biologicos, pero extraño mucho mi casa y a mis otros padres."
+					"texto":"Yo los quiero mucho porque son mis padres biológicos,\npero extraño mucho mi casa y a mis otros padres."
 				},
 				{
 					"personaje":"PB",
-					"texto":"¿Esta bien Estefania, vos que queres hacer?"
+					"texto":"Esta bien Estefania, ¿Vos que queres hacer?"
 				},
 				{
 					"personaje":"E",
@@ -323,7 +323,7 @@
 	},
 	"creditos": {
 		"texto":[
-			"Aventura gráfica realizada por los alumnos del Instituto Secundario Libertador General San Martín"
+			"Aventura gráfica realizada por alumnos del Instituto\nSecundario Libertador General San Martín"
 			,
 			"Sexto año Naturales, promoción 2014"
 			,
@@ -355,6 +355,6 @@
 		]
 	},
 	"final": {
-		"texto":"Estefania heredo los ojos de su madre y la nariz \nde su padre, pero el afecto y el cariño \nse lo dieron sus padres adoptivos"
+		"texto":"Estefania heredó los ojos de su\nmadre y la nariz de su padre, pero el\nafecto y el cariño se lo dieron sus\npadres adoptivos"
 	}
 }

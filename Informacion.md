@@ -56,7 +56,7 @@ A: Abuelo
 
 > E: Bien, conocí un montón de chicos nuevos
 
-> E: Nos presentamos con los otros chicos para conocernos, la profe de tarea nos pidió que llevemos fotos de nosotros con la familia
+> E: Nos presentamos con los otros chicos para conocernos, la profe nos pidió de tarea que llevemos fotos de nosotros con la familia
 
 > MA: [Nerviosa] Uuuuy, ¿Es obligación? ¿Para cuando es?
 
@@ -252,9 +252,9 @@ Meses despues...
 
 Unos meses despues...
 
-> E: Yo los quiero mucho porq son mis padres biologicos, pero extraño mucho mi casa y a mis otros padres.
+> E: Yo los quiero mucho porque son mis padres biológicos, pero extraño mucho mi casa y a mis otros padres.
 
-> PB: ¿Esta bien Estefania, vos que queres hacer? 
+> PB: Esta bien Estefania, ¿Vos que queres hacer? 
 
 > E: Quiero volver con mis padres adoptivos
 
@@ -270,4 +270,4 @@ Unos meses despues...
 
 ## Frase
 
-Estefania heredo los ojos de su madre y la nariz de su padre, pero el afecto y el cariño se lo dieron sus padres adoptivos
+Estefania heredó los ojos de su madre y la nariz de su padre, pero el afecto y el cariño se lo dieron sus padres adoptivos

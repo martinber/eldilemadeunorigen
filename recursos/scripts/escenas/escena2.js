@@ -133,7 +133,7 @@ Juego.Escena2.prototype = {
 	
 	limpiar: function () { // Salir de la escena
 		// Liberar espacio
-		this.fondo.destroy();
+		if (this.fondo != null) this.fondo.destroy();
 		this.fondo = null;
 		this.personaje.eliminar();
 		this.personaje = null;
