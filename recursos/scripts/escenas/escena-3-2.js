@@ -41,6 +41,7 @@ Juego.Escena_3_2.prototype = {
 	
 	listo: function () { // Cuando termina la transicion
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 4, this.atenderPuerta, this);
+		this.transicion = null;
 	},
 	
 	update: function () {
@@ -72,7 +73,7 @@ Juego.Escena_3_2.prototype = {
 	eliminarDialogo: function () {
 		this.dialogo.eliminar();
 		this.dialogo = null;
-		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+		if (this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
 	},
 	
 	limpiar: function () { // Salir de la escena

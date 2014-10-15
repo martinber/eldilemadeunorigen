@@ -35,6 +35,7 @@ Juego.Escena_2s_3.prototype = {
 	
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
+		this.transicion = null;
 	},
 	
 	update: function () {
@@ -85,7 +86,7 @@ Juego.Escena_2s_3.prototype = {
 	eliminarDialogo: function () {
 		this.dialogo.eliminar();
 		this.dialogo = null;
-		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+		if (this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
 	},
 	
 	avanzarEscena: function() {

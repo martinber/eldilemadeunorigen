@@ -35,6 +35,7 @@ Juego.Escena_3_1.prototype = {
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * .5, this.crearDialogo, this);
+		this.transicion = null;
 	},
 	
 	update: function () {
@@ -55,7 +56,7 @@ Juego.Escena_3_1.prototype = {
 	eliminarDialogo: function () {
 		this.dialogo.eliminar();
 		this.dialogo = null;
-		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
+		if (this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
 	},
 	
 	avanzarEscena: function() {

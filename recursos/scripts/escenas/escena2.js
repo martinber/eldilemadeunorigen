@@ -38,6 +38,7 @@ Juego.Escena2.prototype = {
 	listo: function () { // Cuando termina la transicion
 		this.foco = false;
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 2, this.mostrarLlamado, this);
+		this.transicion = null;
 	},
 	
 	mostrarLlamado: function () {
@@ -78,7 +79,7 @@ Juego.Escena2.prototype = {
 		if (this.personaje != null) this.personaje.update(); // Actualizar personaje
 		this.UI.update(this.camara); // Actualizar UI
 		if (this.personaje != null) {
-			if (this.personaje.x < 60) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
+			if (this.personaje.x < 60 && this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
 		}
 	},
 	

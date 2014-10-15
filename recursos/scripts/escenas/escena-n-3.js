@@ -35,6 +35,7 @@ Juego.Escena_n_3.prototype = {
 	
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
+		this.transicion = null;
 	},
 	
 	update: function () {
@@ -93,7 +94,7 @@ Juego.Escena_n_3.prototype = {
 		this.puertaAbierta.alpha = 0;
 		this.MA.destroy();
 		this.MA = null;
-		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
+		if (this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this);
 	},
 	
 	avanzarEscena: function() {
