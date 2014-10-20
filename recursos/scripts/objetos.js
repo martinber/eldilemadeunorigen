@@ -332,7 +332,7 @@ Foto = function (creador, id) { // Objeto que crea una transición a negro
 	this.sprite.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	// Agregar boton
-	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'boton', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
 }
