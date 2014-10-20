@@ -23,7 +23,11 @@ Juego.Cargador.prototype = {
 		this.load.atlas('botonCerrar', 'recursos/escenas/general/botonCerrar.png', 'recursos/escenas/general/botonCerrar.json');
 		this.load.atlas('botonSi', 'recursos/escenas/general/botonSi.png', 'recursos/escenas/general/botonSi.json');
 		this.load.atlas('botonNo', 'recursos/escenas/general/botonNo.png', 'recursos/escenas/general/botonNo.json');
+		
 		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
+		this.load.audio('puertaAbriendose', ['recursos/sonidos/puertaAbriendose.mp3', 'recursos/sonidos/puertaAbriendose.ogg']);
+		this.load.audio('puertaCerrandose', ['recursos/sonidos/puertaCerrandose.mp3', 'recursos/sonidos/puertaCerrandose.ogg']);
+		this.load.audio('timbre1', ['recursos/sonidos/timbre1.mp3', 'recursos/sonidos/timbre1.ogg']);
 		
 		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
 		this.load.image('UIFondo', 'recursos/escenas/general/UI.png');

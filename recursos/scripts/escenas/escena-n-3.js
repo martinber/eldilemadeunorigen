@@ -13,6 +13,8 @@ Juego.Escena_n_3.prototype = {
 		
 		// Comienzo creacion objetos
 		
+		this.timbre = this.add.audio('timbre1'); // Configurar sonido
+		
 		this.puerta = this.add.sprite(770, 435, 'puertaBiologicos');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puertaAbierta = this.add.sprite(770, 435, 'puertaBiologicosAbierta');
@@ -59,6 +61,7 @@ Juego.Escena_n_3.prototype = {
 	},
 	
 	fPuerta: function() {
+		this.timbre.play(); // Reproducir sonido
 		this.personaje.moverX(this.personaje.x - 70, "callback", this.girarPersonaje, this);
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 5, this.atenderPuerta, this);
 	},
@@ -116,5 +119,7 @@ Juego.Escena_n_3.prototype = {
 		this.UI = null;
 		this.camara.eliminar();
 		this.camara = null;
+		this.timbre.destroy();
+		this.timbre = null;
 	}
 };

@@ -12,6 +12,9 @@ Juego.Escena4.prototype = {
 		
 		// Comienzo creacion objetos
 		
+		this.puertaCerrandose = this.add.audio('puertaCerrandose'); // Configurar sonido
+		this.puertaCerrandose.play(); // Reproducir sonido
+		
 		this.armario = this.add.sprite(260, 70, 'armario');
 		this.armario.inputEnabled = true; // Habilitar chequeos de click
 		this.armario.events.onInputDown.add(this.clickEnArmario, this); // Llamar la función al hacerle click
@@ -101,5 +104,7 @@ Juego.Escena4.prototype = {
 		this.UI = null;
 		this.camara.eliminar();
 		this.camara = null;
+		this.puertaCerrandose.destroy();
+		this.puertaCerrandose = null;
 	}
 };

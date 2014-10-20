@@ -12,6 +12,8 @@ Juego.Escena3.prototype = {
 		
 		// Comienzo creacion objetos
 		
+		this.puertaAbriendose = this.add.audio('puertaAbriendose'); // Configurar sonido
+		
 		this.puerta1 = this.add.sprite(1147, 42, 'puerta1');
 		this.puerta1Abierta = this.add.sprite(1147, 42, 'puerta1Abierta');
 		this.puerta1Abierta.alpha = 0;
@@ -65,6 +67,7 @@ Juego.Escena3.prototype = {
 	fPuerta1: function () {
 		this.puerta1.alpha = 0;
 		this.puerta1Abierta.alpha = 1;
+		this.puertaAbriendose.play(); // Reproducir sonido
 		if (this.transicion == null) this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this)
 	},
 	
@@ -87,5 +90,7 @@ Juego.Escena3.prototype = {
 		this.UI = null;
 		this.camara.eliminar();
 		this.camara = null;
+		this.puertaAbriendose.destroy();
+		this.puertaAbriendose = null;
 	}
 };

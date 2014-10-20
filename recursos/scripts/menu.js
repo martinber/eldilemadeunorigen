@@ -7,7 +7,7 @@ Juego.Menu = function (game) {
 Juego.Menu.prototype = {
 	create: function () {
 		this.musica = this.add.audio('menuMusica'); // Configurar musica
-		this.musica.play(); // Reproducir musica
+		//this.musica.play(); // Reproducir musica
 		
 		// Dibujar el menu
 		this.fondo = this.add.tileSprite(0, 0, canvasWidth * 2, canvasHeight * 2, 'fondo');
@@ -48,6 +48,7 @@ Juego.Menu.prototype = {
 	},
 	comenzarJuego: function (pointer) { // Se ejecuta al presionar boton correspondiente
 		this.musica.stop(); // Parar la musica
-		this.game.state.start('Escena1'); // Ir a la escena 1
+		this.musica.destroy();
+		this.game.state.start('Escena-n-3'); // Ir a la escena 1
 	}
 }; 

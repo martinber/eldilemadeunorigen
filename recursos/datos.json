@@ -272,7 +272,7 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Hola buen dia, queres comprar un numero para el dia de la madre?"
+					"texto":"Hola buen dia, queres comprar un numero para el dia\nde la madre?"
 				},
 				{
 					"personaje":"MB",
@@ -280,11 +280,11 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Disculpe yo a usted la conozco de algun lado, ahora recuerdo tengo una foto suya en mi casa."
+					"texto":"Disculpe yo a usted la conozco de algun lado, ahora\nrecuerdo tengo una foto suya en mi casa."
 				},
 				{
 					"personaje":"MB",
-					"texto":"Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro dia te compro. Chau."
+					"texto":"Creo que eso es imposible... perdoname, tengo la comida\nen el fuego, otro dia te compro. Chau."
 				}
 			]
 		}
