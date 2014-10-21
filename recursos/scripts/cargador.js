@@ -58,6 +58,7 @@ Juego.Cargador.prototype = {
 		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
 		this.load.image('cocinaFondo', 'recursos/escenas/fondos/cocina.jpg');
 		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicosConGente.jpg');
+		this.load.image('livingAbueloFondo', 'recursos/escenas/fondos/livingAbueloConGente.jpg');
 		this.load.image('piezaFondo', 'recursos/escenas/fondos/pieza.jpg');
 		this.load.image('frenteCasaFondo', 'recursos/escenas/fondos/frenteCasa.jpg');
 		this.load.image('frenteAbueloFondo', 'recursos/escenas/fondos/frenteAbuelo.jpg');

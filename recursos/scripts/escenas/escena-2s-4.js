@@ -4,7 +4,7 @@ Juego.Escena_2s_4 = function (game) {
 
 Juego.Escena_2s_4.prototype = {
 	create: function () {
-		this.fondo = this.add.sprite(0, 0, 'cocinaFondo'); // Agregar fondo
+		this.fondo = this.add.sprite(0, 0, 'livingAbueloFondo'); // Agregar fondo
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
