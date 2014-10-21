@@ -72,7 +72,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > PA: Acá están las fotos
 
-> E: Ahhhh, mira esa que tierna... no hay de cuando estás embarazada? Los otros chicos iban a llevar
+> E: Ahhhh, mira esa que tierna... no hay de cuando estabas embarazada? Los otros chicos iban a llevar
 
 > PA: Uy, creo que no hay...
 

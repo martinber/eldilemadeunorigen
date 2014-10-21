@@ -19,7 +19,6 @@ Juego.Cargador.prototype = {
 		this.load.atlas('botonSilenciar1', 'recursos/menu/botonSilenciar1.png', 'recursos/menu/botonSilenciar.json');
 		this.load.atlas('botonSilenciar2', 'recursos/menu/botonSilenciar2.png', 'recursos/menu/botonSilenciar.json');
 		
-		this.load.atlas('boton', 'recursos/escenas/general/boton.png', 'recursos/escenas/general/boton.json');
 		this.load.atlas('botonCerrar', 'recursos/escenas/general/botonCerrar.png', 'recursos/escenas/general/botonCerrar.json');
 		this.load.atlas('botonSi', 'recursos/escenas/general/botonSi.png', 'recursos/escenas/general/botonSi.json');
 		this.load.atlas('botonNo', 'recursos/escenas/general/botonNo.png', 'recursos/escenas/general/botonNo.json');
@@ -33,8 +32,6 @@ Juego.Cargador.prototype = {
 		this.load.image('foto', 'recursos/escenas/general/foto.png');
 		this.load.image('UIFondo', 'recursos/escenas/general/UI.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
-		
-		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
 
 		this.load.image('armario', 'recursos/escenas/armario.png');
 		this.load.image('armarioAbierto', 'recursos/escenas/armarioAbierto.png');
