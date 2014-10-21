@@ -49,20 +49,19 @@ PB: Padre biológico
 MB: Madre biológica
 A: Abuelo
 ```
-
 #### Escena1
 
-> MA: Como te fue hoy en el colegio?
+> MA: ¿Como te fue hoy en el colegio?
 
 > E: Bien, conocí un montón de chicos nuevos
 
 > E: Nos presentamos con los otros chicos para conocernos, la profe nos pidió de tarea que llevemos fotos de nosotros con la familia
 
-> MA: [Nerviosa] Uuuuy, ¿Es obligación? ¿Para cuando es?
+> MA: Uuuuy, ¿Es obligación? ¿Para cuándo es?
 
 > E: Es para la semana que viene, ¿Pero lo podemos hacer ahora así ya está?
 
-> MA: Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos esta tarde
+> MA: Ehhh, esperá que venga papá así nos ayuda, lo hacemos esta tarde
 
 [Se pone en negro]
 
@@ -72,11 +71,11 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > MA: Acá están las fotos
 
-> E: Ahhhh, mira esa que tierna... no hay de cuando estabas embarazada? Los otros chicos iban a llevar
+> E: Ahhhh, mira esa que tierna... ¿No hay de cuando estabas embarazada? Los otros chicos iban a llevar
 
 > MA: Uy, creo que no hay...
 
-> E: Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren
+> E: Que lástima, ahí me pongo a pegarlas, despues guardo las que sobren
 
 > PA: Ah bueno, cualquier cosa avisanos
 
@@ -94,7 +93,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 [Al guardar foto encuentra otra]
 
-> E: Y esta foto? Nunca la vi
+> E: ¿Y esta foto? Nunca la vi
 
 [Se muestra la foto en grande, dice "para Estefania"]
 
@@ -114,11 +113,11 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > PA: Son unos amigos nuestros, hace bastante que no los vemos
 
-> E: .... [que nerviosos que se pusieron]
+> E: ...
 
-> E: Ah, si creo que una vez vinieron a visitarnos
+> E: Ah, si, creo que una vez vinieron a visitarnos
 
-> MA: Anda a guardarla
+> MA: Andá a guardarla
 
 **¿Le tendria que preguntarle a mis abuelos? Si o no**
 
@@ -142,7 +141,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > E: Recién encontré esta foto, ¿Quiénes son? Papá dice que son unos amigos pero es raro que tenga mi nombre
 
-> A: Lo que pasa es que... bueno, en realidad ellos...
+> A: Lo que pasa es que... bueno, en realidad ellos son tus padres...
 
 [Se va oscureciendo...]
 
@@ -150,15 +149,15 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 [Aparecen en living]
 
-> E: Pero no le digas nada que vine a preguntarte, por ahora
+> E: Pero no digas nada que vine a preguntarte, por ahora
 
-> A: Pero ¿Por qué no lo hablás con ellos?
+> A: Pero, ¿Por qué no lo hablás con ellos?
 
 > E: No, no me animo
 
 > E: Bueno, nos vemos
 
-> A: Chau chiquita quedate tranquila y habla con tus papis
+> A: Chau chiquita, quedate tranquila y habla con tus papis
 
 #### Escena-2s-5
 
@@ -170,7 +169,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > E: Ya sé la verdad de esta foto
 
-> Padres: ............
+> Padres: Bueno... queríamos esperar a que crezcas para contarte que...
 
 [Se va oscureciendo]
 
@@ -178,7 +177,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > E: Quiero conocerlos
 
-> PA: Vamos....
+> PA: Vamos...
 
 #### Escena-3-2
 
@@ -188,13 +187,13 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > MB: Por favor pasen
 
-> MB: Sientense, ahi traigo algo para tomar
+> MB: Sientense, ahí traigo algo para tomar
 
 #### Escena-3-3
 
 [Aparecen en living]
 
-> PB: Bueno... la verdad es que nosotros nunca quisimos esto pero no podíamos cuidarte como te lo merecías
+> PB: Bueno... la verdad es que nosotros nunca quisimos abandonarte... pero como te dijimos, no podíamos cuidarte como te lo merecías
 
 > E. Está bien, entiendo, pero... quiero saber un poco más sobre...
 
@@ -210,13 +209,13 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 Meses despues...
 
-> E: Mama me dieron numeros del colegio para vender
+> E: Mamá me dieron números del colegio para vender
 
-> MA: Que se rifa hija? es para el dia de la madre? 
+> MA: ¿Qué se rifa hija? ¿Es para el día de la madre? 
 
-> E: Se sortea una cartera, un ramo de flores y una caja de bombones. Salen $15 cada unos
+> E: Se sortea una cartera, un ramo de flores y una caja de bombones. Salen 15 pesos cada uno
 
-> MA: Te compro 2 despues, anda a vender los demas
+> MA: Después te compro dos, andá a vender los demás
 
 > E: Bueno, gracias. Voy a ir de los vecinos.
 
@@ -228,21 +227,21 @@ Meses despues...
 
 [Aparece al frente se casa de padres biologicos]
 
-> E: Hola buen dia, queres comprar un numero para el dia de la madre?
+> E: Hola buen día, quiere comprar un número para el día de la madre?
 
-> MB: Eh, si ya vengo
+> MB: Eh, sí, ya vengo
 
-> E: Disculpe yo a usted la conozco de algun lado, ahora recuerdo tengo una foto suya en mi casa.
+> E: Disculpe, yo a usted la conozco de algun lado... ahora recuerdo, tengo una foto suya en mi casa.
 
-> MB: Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro dia te compro. Chau.
+> MB: Creo que eso es imposible... perdoname, tengo la comida en el fuego, otro día te compro. Chau.
 
 #### Escena-n-4
 
 [Aparece en cocina]
 
-> E: ¿Papa quien es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?
+> E: ¿Papá quién es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?
 
-> PA: Si, hija tengo que contarte algo sobre esta mujer.
+> PA: Sí, hija tengo que contarte algo sobre esta mujer, en realidad ellos son tus padres...
 
 [Ir a Escena-3-1]
 
@@ -256,7 +255,7 @@ Unos meses despues...
 
 > E: Yo los quiero mucho porque son mis padres biológicos, pero extraño mucho mi casa y a mis otros padres.
 
-> PB: Esta bien Estefania, ¿Vos que queres hacer? 
+> PB: Está bien Estefania, ¿Que querés hacer? 
 
 > E: Quiero volver con mis padres adoptivos
 

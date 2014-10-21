@@ -53,6 +53,6 @@ Juego.Menu.prototype = {
 		this.musica.stop(); // Parar la musica
 		this.musica.destroy();
 		this.musica = null;
-		this.game.state.start('Escena-2s-4'); // Ir a la escena 1
+		this.game.state.start('Escena1'); // Ir a la escena 1
 	}
 }; 

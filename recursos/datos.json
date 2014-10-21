@@ -16,7 +16,7 @@
 				},
 				{
 					"personaje":"MA",
-					"texto":"Uuuuy, ¿Es obligación? ¿Para cuando es?"
+					"texto":"Uuuuy, ¿Es obligación? ¿Para cuándo es?"
 				},
 				{
 					"personaje":"E",
@@ -24,7 +24,7 @@
 				},
 				{
 					"personaje":"MA",
-					"texto":"Ehhhhhh, esperá que venga papá así nos ayuda, lo hacemos \nesta tarde"
+					"texto":"Ehhh, esperá que venga papá así nos ayuda, lo hacemos \nesta tarde"
 				}
 			]
 		}
@@ -38,15 +38,15 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Ahhhh, mira esa que tierna... no hay de cuando estabas\nembarazada? Los otros chicos iban a llevar"
+					"texto":"Ahhhh, mira esa que tierna... ¿No hay de cuando estabas\nembarazada? Los otros chicos iban a llevar"
 				},
 				{
 					"personaje":"MA",
-					"texto":"Uy, creo que no hay...."
+					"texto":"Uy, creo que no hay..."
 				},
 				{
 					"personaje":"E",
-					"texto":"Que lastima, ahi me pongo a pegarlas, despues guardo\nlas que sobren"
+					"texto":"Que lástima, ahí me pongo a pegarlas, despues guardo\nlas que sobren"
 				},
 				{
 					"personaje":"PA",
@@ -60,7 +60,7 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Y esta foto? Nunca la vi"
+					"texto":"¿Y esta foto? Nunca la vi"
 				}
 			],
 			"dialogo2":[
@@ -88,11 +88,11 @@
 				},
 				{
 					"personaje":"E",
-					"texto":"Ah, si creo que una vez vinieron a visitarnos"
+					"texto":"Ah, si, creo que una vez vinieron a visitarnos"
 				},
 				{
 					"personaje":"MA",
-					"texto":"Anda a guardarla"
+					"texto":"Andá a guardarla"
 				}
 			]
 		}
@@ -114,7 +114,7 @@
 				},
 				{
 					"personaje":"A",
-					"texto":"Lo que pasa es que... bueno, en realidad ellos..."
+					"texto":"Lo que pasa es que...\nbueno, en realidad ellos son tus padres..."
 				}
 			]
 		}
@@ -124,11 +124,11 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Pero no le digas nada que vine a preguntarte, por ahora"
+					"texto":"Pero no digas nada que vine a preguntarte, por ahora"
 				},
 				{
 					"personaje":"A",
-					"texto":"Pero ¿Por qué no lo hablás con ellos?"
+					"texto":"Pero, ¿Por qué no lo hablás con ellos?"
 				},
 				{
 					"personaje":"E",
@@ -154,7 +154,7 @@
 				},
 				{
 					"personaje":"MA",
-					"texto":"............"
+					"texto":"Bueno... queríamos esperar a que crezcas para\ncontarte que..."
 				}
 			]
 		}
@@ -186,7 +186,7 @@
 				},
 				{
 					"personaje":"MB",
-					"texto":"Sientense, ahi traigo algo para tomar"
+					"texto":"Sientense, ahí traigo algo para tomar"
 				}
 			]
 		}
@@ -196,7 +196,7 @@
 			"dialogo1":[
 				{
 					"personaje":"PB",
-					"texto":"Bueno... la verdad es que nosotros nunca quisimos\nesto, pero no podíamos cuidarte como te lo merecías"
+					"texto":"Bueno... la verdad es que nosotros nunca quisimos\nabandonarte... pero como te dijimos, no podíamos\ncuidarte como te lo merecías"
 				},
 				{
 					"personaje":"E",
@@ -210,19 +210,19 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Mama me dieron numeros del colegio para vender"
+					"texto":"Mamá me dieron números del colegio para vender"
 				},
 				{
 					"personaje":"MA",
-					"texto":"Que se rifa hija? es para el dia de la madre?"
+					"texto":"¿Qué se rifa hija? ¿Es para el día de la madre?"
 				},
 				{
 					"personaje":"E",
-					"texto":"Se sortea una cartera, un ramo de flores y una caja\nde bombones. Salen $15 cada unos"
+					"texto":"Se sortea una cartera, un ramo de flores y una caja\nde bombones. Salen 15 pesos cada uno"
 				},
 				{
 					"personaje":"MA",
-					"texto":"Te compro 2 despues, anda a vender los demas"
+					"texto":"Después te compro dos, andá a vender los demás"
 				},
 				{
 					"personaje":"E",
@@ -236,19 +236,19 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Hola buen dia, queres comprar un numero para el dia\nde la madre?"
+					"texto":"Hola buen día, quiere comprar un número para el día\nde la madre?"
 				},
 				{
 					"personaje":"MB",
-					"texto":"Eh, si ya vengo"
+					"texto":"Eh, sí, ya vengo"
 				},
 				{
 					"personaje":"E",
-					"texto":"Disculpe yo a usted la conozco de algun lado, ahora\nrecuerdo tengo una foto suya en mi casa."
+					"texto":"Disculpe, yo a usted la conozco de algun lado... ahora\nrecuerdo, tengo una foto suya en mi casa."
 				},
 				{
 					"personaje":"MB",
-					"texto":"Creo que eso es imposible... perdoname, tengo la comida\nen el fuego, otro dia te compro. Chau."
+					"texto":"Creo que eso es imposible... perdoname, tengo la comida\nen el fuego, otro día te compro. Chau."
 				}
 			]
 		}
@@ -258,11 +258,11 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"¿Papa quien es la mujer que vive a 6 calles de aca?\n¿Es la de esta foto?"
+					"texto":"¿Papá quién es la mujer que vive a 6 calles de aca?\n¿Es la de esta foto?"
 				},
 				{
 					"personaje":"PA",
-					"texto":"Si, hija tengo que contarte algo sobre esta mujer."
+					"texto":"Sí, hija tengo que contarte algo sobre esta mujer,\nen realidad ellos son tus padres..."
 				}
 			]
 		}
@@ -276,7 +276,7 @@
 				},
 				{
 					"personaje":"PB",
-					"texto":"Esta bien Estefania, ¿Vos que queres hacer?"
+					"texto":"Está bien Estefania, ¿Que querés hacer?"
 				},
 				{
 					"personaje":"E",
