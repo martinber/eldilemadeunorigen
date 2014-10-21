@@ -110,6 +110,8 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 [Aparece en cocina]
 
+> E: ¿Quiénes son las personas de esta foto?
+
 > PA: Son unos amigos nuestros, hace bastante que no los vemos
 
 > E: .... [que nerviosos que se pusieron]
@@ -148,7 +150,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 [Aparecen en living]
 
-> E: Pero no le digas nada de que me lo dijiste, por ahora
+> E: Pero no le digas nada que vine a preguntarte, por ahora
 
 > A: Pero ¿Por qué no lo hablás con ellos?
 

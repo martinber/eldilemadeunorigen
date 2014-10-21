@@ -115,6 +115,10 @@
 		"dialogos": {
 			"dialogo1":[
 				{
+					"personaje":"E",
+					"texto":"¿Quiénes son las personas de esta foto?"
+				},
+				{
 					"personaje":"PA",
 					"texto":"Son unos amigos nuestros, hace bastante que no\nlos vemos"
 				},
@@ -160,7 +164,7 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"Pero no le digas nada de que me lo dijiste, por ahora"
+					"texto":"Pero no le digas nada que vine a preguntarte, por ahora"
 				},
 				{
 					"personaje":"A",
@@ -294,7 +298,7 @@
 			"dialogo1":[
 				{
 					"personaje":"E",
-					"texto":"¿Papa quien es la mujer que vive a 6 calles de aca? ¿Es la de esta foto?"
+					"texto":"¿Papa quien es la mujer que vive a 6 calles de aca?\n¿Es la de esta foto?"
 				},
 				{
 					"personaje":"PA",
