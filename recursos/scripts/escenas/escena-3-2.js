@@ -19,18 +19,14 @@ Juego.Escena_3_2.prototype = {
 		this.puertaAbierta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puertaAbierta.alpha = 0;
 		
-		this.MA = game.add.sprite(650, 470, 'personaje'); // Agregar madre
-		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.MA.animations.add('personajeCaminando', [0, 1], 10, true);
-		
-		this.PA = game.add.sprite(600, 470, 'personaje'); // Agregar madre
-		this.PA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.PA.animations.add('personajeCaminando', [0, 1], 10, true);
-		//this.MA.animations.play('personajeCaminando'); // Animar personaje
-		//this.MATween = game.add.tween(this.MA).to({x: 500}, 4000, Phaser.Easing.Linear.None, true, 0);
-		
-		this.personaje = new Personaje(625, 470); // Agregar personaje, al final para que se vea arriba
+		this.personaje = new Personaje(530, 470); // Agregar personaje
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
+		
+		this.MA = game.add.sprite(650, 470, 'MACaminando'); // Agregar madre
+		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.PA = game.add.sprite(600, 470, 'PACaminando'); // Agregar madre
+		this.PA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		
 		// Fin creacion objetos
 		
@@ -59,9 +55,8 @@ Juego.Escena_3_2.prototype = {
 		this.puerta.alpha = 0;
 		this.puertaAbierta.alpha = 1;
 		
-		this.MB = game.add.sprite(this.puerta.x, this.puerta.y, 'personaje'); // Agregar abuelo
+		this.MB = game.add.sprite(this.puerta.x, this.puerta.y, 'MBParadaCostado');
 		this.MB.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.MB.scale.x = -1;
 		
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 2, this.crearDialogo, this);
 	},

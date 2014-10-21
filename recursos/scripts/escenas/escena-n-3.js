@@ -74,9 +74,8 @@ Juego.Escena_n_3.prototype = {
 		this.puerta.alpha = 0;
 		this.puertaAbierta.alpha = 1;
 		
-		this.MA = game.add.sprite(this.puerta.x, this.puerta.y, 'personaje'); // Agregar abuelo
+		this.MA = game.add.sprite(this.puerta.x, this.puerta.y, 'MAParadaCostado'); // Agregar abuelo
 		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
-		this.MA.scale.x = -1;
 		
 		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 2, this.crearDialogo, this);
 	},

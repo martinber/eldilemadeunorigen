@@ -12,15 +12,24 @@ Juego.Escena_n_4.prototype = {
 		
 		// Comienzo creacion objetos
 		
-		this.silla1 = this.add.sprite(350, 500, 'silla');
+		this.silla1 = this.add.sprite(300, 500, 'silla');
 		this.silla1.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.silla1.scale.x = -1; // Espejar
 		
-		this.silla2 = this.add.sprite(650, 500, 'silla');
+		this.PA = this.add.sprite(350, 500, 'PASentadoCostado');
+		this.PA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.silla2 = this.add.sprite(680, 500, 'silla');
 		this.silla2.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.MA = this.add.sprite(650, 500, 'MASentadaCostado');
+		this.MA.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		
 		this.silla3 = this.add.sprite(500, 450, 'sillaFrente');
 		this.silla3.anchor.setTo(.5, 1); // Establecer su origen (ancla)
+		
+		this.E = this.add.sprite(500, 445, 'ESentadaFrente');
+		this.E.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		
 		this.mesa = this.add.sprite(500, 500, 'mesa');
 		this.mesa.anchor.setTo(.5, 1); // Establecer su origen (ancla)
@@ -76,6 +85,12 @@ Juego.Escena_n_4.prototype = {
 		this.silla2 = null;
 		this.silla3.destroy();
 		this.silla3 = null;
+		this.E.destroy();
+		this.E = null;
+		this.MA.destroy();
+		this.MA = null;
+		this.PA.destroy();
+		this.PB = null;
 		if (this.dialogo != null) {
 			this.dialogo.eliminar();
 			this.dialogo = null;

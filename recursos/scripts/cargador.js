@@ -34,7 +34,7 @@ Juego.Cargador.prototype = {
 		this.load.text('datosJSON', 'recursos/datos.json');
 		
 		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
-		this.load.image('luigi', 'recursos/escenas/general/luigi.png');
+
 		this.load.image('cajaFotos', 'recursos/escenas/cajaFotos.png');
 		this.load.image('armario', 'recursos/escenas/armario.png');
 		this.load.image('armarioAbierto', 'recursos/escenas/armarioAbierto.png');
@@ -54,18 +54,29 @@ Juego.Cargador.prototype = {
 		this.load.image('sillaFrente', 'recursos/escenas/sillaFrente.png');
 		this.load.image('sillaEscritorio', 'recursos/escenas/sillaEscritorio.png');
 		
-		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
-		
 		this.load.image('pasilloFondo', 'recursos/escenas/fondos/pasillo.jpg');
 		this.load.image('bosqueFondo', 'recursos/escenas/fondos/bosque.jpg');
 		this.load.image('cocinaFondo', 'recursos/escenas/fondos/cocina.jpg');
-		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicos.jpg');
+		this.load.image('livingBiologicosFondo', 'recursos/escenas/fondos/livingBiologicosConGente.jpg');
 		this.load.image('piezaFondo', 'recursos/escenas/fondos/pieza.jpg');
 		this.load.image('frenteCasaFondo', 'recursos/escenas/fondos/frenteCasa.jpg');
 		this.load.image('frenteAbueloFondo', 'recursos/escenas/fondos/frenteAbuelo.jpg');
 		this.load.image('frenteBiologicosFondo', 'recursos/escenas/fondos/frenteBiologicos.jpg');
 		this.load.image('piezaPadresFondo', 'recursos/escenas/fondos/piezaPadres.jpg');
 
+		this.load.spritesheet('personaje', 'recursos/escenas/general/personaje.png', 120, 290, 2);// 2 cuadros de 120x290px cada uno
+		this.load.spritesheet('MACaminando', 'recursos/escenas/general/MACaminando.png', 87, 304, 2);// 2 cuadros de 120x290px cada uno
+		this.load.spritesheet('PACaminando', 'recursos/escenas/general/PACaminando.png', 84, 304, 2);// 2 cuadros de 120x290px cada uno
+		
+		this.load.image('AParadoCostado', 'recursos/escenas/general/AParadoCostado.png');
+		this.load.image('ASentadoCostado', 'recursos/escenas/general/ASentadoCostado.png');
+		this.load.image('ESentadaFrente', 'recursos/escenas/general/ESentadaFrente.png');
+		this.load.image('MASentadaCostado', 'recursos/escenas/general/MASentadaCostado.png');
+		this.load.image('MBParadaCostado', 'recursos/escenas/general/MBParadaCostado.png');
+		this.load.image('MBSentadaFrente', 'recursos/escenas/general/MBSentadaFrente.png');
+		this.load.image('PASentadoCostado', 'recursos/escenas/general/PASentadoCostado.png');
+		this.load.image('PBSentadoFrente', 'recursos/escenas/general/PBSentadoFrente.png');
+		
 		this.load.image('iconoE', 'recursos/escenas/general/iconosPersonajes/e.png');
 		this.load.image('iconoA', 'recursos/escenas/general/iconosPersonajes/a.png');
 		this.load.image('iconoMA', 'recursos/escenas/general/iconosPersonajes/ma.png');
