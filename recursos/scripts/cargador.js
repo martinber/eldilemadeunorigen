@@ -30,12 +30,12 @@ Juego.Cargador.prototype = {
 		this.load.audio('timbre1', ['recursos/sonidos/timbre1.mp3', 'recursos/sonidos/timbre1.ogg']);
 		
 		this.load.image('dialogoFondo', 'recursos/escenas/general/dialogo.png');
+		this.load.image('foto', 'recursos/escenas/general/foto.png');
 		this.load.image('UIFondo', 'recursos/escenas/general/UI.png');
 		this.load.text('datosJSON', 'recursos/datos.json');
 		
 		this.load.image('puerta', 'recursos/escenas/general/puerta.png');
 
-		this.load.image('cajaFotos', 'recursos/escenas/cajaFotos.png');
 		this.load.image('armario', 'recursos/escenas/armario.png');
 		this.load.image('armarioAbierto', 'recursos/escenas/armarioAbierto.png');
 		this.load.image('mesa', 'recursos/escenas/mesa.png');

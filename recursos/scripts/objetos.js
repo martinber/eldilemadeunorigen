@@ -328,7 +328,7 @@ Foto = function (creador, id) { // Objeto que crea una transición a negro
 	
 	this.creador = creador; // Necesario para que luego borre a este objeto
 	
-	this.sprite = game.add.sprite(this.x, this.y, 'dialogoFondo'); // Dibujar fondo
+	this.sprite = game.add.sprite(this.x, this.y, 'foto'); // Dibujar fondo
 	this.sprite.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	// Agregar boton
