@@ -11,6 +11,9 @@ Juego.Escena1 = function (game) {
 
 Juego.Escena1.prototype = {
 	create: function () {
+		Juego.musica = this.add.audio('musicaJuego'); // Configurar musica
+		Juego.musica.play("", 0, 1, true); // Reproducir musica, repitiendo
+		
 		this.fondo = this.add.sprite(0, 0, 'cocinaFondo'); // Agregar fondo
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
 		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto

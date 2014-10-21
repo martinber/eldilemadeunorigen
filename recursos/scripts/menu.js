@@ -6,8 +6,8 @@ Juego.Menu = function (game) {
 
 Juego.Menu.prototype = {
 	create: function () {
-		this.musica = this.add.audio('menuMusica'); // Configurar musica
-		this.musica.play(); // Reproducir musica
+		this.musica = this.add.audio('musicaMenu'); // Configurar musica
+		this.musica.play("", 0, 1, true); // Reproducir musica, repitiendo
 		
 		// Dibujar el menu
 		this.fondo = this.add.tileSprite(0, 0, canvasWidth * 2, canvasHeight * 2, 'fondo');
@@ -17,8 +17,6 @@ Juego.Menu.prototype = {
 		
 		this.boton = this.add.button(canvasWidth - 30, canvasHeight - 30, 'botonSilenciar1', this.silenciar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 		this.boton.anchor.setTo(1, 1);
-		
-		this.silenciar();
 		
 		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteJuan','El Dilema de un Origen', 64);
 		
@@ -50,6 +48,6 @@ Juego.Menu.prototype = {
 		this.musica.stop(); // Parar la musica
 		this.musica.destroy();
 		this.musica = null;
-		this.game.state.start('Escena-3-1'); // Ir a la escena 1
+		this.game.state.start('Escena1'); // Ir a la escena 1
 	}
 }; 

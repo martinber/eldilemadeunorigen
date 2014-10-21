@@ -70,5 +70,7 @@ Juego.Creditos.prototype = {
 		this.linea = null;
 		this.renglones = null;
 		this.datos = null;
+		Juego.musica.stop(); // Parar la musica
+		Juego.musica.destroy();
 	}
 };

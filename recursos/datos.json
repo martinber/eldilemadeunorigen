@@ -1,44 +1,4 @@
 {
-	"escenaPrueba": {
-		"dialogos": {
-			"luigi":[
-				{
-					"personaje":"E",
-					"texto":"Hola me llamo Estefania"
-				},
-				{
-					"personaje":"Luigi",
-					"texto":"Hola Estefania"
-				},
-				{
-					"personaje":"E",
-					"texto":"Chau Luigi"
-				},
-				{
-					"personaje":"Luigi",
-					"texto":"Chau!!"
-				}
-			],
-			"luigi2":[
-				{
-					"personaje":"E",
-					"texto":"Hola de nuevo Luigi"
-				},
-				{
-					"personaje":"Luigi",
-					"texto":"Hola Estefania"
-				},
-				{
-					"personaje":"E",
-					"texto":"Chau Luigi"
-				},
-				{
-					"personaje":"Luigi",
-					"texto":"Chau!!"
-				}
-			]
-		}
-	},
 	"escena1": {
 		"dialogos": {
 			"dialogo1":[
@@ -73,7 +33,7 @@
 		"dialogos": {
 			"dialogo1":[
 				{
-					"personaje":"PA",
+					"personaje":"MA",
 					"texto":"Acá están las fotos"
 				},
 				{
@@ -81,7 +41,7 @@
 					"texto":"Ahhhh, mira esa que tierna... no hay de cuando estabas\nembarazada? Los otros chicos iban a llevar"
 				},
 				{
-					"personaje":"PA",
+					"personaje":"MA",
 					"texto":"Uy, creo que no hay...."
 				},
 				{
@@ -89,7 +49,7 @@
 					"texto":"Que lastima, ahi me pongo a pegarlas, despues guardo\nlas que sobren"
 				},
 				{
-					"personaje":"MA",
+					"personaje":"PA",
 					"texto":"Ah bueno, cualquier cosa avisanos"
 				}
 			]
@@ -327,7 +287,9 @@
 	},
 	"creditos": {
 		"texto":[
-			"Aventura gráfica realizada por alumnos del Instituto\nSecundario Libertador General San Martín"
+			"Aventura gráfica realizada por alumnos del Instituto"
+			,
+			"Secundario Libertador General San Martín"
 			,
 			"Sexto año Naturales, promoción 2014"
 			,

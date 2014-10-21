@@ -45,9 +45,18 @@ Juego.Escena_3_3.prototype = {
 		this.decision.eliminar();
 		this.decision = null;
 		
+		if (respuesta == true) this.transicion = new Transicion(1000, "salir", this.decididoSi, this);
+		else this.transicion = new Transicion(1000, "salir", this.decididoNo, this);
+	},
+	
+	decididoNo: function () {
 		this.limpiar();
-		if (respuesta == true) game.state.start('MesesMasTarde2');
-		else game.state.start('Final');
+		game.state.start('Final');
+	},
+	
+	decididoSi: function () {
+		this.limpiar();
+		game.state.start('MesesMasTarde2');
 	},
 	
 	limpiar: function () { // Salir de la escena

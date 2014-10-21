@@ -23,7 +23,10 @@ Juego.Cargador.prototype = {
 		this.load.atlas('botonSi', 'recursos/escenas/general/botonSi.png', 'recursos/escenas/general/botonSi.json');
 		this.load.atlas('botonNo', 'recursos/escenas/general/botonNo.png', 'recursos/escenas/general/botonNo.json');
 		
-		this.load.audio('menuMusica', ['recursos/menu/menuMusica.mp3', 'recursos/menu/menuMusica.ogg']);
+		this.load.audio('musicaMenu', ['recursos/sonidos/musicaMenu.mp3', 'recursos/sonidos/musicaMenu.ogg']);
+		this.load.audio('musicaJuego', ['recursos/sonidos/musicaJuego.mp3', 'recursos/sonidos/musicaJuego.ogg']);
+		this.load.audio('musicaFinal', ['recursos/sonidos/musicaFinal.mp3', 'recursos/sonidos/musicaFinal.ogg']);
+		
 		this.load.audio('puertaAbriendose', ['recursos/sonidos/puertaAbriendose.mp3', 'recursos/sonidos/puertaAbriendose.ogg']);
 		this.load.audio('puertaCerrandose', ['recursos/sonidos/puertaCerrandose.mp3', 'recursos/sonidos/puertaCerrandose.ogg']);
 		this.load.audio('timbre1', ['recursos/sonidos/timbre1.mp3', 'recursos/sonidos/timbre1.ogg']);
@@ -89,7 +92,7 @@ Juego.Cargador.prototype = {
 	},
 	update: function () {
 		// Esperar a que se decodifique la musica
-		if (this.cache.isSoundDecoded('menuMusica') && this.terminado == false) {
+		if (this.cache.isSoundDecoded('musicaMenu') && this.terminado == false) {
 			this.terminado = true; // Terminamos
 			this.game.state.start('Menu'); // Ir al menu
 		}

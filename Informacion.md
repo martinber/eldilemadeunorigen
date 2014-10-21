@@ -70,15 +70,15 @@ A: Abuelo
 
 Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular]
 
-> PA: Acá están las fotos
+> MA: Acá están las fotos
 
 > E: Ahhhh, mira esa que tierna... no hay de cuando estabas embarazada? Los otros chicos iban a llevar
 
-> PA: Uy, creo que no hay...
+> MA: Uy, creo que no hay...
 
 > E: Que lastima, ahi me pongo a pegarlas, despues guardo las que sobren
 
-> MA: Ah bueno, cualquier cosa avisanos
+> PA: Ah bueno, cualquier cosa avisanos
 
 [Se van, Se pone en negro]
 
