@@ -45,7 +45,7 @@ Juego.Escena_4s_1.prototype = {
 		this.dialogo.eliminar();
 		this.dialogo = null;
 		this.foco = true;
-		if (this.transicion == null) this.transicion = new Transicion(2000, "salir", this.avanzarEscena, this);
+		if (this.transicion == null) this.transicion = new Transicion(7000, "salir", this.avanzarEscena, this, true);
 	},
 	
 	avanzarEscena: function() {

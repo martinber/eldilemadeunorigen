@@ -292,7 +292,7 @@ Dialogo.prototype = {
 	}
 }
 
-Transicion = function (tiempo, funcion, callback, contexto) { // Objeto que crea una transición a negro
+Transicion = function (tiempo, funcion, callback, contexto, volumen) { // Objeto que crea una transición a negro
 	this.fondo = game.add.graphics(0, 0);
 	this.fondo.lineStyle(0);
 	this.fondo.fixedToCamera = true;
@@ -301,11 +301,19 @@ Transicion = function (tiempo, funcion, callback, contexto) { // Objeto que crea
 	
 	if (funcion == "entrar") {
 		this.fondo.alpha = 1;
+		if (volumen && sonido) {
+			game.sound.volume = 0;
+			this.tweenSonido = game.add.tween(game.sound).to({volume: 1}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		}
 		this.tween = game.add.tween(this.fondo).to({alpha: 0}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
 		this.tween.onComplete.add(callback, contexto);
 	}
 	if (funcion == "salir") {
 		this.fondo.alpha = 0;
+		if (volumen && sonido) {
+			game.sound.volume = 1;
+			this.tweenSonido = game.add.tween(game.sound).to({volume: 0}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
+		}
 		this.tween = game.add.tween(this.fondo).to({alpha: 1}, tiempo, Phaser.Easing.Quadratic .In, true, 0); // animar
 		this.tween.onComplete.add(callback, contexto);
 	}

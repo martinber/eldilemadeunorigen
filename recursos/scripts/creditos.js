@@ -40,7 +40,7 @@ Juego.Creditos.prototype = {
 	nuevaLinea: function () {
 		if (this.linea < this.datos.length) { // Si no terminó el diálogo
 			this.texto[this.linea] = game.add.bitmapText(100, 50 + 40 * this.linea, 'fuenteJuanBlanco', "", 40); // Crear línea nueva
-			this.alarmaAvance = game.time.events.repeat(80, this.datos[this.linea].length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
+			this.alarmaAvance = game.time.events.repeat(75, this.datos[this.linea].length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 			
 			if (this.tween != null && this.tween.isRunning) this.tween.stop(); // Parar movimientos anteriores si estan corriendo
 			if (this.linea > 8) this.tween = game.add.tween(game.camera).to({y: game.camera.y + 40}, 2000, Phaser.Easing.Quadratic.InOut, true, 0); // animar

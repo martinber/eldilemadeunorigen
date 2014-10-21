@@ -47,7 +47,7 @@ Juego.Escena1.prototype = {
 		// Fin creacion objetos
 		
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
-		this.transicion = new Transicion(2000, "entrar", this.listo, this);
+		this.transicion = new Transicion(2000, "entrar", this.listo, this, true);
 		this.UI = new UI(this); // Agregar UI
 	},
 	

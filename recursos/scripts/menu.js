@@ -44,7 +44,12 @@ Juego.Menu.prototype = {
 	update: function () {
 
 	},
+	
 	comenzarJuego: function (pointer) { // Se ejecuta al presionar boton correspondiente
+		this.transicion = new Transicion(1000, "salir", this.avanzarEscena, this, true);
+	},
+	
+	avanzarEscena: function () {
 		this.musica.stop(); // Parar la musica
 		this.musica.destroy();
 		this.musica = null;

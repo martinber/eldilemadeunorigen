@@ -4,7 +4,7 @@ Juego.Final = function (game) {
 
 Juego.Final.prototype = {
 	create: function () {
-		this.transicion = new Transicion(1, "entrar", this.listo, this);
+		this.transicion = new Transicion(1, "entrar", this.listo, this, true);
 		this.alarmaAvance = null;
 		game.world.setBounds(0, 0, 960, 1000);
 		
@@ -35,7 +35,7 @@ Juego.Final.prototype = {
 			this.texto.setText(this.datos.substr(0, this.texto.text.length + 1)); // Agregar una letra a la línea
 		}
 		else {
-			this.alarmaTransicion = game.time.events.add(Phaser.Timer.SECOND * 6, this.transicionFin, this);
+			this.alarmaTransicion = game.time.events.add(Phaser.Timer.SECOND * 5, this.transicionFin, this);
 		}
 	},
 	
@@ -45,7 +45,7 @@ Juego.Final.prototype = {
 	},
 	
 	transicionFin: function () {
-		this.tween = game.add.tween(game.camera).to({y: canvasHeight}, 5000, Phaser.Easing.Quadratic.In, true, 0); // Animar
+		this.tween = game.add.tween(game.camera).to({y: canvasHeight}, 4000, Phaser.Easing.Quadratic.In, true, 0); // Animar
 		this.tween.onComplete.add(this.fin, this); // Llamar funcion fin() al terminar
 	},
 	

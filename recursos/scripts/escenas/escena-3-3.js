@@ -46,7 +46,7 @@ Juego.Escena_3_3.prototype = {
 		this.decision = null;
 		
 		if (respuesta == true) this.transicion = new Transicion(1000, "salir", this.decididoSi, this);
-		else this.transicion = new Transicion(1000, "salir", this.decididoNo, this);
+		else this.transicion = new Transicion(7000, "salir", this.decididoNo, this, true);
 	},
 	
 	decididoNo: function () {
