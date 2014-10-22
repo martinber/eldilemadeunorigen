@@ -12,6 +12,9 @@ Juego.Escena_3_2.prototype = {
 		this.puedeSalir == false; // Si puede salir de habitacion, para no saltarse dialogo
 		
 		// Comienzo creacion objetos
+		game.sound.volume = 1;
+		this.timbre = this.add.audio('timbre1'); // Configurar sonido
+		this.timbre.play(); // Reproducir sonido
 		
 		this.puerta = this.add.sprite(770, 435, 'puertaBiologicos');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
@@ -85,5 +88,7 @@ Juego.Escena_3_2.prototype = {
 		this.UI = null;
 		this.camara.eliminar();
 		this.camara = null;
+		this.timbre.destroy();
+		this.timbre = null;
 	}
 };
