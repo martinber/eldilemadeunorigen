@@ -75,7 +75,7 @@ Horas mas tarde.... [Llegan los dos juntos, Estefania esta chateando por celular
 
 > MA: Uy, creo que no hay...
 
-> E: Que lástima, ahí me pongo a pegarlas, despues guardo las que sobren
+> E: Que lástima, ahí me pongo a pegarlas, después guardo las que sobren
 
 > PA: Ah bueno, cualquier cosa avisanos
 
