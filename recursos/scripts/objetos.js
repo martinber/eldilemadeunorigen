@@ -224,6 +224,7 @@ Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar
 	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
+	this.boton.input.useHandCursor = true;
 	
 	this.nuevaLinea(); // Empezar a dibujar una línea de texto
 }
@@ -343,6 +344,7 @@ Foto = function (creador, id) { // Objeto que crea una transición a negro
 	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
+	this.boton.input.useHandCursor = true;
 }
 Foto.prototype = {
 	cerrar: function () {
@@ -383,10 +385,12 @@ Decision = function (creador, id) { // Objeto que crea una transición a negro
 	// Agregar botones
 	this.botonSi = game.add.button(100, 350, 'botonSi', this.si, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.botonSi.fixedToCamera = true;
+	this.botonSi.input.useHandCursor = true;
 	
 	this.botonNo = game.add.button(this.w - 100, 350, 'botonNo', this.no, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
 	this.botonNo.anchor.setTo(1, 0); // Establecer su origen (ancla)
 	this.botonNo.fixedToCamera = true;
+	this.botonNo.input.useHandCursor = true;
 }
 Decision.prototype = {
 	si: function () {

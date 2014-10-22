@@ -14,9 +14,11 @@ Juego.Menu.prototype = {
 		
 		// Agregar boton
 		this.boton = this.add.button(100, 150, 'menuBoton', this.comenzarJuego, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+		this.boton.input.useHandCursor = true;
 		
-		this.boton = this.add.button(canvasWidth - 30, canvasHeight - 30, 'botonSilenciar1', this.silenciar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
-		this.boton.anchor.setTo(1, 1);
+		this.botonSilenciar = this.add.button(canvasWidth - 30, canvasHeight - 30, 'botonSilenciar1', this.silenciar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+		this.botonSilenciar.anchor.setTo(1, 1);
+		this.botonSilenciar.input.useHandCursor = true;
 		
 		this.textoTitulo = this.add.bitmapText(50, 50, 'fuenteJuan','El Dilema de un Origen', 64);
 		
@@ -28,17 +30,17 @@ Juego.Menu.prototype = {
 	},
 	
 	silenciar: function () {
-		if (this.boton.key == 'botonSilenciar2') {
-			this.boton.key = 'botonSilenciar1';
+		if (this.botonSilenciar.key == 'botonSilenciar2') {
+			this.botonSilenciar.key = 'botonSilenciar1';
 			sonido = true;
 			game.sound.volume = 1;
 		}
-		else if (this.boton.key == 'botonSilenciar1') {
-			this.boton.key = 'botonSilenciar2';
+		else if (this.botonSilenciar.key == 'botonSilenciar1') {
+			this.botonSilenciar.key = 'botonSilenciar2';
 			sonido = false;
 			game.sound.volume = 0;
 		}
-		this.boton.frameName = 'boton2';
+		this.botonSilenciar.frameName = 'boton2';
 	},
 	
 	update: function () {
