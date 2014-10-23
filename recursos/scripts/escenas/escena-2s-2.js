@@ -13,6 +13,10 @@ Juego.Escena_2s_2.prototype = {
 		
 		// Comienzo creacion objetos
 		
+		this.nota = this.add.sprite(10, 10, 'notaFlecha');
+		this.nota.scale.x = -1;
+		this.nota.anchor.setTo(1, 0);
+		
 		this.personaje = new Personaje(60, 526); // Agregar personaje, al final para que se vea arriba
 		this.personaje.limitarX(60, 900); // Limitar posición del personaje
 		
@@ -21,6 +25,7 @@ Juego.Escena_2s_2.prototype = {
 		this.camara = new Camara(this.personaje); // Agregar camara
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
+		
 		this.UI = new UI(this); // Agregar UI
 	},
 	

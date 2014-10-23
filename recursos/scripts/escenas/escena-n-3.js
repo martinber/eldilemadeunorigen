@@ -15,6 +15,8 @@ Juego.Escena_n_3.prototype = {
 		
 		this.timbre = this.add.audio('timbre1'); // Configurar sonido
 		
+		this.nota = this.add.sprite(10, 10, 'notaPuerta');
+		
 		this.puerta = this.add.sprite(770, 435, 'puertaBiologicos');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puertaAbierta = this.add.sprite(770, 435, 'puertaBiologicosAbierta');

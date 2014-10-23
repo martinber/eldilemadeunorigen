@@ -86,6 +86,10 @@ Juego.Cargador.prototype = {
 		this.load.image('iconoPA', 'recursos/escenas/general/iconosPersonajes/pa.png');
 		this.load.image('iconoMB', 'recursos/escenas/general/iconosPersonajes/mb.png');
 		this.load.image('iconoPB', 'recursos/escenas/general/iconosPersonajes/pb.png');
+		
+		this.load.image('notaMoverse', 'recursos/escenas/notaMoverse.png');
+		this.load.image('notaFlecha', 'recursos/escenas/notaFlecha.png');
+		this.load.image('notaPuerta', 'recursos/escenas/notaPuerta.png');
 	},
 	create: function () {
 		// Al terminar de cargar mostrar la barra entera

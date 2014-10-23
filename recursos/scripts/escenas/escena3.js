@@ -15,6 +15,10 @@ Juego.Escena3.prototype = {
 		
 		this.puertaAbriendose = this.add.audio('puertaAbriendose'); // Configurar sonido
 		
+		this.nota = this.add.sprite(10, 10, 'notaFlecha')10;
+		this.nota.scale.x = -1;
+		this.nota.anchor.setTo(1, 0);
+		
 		this.puerta1 = this.add.sprite(1147, 42, 'puerta1');
 		this.puerta1Abierta = this.add.sprite(1147, 42, 'puerta1Abierta');
 		this.puerta1Abierta.alpha = 0;

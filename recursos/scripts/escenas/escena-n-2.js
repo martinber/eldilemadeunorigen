@@ -13,6 +13,10 @@ Juego.Escena_n_2.prototype = {
 		
 		// Comienzo creacion objetos
 		
+		this.nota = this.add.sprite(10, 10, 'notaFlecha');
+		this.nota.scale.x = -1;
+		this.nota.anchor.setTo(1, 0);
+		
 		this.puerta = this.add.sprite(465, 477, 'puerta2');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
 		this.puerta.alpha = 0;

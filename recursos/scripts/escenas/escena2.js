@@ -126,6 +126,7 @@ Juego.Escena2.prototype = {
 		this.personaje.limitarX(0, this.silla.x); // Limitar posición del personaje
 		this.personaje.sprite.scale.x = -1; // Espejar
 		
+		this.nota = this.add.sprite(10, 10, 'notaMoverse');
 		this.UI.traerAlFrente();
 	},
 	
