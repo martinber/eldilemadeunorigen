@@ -37,6 +37,7 @@ Juego.Escena_2s_3.prototype = {
 	
 	listo: function () { // Cuando termina la transicion
 		this.foco = true;
+		this.UI.decir("Acá vive mi abuelo", "E");
 		this.transicion = null;
 	},
 	

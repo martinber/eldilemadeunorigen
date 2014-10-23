@@ -221,10 +221,11 @@ Dialogo = function (creador, datosDialogo) { // Objeto que se encarga de mostrar
 	this.fondo.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	// Agregar boton
-	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
-	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.boton = game.add.button(this.x + (this.w - 50), this.y + 50, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton.anchor.setTo(.5, .5); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
 	this.boton.input.useHandCursor = true;
+	this.boton.angle = -10;
 	
 	this.nuevaLinea(); // Empezar a dibujar una línea de texto
 }
@@ -255,6 +256,9 @@ Dialogo.prototype = {
 			this.alarmaAvance = game.time.events.repeat(80, this.datosDialogo[this.linea].texto.length, this.avanzar, this); // Avanzar tantas veces como letras tiene la línea
 			
 			this.renglones += this.cantRenglones(this.datosDialogo[this.linea].texto);
+		}
+		else {
+			this.tweenBoton = game.add.tween(this.boton).to({angle: 10}, 300, Phaser.Easing.Quadratic.InOut, true, 0, Number.MAX_VALUE, true); // Animar boton de cerrar
 		}
 	},
 	cantRenglones: function (string) { // Contar cantidad de renglones del texto buscando los \n
@@ -341,10 +345,12 @@ Foto = function (creador, id) { // Objeto que crea una transición a negro
 	this.sprite.fixedToCamera = true; // Fondo fijado a la cámara
 	
 	// Agregar boton
-	this.boton = game.add.button(this.x + (this.w - 10), this.y + 10, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
-	this.boton.anchor.setTo(1, 0); // Establecer su origen (ancla)
+	this.boton = game.add.button(this.x + (this.w - 50), this.y + 50, 'botonCerrar', this.cerrar, this, 'boton2', 'boton1', 'boton3'); // x, y, imagen, accion, objeto, imagenHover, imagen, imagenClick
+	this.boton.anchor.setTo(.5, .5); // Establecer su origen (ancla)
 	this.boton.fixedToCamera = true;
 	this.boton.input.useHandCursor = true;
+	this.boton.angle = -10;
+	this.tweenBoton = game.add.tween(this.boton).to({angle: 10}, 300, Phaser.Easing.Quadratic.InOut, true, 0, Number.MAX_VALUE, true); // Animar boton de cerrar
 }
 Foto.prototype = {
 	cerrar: function () {

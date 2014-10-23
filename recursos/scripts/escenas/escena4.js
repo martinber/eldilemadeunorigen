@@ -6,7 +6,7 @@ Juego.Escena4.prototype = {
 	create: function () {
 		this.fondo = this.add.sprite(0, 0, 'piezaPadresFondo'); // Agregar fondo
 		game.world.setBounds(0, 0, 960, 540); // Configurar tamaño de juego
-		this.foco = true; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
+		this.foco = false; // Capacidad de apretar botones, o interactuar con lo que depende de este objeto
 		this.ultimoClick = ""; // Guardar ultimo objeto clickeado
 		this.puedeSalir == false; // Si puede salir de habitacion, para no saltarse dialogo
 		
@@ -32,11 +32,17 @@ Juego.Escena4.prototype = {
 		game.input.onDown.add(this.click, this); // Llamar la función al hacer click
 		this.transicion = new Transicion(1000, "entrar", this.listo, this);
 		this.UI = new UI(this); // Agregar UI
+		
 	},
 	
 	listo: function () { // Cuando termina la transicion
-		this.foco = true;
+		this.alarma = game.time.events.add(Phaser.Timer.SECOND * 3, this.enfocar, this);
+		this.UI.decir("En ese armario guardamos las fotos", "E");
 		this.transicion = null;
+	},
+	
+	enfocar: function() {
+		this.foco = true;
 	},
 	
 	update: function () {
