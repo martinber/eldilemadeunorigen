@@ -15,7 +15,8 @@ Juego.Escena_2s_3.prototype = {
 		
 		this.timbre = this.add.audio('timbre1'); // Configurar sonido
 		
-		this.nota = this.add.sprite(10, 10, 'notaPuerta');
+		this.nota = this.add.sprite(canvasWidth - 10, 10, 'notaPuerta');
+		this.nota.anchor.setTo(1, 0);
 		
 		this.puerta = this.add.sprite(300, 400, 'puertaAbuelo');
 		this.puerta.anchor.setTo(.5, 1); // Establecer su origen (ancla)
