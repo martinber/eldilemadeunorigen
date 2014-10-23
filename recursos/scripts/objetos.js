@@ -330,7 +330,7 @@ Transicion.prototype = {
 	}
 }
 
-Foto = function (creador, id) { // Objeto que crea una transición a negro
+Foto = function (creador, id) {
 	// Posicion en pantalla
 	this.x = 0;
 	this.y = 0;

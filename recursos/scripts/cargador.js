@@ -15,9 +15,11 @@ Juego.Cargador.prototype = {
 		
 		// Cargar lo necesario para el juego
 		this.load.image('menuFondo', 'recursos/menu/menuFondo.jpg');
+		this.load.image('ayuda', 'recursos/menu/ayuda.png');
 		this.load.atlas('menuBoton', 'recursos/menu/boton.png', 'recursos/menu/boton.json');
 		this.load.atlas('botonSilenciar1', 'recursos/menu/botonSilenciar1.png', 'recursos/menu/botonSilenciar.json');
 		this.load.atlas('botonSilenciar2', 'recursos/menu/botonSilenciar2.png', 'recursos/menu/botonSilenciar.json');
+		this.load.atlas('botonAyuda', 'recursos/menu/botonAyuda.png', 'recursos/menu/botonAyuda.json');
 		
 		this.load.atlas('botonCerrar', 'recursos/escenas/general/botonCerrar.png', 'recursos/escenas/general/botonCerrar.json');
 		this.load.atlas('botonSi', 'recursos/escenas/general/botonSi.png', 'recursos/escenas/general/botonSi.json');
